@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>Cognitive load</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">
+    @import url(silverbullet.css);
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,60 L380,40"/>
+    <path id="subheading" d="M20,210 C120,240 520,240 620,210"/>
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">Cognitive load</text>
+
+  <g id="content" font-size="30">
+
+    9: Cognitive vs Perceptual Design Distinction
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>cognitive load: the amount of mental effort that we use to get the information that we need. A good data visualization minimizes the cognitive load while also communicating the message accurately. There are three types of cognitive load:
+
+        <tspan x="20" dy="1.5em">intrinsic: baseline cognitive load pertaining to how much brain power is needed to understand an idea. Different types of tasks will require more or less thought or attention.</tspan>
+        <tspan x="20" dy="1.5em">extraneous: amount of extra brain power needed to perceive and understand a topic</tspan>
+        <tspan x="20" dy="1.5em">germane: a way for the brain to look for patterns to develop context. As with extraneous load, it is to help take a cognitive issue and present it in an easy and meaningful way. We'll use these three types of cognitive loads
+          instinctively throughout this specialization.</tspan>
+      </text>
+    </g>
+
+  </g>
+
+</svg>

@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 900 600">
+
+  <title>Dataviz as Document</title>
+
+  <script href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    #content {
+      font-size: 30px;
+    }
+
+    .label {
+      fill: white;
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs id="defs-1">
+
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+  <rect id="frame" x="0" y="0" width="100%" height="100%"/>
+
+  <text id="head" x="880" y="1.5em" class="heading" text-anchor="end">Dataviz as Document</text>
+
+  <g id="content" transform="translate(0,30)">
+
+    <g id="document" data-debug-fire="3" transform="translate(20,70)">
+       <!-- <rect id="browser-window" x="0" y="0" width="495" height="605" fill="gainsboro"  /> -->
+      <path class="paper" transform="translate(10,10)" d="M0,0 H250 L300,50 V400 H0 Z M250,0 300,50 250,50 Z"/>
+
+      <g id="paper-content" style="stroke:black; stroke-width:10px;" transform="translate(10,10)">
+        <style>
+
+          .paper {
+            fill: ghostwhite;
+            fill-rule: nonzero;
+            stroke: black;
+            stroke-width: 3px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+          }
+        </style>
+        <defs>
+          <line id="words" x1="0" y1="0" x2="80" y2="0"/>
+          <g id="textline">
+            <use href="#words" x="30" y="0" />
+            <use href="#words" x="110" y="0" />
+            <use href="#words" x="190" y="0" />
+          </g>
+          <g id="textline-short">
+            <use href="#words" x="30" y="0" />
+            <use href="#words" x="110" y="0" />
+          </g>
+
+          <g id="picture">
+             <rect x="0" y="0" width="70" height="70" fill="gainsboro" stroke="black" stroke-width="3" />
+             <polygon points="5,50 15,40 30,45 50,30 65,40 65,65 5,65" stroke="none" fill="black" />
+             <circle cx="20" cy="20" r="7" fill="black" stroke="none" />
+          </g>
+        </defs>
+
+        <use id="heading1" href="#words" x="110" y="30" style="stroke-width:18px;"/>
+
+        <use id="byline" href="#textline-short" x="40" y="55" style="stroke-width:7px;" />
+
+        <g id="precis">
+          <use href="#textline" y="75" />
+          <use href="#textline" y="95" />
+        </g>
+
+        <!-- <use href="#textline" y="100" /> -->
+        <g id="doc-body">
+
+          <use href="#textline-short" x="80" y="125" />
+          <use href="#textline-short" y="145" />
+          <use href="#textline-short" y="165" />
+          <use href="#textline-short" y="185" />
+          <use href="#textline-short" y="205" />
+          <use href="#textline-short" x="80" y="225" />
+          <use href="#textline" y="245" />
+          <use href="#textline" y="265" />
+          <use href="#textline-short" y="285" />
+
+          <use href="#textline-short" x="80" y="305" />
+          <use href="#textline" y="325" />
+        </g>
+
+
+        <use href="#picture" x="200" y="140" />
+
+        <g id="conclusion" data-debug-fire="4">
+          <!-- <use href="#footnote-ref" x="265" y="300" /> -->
+          <!-- <path style="stroke:black; stroke-width:3px; stroke-dasharray:5,7; stroke-linecap:round; fill:none;" d="M265,300 H275 Q285,300 285,310 V330 Q285,340 275,340 H45 Q35,340 35,350 V360"/> -->
+
+          <use href="#textline" y="360" />
+          <use href="#textline" y="380" />
+          <!-- <use href="#footnote-ref" x="35" y="360" /> -->
+        </g>
+
+      </g>
+
+    </g>
+
+    <g id="dataviz" data-debug-fire="3" transform="translate(560,70)">
+       <!-- <rect id="browser-window" x="0" y="0" width="495" height="605" fill="gainsboro"  /> -->
+      <path class="paper" transform="translate(10,10)" d="M0,0 H300 V400 H0 Z"/>
+
+      <g id="dataviz-content" style="stroke:black; stroke-width:10px;" transform="translate(10,10)">
+        <use id="heading2" href="#words" x="110" y="30" style="stroke-width:18px;"/>
+
+        <use id="source" href="#textline-short" x="80" y="380" style="stroke-width:7px;" />
+
+        <style>
+          .bars {
+            stroke:none;
+            fill:black;
+          }
+
+          .axes-marks {
+            stroke:black;
+            fill:none;
+          }
+        </style>
+        <defs>
+          <g id="axes-marks">
+            <path id="axes" style="stroke-width:3px;" d="M50,60 V330 H260" />
+            <path id="ticks" style="stroke-width:7px; stroke-dasharray:2 23.5;" d="M45,60 V333 H260" />
+            <path id="labels" style="stroke-width:7px; stroke-dasharray:6 23;" d="M35,65 V345 H260" />
+          </g>
+
+          <g id="bars">
+            <rect id="bar-0" x="50" y="65" width="150" height="20" />
+            <rect id="bar-1" x="50" y="89.5" width="210" height="20" />
+            <rect id="bar-2" x="50" y="114" width="150" height="20" />
+            <rect id="bar-2" x="50" y="138.5" width="30" height="20" />
+            <rect id="bar-2" x="50" y="164" width="70" height="20" />
+            <rect id="bar-2" x="50" y="189" width="190" height="20" />
+            <rect id="bar-2" x="50" y="214" width="100" height="20" />
+            <rect id="bar-2" x="50" y="241" width="90" height="20" />
+            <rect id="bar-2" x="50" y="266" width="130" height="20" />
+            <rect id="bar-2" x="50" y="292" width="10" height="20" />
+          </g>
+        </defs>
+
+        <use href="#bars" class="bars"/>
+        <use href="#axes-marks" class="axes-marks"/>
+
+      </g>
+
+    </g>
+
+
+    <g data-fire="1" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="0" width="150" height="35" fill="crimson"/>
+      <text x="100" y="25" class="label">title</text>
+      <use href="#words" x="-210" y="25" style="stroke:crimson; stroke-width:18px;"/>
+      <use href="#words" x="330" y="25" style="stroke:crimson; stroke-width:18px;"/>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="50" width="150" height="35" fill="hsl(293, 83%, 32%)"/>
+      <text x="100" y="75" class="label">provenance</text>
+      <use href="#byline" x="-320" y="-5" style="stroke:hsl(293, 83%, 32%); stroke-width:10px; fill:none;"/>
+      <use href="#source" x="220" y="-5" style="stroke:hsl(293, 83%, 32%); stroke-width:7px;" />
+      <!-- <use href="#words" x="-210" y="25" style="stroke:crimson; stroke-width:18px;"/>
+      <use href="#textline-short" x="280" y="380" style="stroke-width:7px;" /> -->
+    </g>
+
+    <!-- <g data-fire="1" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="0" width="150" height="35" fill="crimson"/>
+      <text x="100" y="25" class="label">title</text>
+      <rect x="-225" y="20" width="50" height="35" fill="none" stroke="crimson" stroke-width="5"/>
+    </g> -->
+
+
+    <g data-fire="3" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="100" width="150" height="35" fill="blue"/>
+      <text x="100" y="125" class="label">intro</text>
+      <use href="#precis" x="-320" y="-5" style="stroke:blue; stroke-width:10px; fill:none;"/>
+      <use href="#axes-marks" x="220" y="-5" style="stroke:blue; stroke-width:18px; fill:none;"/>
+    </g>
+
+
+    <g data-fire="4" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="150" width="150" height="35" fill="green"/>
+      <text x="100" y="175" class="label">body</text>
+      <use href="#doc-body" x="-320" y="-5" style="stroke:green; stroke-width:10px; fill:none;"/>
+      <use href="#bars" x="220" y="-5" style="fill:green;"/>
+    </g>
+
+
+    <g data-fire="5" data-blank="true" transform="translate(350,85)">
+      <rect x="25" y="200" width="150" height="35" fill="hsl(39, 100%, 42%)"/>
+      <text x="100" y="225" class="label">conclusion</text>
+      <use href="#conclusion" x="-320" y="-5" style="stroke:hsl(39, 100%, 42%); stroke-width:10px; fill:none;"/>
+    </g>
+
+    <g data-fire="6" data-blank="true" transform="translate(450,530)">
+      <text x="0" y="0" class="label" style="fill:black;">Conclusion of dataviz is the insight the reader has gained, decisions made</text>
+    </g>
+
+  </g>
+
+</svg>

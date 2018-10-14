@@ -1,0 +1,166 @@
+- add ability to turn off animations/remove classes
+- provide "show all" option in URL
+
+-----------
+
+
+0. None
+1. Provide generic alt-txt: "barchart", "pie chart of market segment size"
+2. Provide detailed summary in alt-txt: "Line chart showing market trends, with a downward trend over the last year", "bar chart with 12 bars; the highest value isn 1500"
+3. Provide hidden content (e.g. a table) with the same information
+4. Serial access to data: table alternative
+5. Automatically generic task-oriented contextual options
+
+
+------------
+structure
+order
+context
+position within context (focus indicator)
+details of specific position (labels, values, options (affordance))
+
+affordance of navigation options
+
+------------
+cognitive, also
+
+
+------------
+
+graphics-document:
+an image/diagram which can have child elements with text, alt text, or interactivity
+
+graphics-object:
+a meaningful region or sub-component of a graphics-document
+
+graphics-symbol:
+a shape or icon that should be treated as indivisible element within a graphic
+
+-------------
+
+Semiotic
+- Annotation layer
+- Visualization layer
+  - Pieces
+  - arrow keys to navigate between pieces
+  - aria label
+  - tooltip moves with it
+  - keyboard focus
+  problems
+    - stacked
+      - shared tooltips for whole stack
+- Interaction layer
+  - want to move to interaction layer
+
+- bar charts
+- line charts (funky)
+- network (with effort)
+
+Apply to some charts, requires some thinking
+ARIA labels by default
+
+--------------
+Bloomberg has an excellent sonification system
+
+
+----
+Fast vs slow
+scatterplot: "For instance, an analyst might immediately notice a single dot sitting alone but nearby to a cluster of other dots in a scatter plot. That's system 1. If the analysts spent a few moments considering a bad data as a meaningful outlier with further investigation, that would be system two."
+
+----
+6 Gestalt Principles
+
+1. Proximity: things close together tend to be more related than things further apart. This is the one that we're going to do to deep dive in in just a moment.
+
+Tobler's First Law of Geography states that, "Everything is related to everything else, but near things are more related than distant things.""
+
+2. Similarity: Things that look the same tend to be grouped together.
+
+3. Enclosure: It's when we perceive things to belong together when there's a boundary or an appearance of a boundary around a group.
+Enclosure can be used to show contrast in order to differentiate between information.
+
+4. Closure: the gut feeling that we have that we should resolve ambiguity. The resolution of ambiguity works to our benefit to eliminate distracting elements from our visualization as you can see on the screen.
+
+5. Continuity: when we perceive something to be part of a whole, even if they are with another section. In the sketch I drew on the screen We perceived the wavy line to be continuous, even though it is broken up by the green rectangle.
+Continuity can be used to remove the x-axis line on a bar chart because all the bars are lined up and oriented along the bottom
+
+In this example, we don't need a row for each division. Because it's obvious that the departments go with the top level division. In fact, we can even save horizontal space by indenting the department under each division.
+
+6. Connection: the notion that a line connects two grouped things.
+
+
+------------
+
+
+_: Cognitive vs Perceptual Design Distinction
+- cognitive load: the amount of mental effort that we use to get the information that we need. A good data visualization minimizes the cognitive load while also communicating the message accurately. There are three types of cognitive load,
+  - intrinsic: baseline cognitive load pertaining to how much brain power is needed to understand an idea. Different types of tasks will require more or less thought or attention.
+  - extraneous: amount of extra brain power needed to perceive and understand a topic
+  - germane: a way for the brain to look for patterns to develop context. As with extraneous load, it is to help take a cognitive issue and present it in an easy and meaningful way.
+
+- Clutter is all the extraneous factors you can remove while preserving germane ideas
+  - 3D is an example of clutter: skews info, and adds confusion
+- Redundancy is extraneous factors increase clarity and decrease cognitive load, such as extra labels on each bar
+    - labels: unit symbols (currency symbols, percent signs), commas in numbers, scientific notation
+
+COGNITIVE LOAD and annotation: as part of the working memory, being able to manipulate, filter, and annotate a diagram can help offload tasks and "bookmark" thought processes from the working memory
+---------------
+Serial vs parallel tasks
+---------------
+Ben Shneiderman: "Overview first, zoom and filter, and then details on demand."
+
+Colin Ware on interactive visualizations: three interlocking feedback loops:
+1. direct manipulation of graphical objects.
+2. exploration and navigation
+3. problem solving and question
+
+(For our purposes, we want to anticipate the problems and questions, and provide interfaces for them)
+-----------------
+https://www.coursera.org/learn/dataviz-design/lecture/tAHYy/language-labeling-and-scales
+"Direct manipulation of graphical objects is the ability to interact with various visual elements representing data within the visualization. The visual elements on the screen can actively serve many roles for example, by hovering on or rolling over point of interest in a timeline for example. It can provide additional transient, detailed information about that spot. Visual elements can also act as input mechanisms as well as enhanced display items. One of the examples of this is selecting a node in a network diagram to tag and save or to use as the focus in pivot point for a new investigation." (This is what we do for each component of the dataviz)
+
+--
+"Being able to interact with visual elements should be in the service of getting insights and not testing the hand eye dexterity of your users.
+4:54
+In some visualizations such stacked column charts and bubble graphs for example, it can be extremely difficult to precisely select and interact with a data point of interest because it's crowded out or covered over by nearby visual elements.
+5:09
+Sometimes the issue is that the visual element of interest presents only a very small or ambiguous selectable target area.
+5:19
+Techniques such as outlining a particular selected area or highlighting it on rollover can be helpful to address this, as well as the ability to zoom in and out of a particular spot.
+5:33
+Exploration and navigation includes the ability for people to easily and effectively find their way through a visual information space.
+5:41
+That is, does the interface design help them enter, orient themselves, and get where they want to go, or discover useful pathways ahead and anticipate it? "
+
+---
+
+"Recall the idea of your work as a data visualization designer as being akin to that of an architect. Just as buildings are designed to provide structures for people to move through, interactive visualizations enable people to navigate or flow through large data sets.
+Building floor plans and layouts that are shaped based on the needs of people in it and the purposes of the structure is essential. The visual components and information architecture are blueprints of your visualizations, need to support the ability of people to walk through a process of discovery."
+
+-------------
+Which of the following are two of the primary and ultimatepurposes of data visualization?
+- Question generation
+- Problem solving
+----------------
+interactivity
+"For example, you might select a region on a map or scatter plot to capture some point of interest to highlight or filter down and the related points in other views would likewise be highlighted or filtered. This select connect type of interaction is sometimes referred to as brushing and linking. "
+"Now as we've seen, sometimes the only way to really gain a clear understanding of what you are looking at is to see it from different perspectives. If they are designed well, data displays can give your audiences the power to do just that. With tools like coordinated highlighting and filtering on multiple chart types, people can be more effective analysts and data explorers. One of the keys to make the designs of this coordination work is to make it apparent and easy to do. In the instances where the coordination is not technically possible for some views, make those limitations apparent to people as well. "
+
+---------------
+Pre-attentive attributes
+So if you want to draw the eyes of your audience, you can change the characteristic of the element you want people to see. You can change the size, the color, orientation, shape, line, length or width, you can put in an enclosure, intensity, or spatial position.
+All of those are preattentive attributes and more.
+
+Each of these have their uses, depending on what you're visualizing.
+For example, some preattentive attributes have an implicit quantitative element like a bar in a bar graph or a line in a line graph.
+Some, like shape or color, are used for categories.
+
+
+Color is one of the most important of the pre-attentive attributes. With color, if we overuse it, we lose the ability to focus our audience's attention where we need it to be. It'll basically get dissipated. But if we underuse it, we lose the ability to really direct our attention.
+So it is about trying to find the right balance.
+
+
+---------------
+“Common types of learning disabilities include intellectual disabilities, autism, ADHD, dyslexia, deaf-blindness, developmental delay, orthopedic impairment, speech or language impairment, and traumatic brain injury.”
+
+Excerpt From: Boundless. “Boundless Psychology.” iBooks.

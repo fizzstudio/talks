@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>One size does not fit all</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">
+    @import url(silverbullet.css);
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,60 L380,40"/>
+    <path id="subheading" d="M20,210 C120,240 520,240 620,210"/>
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">One size does not fit all</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>In general, you should make sure that your dataviz is perceptible to all
+      </text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>But knowing your audience is important
+
+        <tspan x="20" dy="1.5em">Different audiences may have more or less expertise in a topic, or have different goals</tspan>
+        <tspan x="20" dy="1.5em">Some differences may be cognitive ability</tspan>
+        <tspan x="20" dy="1.5em">Create user personas</tspan>
+      </text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>Consider your target audience, and create your dataviz with them as your primary focus
+      </text>
+    </g>
+
+  </g>
+
+</svg>

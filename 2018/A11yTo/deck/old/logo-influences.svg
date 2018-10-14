@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="100%" height="100%" viewBox="0 0 1120 880">
+
+  <title>Fizz logo influences</title>
+
+  <script href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+
+  <defs id="defs-1">
+     <path id="heading" d="M0,60 L380,40" />
+     <path id="subheading" d="M20,210 C120,240 520,240 620,210" />
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    .emphasis {
+      font-size: 34px;
+      font-weight: bold;
+    }
+  </style>
+
+
+  <defs>
+    <svg id="fizz" viewBox="0 0 208 208">
+      <style>
+        .icon_size {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 10px;
+        }
+
+        .full_size {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 6px;
+        }
+
+        .small_size {
+          fill: purple;
+          stroke: purple;
+          stroke-width: 5px;
+        }
+
+        .gray_scale {
+          fill: gray;
+          stroke: black;
+        }
+
+        .badge {
+          fill: white;
+          stroke: purple;
+        }
+
+        .badge_container {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 8px;
+        }
+
+        .badge.mono {
+          fill: white;
+          stroke: white;
+          stroke-width: 1px;
+        }
+
+        .badge_container.mono {
+          fill: purple;
+          stroke: purple;
+          stroke-width: 8px;
+        }
+      </style>
+
+      <circle id="circle-0-0" cx="50" cy="50" r="30"/>
+      <circle id="circle-0-1" cx="120" cy="46.5" r="23"/>
+      <circle id="circle-0-2" cx="176" cy="43" r="16"/>
+
+      <circle id="circle-1-0" cx="46.5" cy="120" r="23"/>
+
+      <circle id="circle-1-1" cx="112" cy="112" r="16"/>
+
+      <circle id="circle-2-0" cx="43" cy="176" r="16"/>
+    </svg>
+  </defs>
+
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text id="head" x="1100" y="1em" class="heading" text-anchor="end">Fizz logo influences</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(30,120)">
+      <text x="0" y="0">bubbles (fizzy)</text>
+      <image href="bubbles-colors.jpg" x="-10" y="5" width="285.2" height="300" />
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(380,120)">
+      <text x="0" y="0">bubble charts (scatter plots)</text>
+      <image href="bubble-chart-2007.png" x="-10" y="10" width="556.7" height="350" />
+    </g>
+
+    <g data-fire="3" data-blank="true" transform="translate(950,120)">
+      <text x="0" y="0">sound wave icon</text>
+      <svg x="0" y="10" width="150" height="150" viewBox="0 0 100 100">
+        <path d="M29.744,32.969 l-6.098,6.1 c6.027,6.03 6.027,15.835 0,21.863l0,0l6.098,6.101c0-0.001,0-0.001,0-0.001 C39.135,57.642,39.135,42.36,29.744,32.969z M43.729,18.984l-6.102,6.1c13.738,13.737,13.738,36.095,0,49.832l0,0l6.102,6.1c0,0,0,0,0-0.001 C60.828,63.913,60.828,36.087,43.729,18.984z M76.354,50c0-16.998-6.623-32.981-18.641-45l0,0l-6.104,6.1 C62,21.492 67.723,35.304 67.723,50 S62,78.508,51.609,88.899 V88.9 l6.104,6.1 c0-0.001,0 -0.001,0 -0.001C69.73,82.982,76.354,66.998,76.354,50z"/>
+      </svg>
+    </g>
+
+    <g data-fire="4" data-blank="true" transform="translate(30,530)">
+      <text x="0" y="0">letter F (for “Fizz”)</text>
+      <image href="letter-F.png" x="-8" y="10" width="200" height="200" />
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(380,530)">
+      <text x="0" y="0">Braille alphabet</text>
+      <!-- <image href="braille-alphabet-and-braille-numbers.png" x="0" y="10" height="1440" width="606" /> -->
+      <!-- <image href="braille-alphabet-and-braille-numbers.png" x="0" y="10" height="126.25" width="300" /> -->
+      <image href="braille-alphabet-and-braille-numbers.png" x="0" y="20" width="720" height="303" />
+    </g>
+
+    <g data-fire="6" data-blank="true" transform="translate(655,542)">
+      <rect x="0" y="0" width="55" height="100" style="fill: none; stroke: purple;"/>
+      <g style="fill: violet; stroke: purple;" transform="translate(15.75,15.5)">
+        <circle cx="0" cy="0" r="7.5" />
+        <circle cx="23.5" cy="0" r="7.5" />
+        <circle cx="0" cy="23.5" r="7.5" />
+      </g>
+    </g>
+
+    <g data-fire="7" data-blank="true" transform="translate(950,320)">
+      <use href="#fizz" width="150" height="150" class="icon_size"/>
+    </g>
+  </g>
+
+</svg>

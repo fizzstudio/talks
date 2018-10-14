@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="100%" height="100%" viewBox="0 0 1000 750">
+
+  <title>Fizz logo ideas</title>
+
+  <script href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+
+  <defs id="defs-1">
+     <path id="heading" d="M0,60 L380,40" />
+     <path id="subheading" d="M20,210 C120,240 520,240 620,210" />
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    .emphasis {
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+
+    text.logo {
+      font-size: 30px;
+      fill: purple;
+      font-family: Verdana, sans-serif;
+      font-weight: bold;
+    }
+
+      text.logo tspan {
+        font-size: 25px;
+        font-weight: normal;
+      }
+
+      text.logo .slogan,
+      text.logo .slogan tspan {
+        font-size: 13px;
+      }
+
+      .centered {
+        text-anchor: middle;
+      }
+
+    .outline {
+      stroke: hsl(300, 50%, 50%);
+      stroke-dasharray: 1 9;
+      fill: none;
+    }
+  </style>
+
+
+  <defs>
+    <svg id="fizz" viewBox="0 0 208 208">
+      <style>
+        .icon_size {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 10px;
+        }
+
+        .full_size {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 6px;
+        }
+
+        .small_size {
+          fill: purple;
+          stroke: purple;
+          stroke-width: 5px;
+        }
+
+        .gray_scale {
+          fill: gray;
+          stroke: black;
+        }
+
+        .badge {
+          fill: white;
+          stroke: purple;
+        }
+
+        .badge_container {
+          fill: violet;
+          stroke: purple;
+          stroke-width: 8px;
+        }
+
+        .badge.mono {
+          fill: white;
+          stroke: white;
+          stroke-width: 1px;
+        }
+
+        .badge_container.mono {
+          fill: purple;
+          stroke: purple;
+          stroke-width: 8px;
+        }
+      </style>
+
+      <circle id="circle-0-0" cx="50" cy="50" r="30"/>
+      <circle id="circle-0-1" cx="120" cy="46.5" r="23"/>
+      <circle id="circle-0-2" cx="176" cy="43" r="16"/>
+
+      <circle id="circle-1-0" cx="46.5" cy="120" r="23"/>
+
+      <circle id="circle-1-1" cx="112" cy="112" r="16"/>
+
+      <circle id="circle-2-0" cx="43" cy="176" r="16"/>
+    </svg>
+  </defs>
+
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text id="head" x="980" y="1em" class="heading" text-anchor="end">Fizz logo ideas</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(30,120)">
+      <text x="0" y="0" class="emphasis">logotype</text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(30,170)">
+      <text x="0" y="0">original</text>
+      <image href="fizz-logo-original.svg" x="-50" y="0" height="250" width="250" />
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(30,470)">
+      <text x="0" y="0">iteration</text>
+      <image href="fizz-logo-original-v2.png" x="-50" y="10" height="250" width="250" />
+    </g>
+
+
+    <rect data-fire="3" data-blank="true" x="10" y="135" width="260" height="590"
+      style="fill: hsla(300,50%,50%,0.75);"/>
+
+    <g data-fire="3" data-blank="true" transform="translate(350,120)">
+      <text x="0" y="0" class="emphasis">logomark</text>
+    </g>
+
+    <g data-fire="4" data-blank="true" transform="translate(350,170)">
+      <text x="0" y="0"></text>
+      <use href="#fizz" x="-20" y="0" width="200" height="200" class="icon_size"/>
+    </g>
+
+
+    <g data-fire="5" data-blank="true" transform="translate(670,120)">
+      <text x="0" y="0" class="emphasis">combination mark</text>
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(670,170)">
+      <text x="0" y="0">horizontal</text>
+      <rect class="outline" x="-10" y="10" width="225" height="105"/>
+      <use href="#fizz" x="-10" y="10" width="100" height="100" class="icon_size"/>
+
+      <text x="100" y="43" class="logo">fizz
+        <tspan x="100" dy="30">studio</tspan>
+        <tspan x="35" dy="26" class="slogan">data at the speed of sound</tspan>
+      </text>
+    </g>
+
+    <g data-fire="6" data-blank="true" transform="translate(670,330)">
+      <text x="0" y="0">vertical</text>
+      <rect class="outline" x="-10" y="10" width="115" height="215"/>
+      <use href="#fizz" x="-10" y="10" width="100" height="100" class="icon_size"/>
+
+      <text x="50" y="143" class="logo centered">
+        <tspan x="50" style="letter-spacing: 0.3em; font-weight: bold;">fizz</tspan>
+        <tspan x="50" dy="30">studio</tspan>
+        <tspan x="48" dy="26" class="slogan">data at the
+          <tspan x="50" dy="1.1em">speed of sound</tspan>
+        </tspan>
+      </text>
+    </g>
+
+    <g data-fire="7" data-blank="true" transform="translate(670,600)">
+      <text x="0" y="0">square</text>
+      <rect class="outline" x="-10" y="10" width="105" height="105"/>
+      <use href="#fizz" x="-10" y="10" width="100" height="100" class="icon_size"/>
+
+      <text x="90" y="90" class="logo" style="font-size: 14px; text-anchor: end;">fizz
+        <tspan x="86" dy="1em" style="font-size: 14px;">studio</tspan>
+      </text>
+    </g>
+
+  </g>
+
+
+</svg>

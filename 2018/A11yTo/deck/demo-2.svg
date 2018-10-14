@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 1100 600">
+
+  <title>Demo 2: establishing context</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    #content {
+      font-size: 45px;
+      text-anchor: middle;
+    }
+
+    .heading {
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs id="defs-1">
+
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+
+  <text id="head" x="550" y="1.5em" class="heading">Demo 2</text>
+
+  <g id="content">
+    <g transform="translate(550,180)">
+      <text>establishing context</text>
+    </g>
+  </g>
+
+</svg>

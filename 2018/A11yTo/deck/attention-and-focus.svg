@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>“Hey, look over here!”</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+
+  <defs id="defs-1">
+     <path id="heading" d="M0,60 L380,40" />
+     <path id="subheading" d="M20,210 C120,240 520,240 620,210" />
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">“Hey, look over here!”</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html">WCAG 1.4.1</a>:
+        <tspan x="20" dy="1.5em">“Use of Color: Color is not used as the only visual means of conveying information,</tspan>
+        <tspan x="20" dy="1.5em">indicating an action, prompting a response,”</tspan>
+        <tspan x="20" dy="1.5em">or distinguishing a visual element. (Level A)”</tspan>
+      </text>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(10,320)">
+      <text>use pre-attentive attributes to draw attention, but compose the data interface to create a model
+        <tspan x="50" dy="1.5em">assemble those elements to help people think</tspan>
+        <tspan x="70" dy="1.5em">clearly</tspan>
+        <tspan x="70" dy="1.5em">accurately</tspan>
+      </text>
+    </g>
+
+    <g data-fire="3" data-blank="true" transform="translate(60,300)">
+      <text>Remove clutter: using too many encodings leads to confusion</text>
+    </g>
+
+    <g data-fire="4" data-blank="true" transform="translate(60,500)">
+      <text>goals of dataviz
+        <tspan x="50" dy="1.5em">perceive the data</tspan>
+        <tspan x="50" dy="1.5em">think about the data</tspan>
+        <tspan x="50" dy="1.5em">reason with the data (make decisions)</tspan>
+      </text>
+    </g>
+  </g>
+
+</svg>
