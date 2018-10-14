@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 600 400" onload="SetList()" onclick="StepList(evt)">
+  <title>Thanks!</title>
+
+  <style type="text/css">@import url(silverbullet.css);</style>
+  <script id="slideshowLibrary" xlink:href="silverbullet.js" type="text/ecmascript"/>
+  <style>
+    .colorbox text,
+    .colorbox text a,
+    .colorbox text tspan {
+      fill: white;
+      font-size: 20px;
+    }
+
+    .colorbox text tspan.strong {
+      font-size: 30px;
+    }
+  </style>
+
+  <defs id="defs-1">
+     <path id="heading" d="M0,80 L520,50" />
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text class="heading" x="20" y="65" font-size="60" font-weight="bold">Thanks for Your Attention!</text>
+
+  <g id="content" font-size="36">
+    <g class="colorbox" data-fire="1" data-blank="true">
+      <text x="50" y="150"><tspan class="strong">Doug Schepers</tspan>
+        <tspan x="70" dy="1.5em">Fizz Studio: founder, CTO</tspan>
+      </text>
+    </g>
+
+
+    <g class="colorbox" data-fire="2" data-blank="true" transform="translate(260,240)">
+      <text x="0" y="0" font-size="20">
+        <a xlink:href="mailto:doug@fizz.studio">doug@fizz.studio</a></text>
+      <text x="0" dy="1.5em">
+        <a xlink:href="http://fizz.studio">http://fizz.studio</a>
+      </text>
+    </g>
+
+    <g class="colorbox" data-fire="3" data-blank="true" transform="translate(420,330)">
+      <text x="0" y="0">
+        <a xlink:href="http://schepers.cc">http://schepers.cc</a>
+        <tspan x="0" dy="1.5em"><a xlink:href="http://twitter.com/shepazu">@shepazu</a></tspan>
+      </text>
+    </g>
+
+  </g>
+Tape by Guilhem from the Noun Project
+Notepad by i cons from the Noun Project
+
+</svg>

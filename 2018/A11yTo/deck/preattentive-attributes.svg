@@ -1,0 +1,533 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 980 700">
+
+  <title>Preattentive Attributes</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    text {
+      fill: black;
+      font-size: 24px;
+      stroke: none;
+      text-anchor: start;
+    }
+
+    .category,
+    .attribute {
+      fill: black;
+      text-anchor: middle;
+      stroke: none;
+    }
+
+      .category {
+        font-size: 34px;
+      }
+
+      .attribute {
+        font-size: 24px;
+      }
+
+    .items {
+      fill: hsl(212, 23%, 46%);
+    }
+
+    .line_items {
+      stroke: hsl(212, 23%, 46%);
+      stroke-width: 2px;
+      stroke-linecap: round;
+      fill: none;
+    }
+
+    .blocker {
+      fill: white;
+      fill-opacity: 0.99;
+    }
+
+    .hilite {
+      stroke: hsla(348, 83%, 47%, 1);
+      stroke-width: 3px;
+      stroke-linecap: round;
+      fill: none;
+    }
+
+    .grow_shrink {
+      animation: expand 6s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes expand {
+      50% {
+        y: 0px;
+        height: 80px;
+      }
+      100% {
+        y: 60px;
+        height: 20px;
+      }
+    }
+
+    .move {
+      animation: sway 6s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+      animation-fill-mode: both;
+    }
+
+    @keyframes sway {
+      0% {
+        x: 30px;
+      }
+      20% {
+        x: 0px;
+      }
+      40% {
+        x: 30px;
+      }
+      60% {
+        x: 60px;
+      }
+      80% {
+        x: 30px;
+      }
+      100% {
+        x: 30px;
+      }
+    }
+
+    .rotate {
+      transform-origin: 10px 40px;
+      animation: spin 6s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes spin {
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .blink .target {
+      transform-origin: 10px 40px;
+      animation: color_fade 1s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes color_fade {
+      50% {
+        fill: hsl(212, 23%, 46%);
+      }
+      75% {
+        fill: hsl(212, 23%, 76%);
+      }
+      100% {
+        fill: hsl(212, 23%, 46%);
+      }
+    }
+
+  </style>
+  <defs>
+    <linearGradient id="texture_gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:hsl(212, 23%, 46%);" />
+      <stop offset="25%" style="stop-color:hsl(212, 23%, 82%);" />
+      <stop offset="50%" style="stop-color:hsl(212, 23%, 46%);" />
+      <stop offset="75%" style="stop-color:hsl(212, 23%, 82%);" />
+      <stop offset="100%" style="stop-color:hsl(212, 23%, 46%);" />
+    </linearGradient>
+
+    <linearGradient id="concave_gradient" x1="34%" y1="0%" x2="66%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(212, 13%, 86%);" />
+      <stop offset="50%" style="stop-color:hsl(212, 23%, 46%);" />
+      <stop offset="100%" style="stop-color:hsl(212, 23%, 16%);" />
+    </linearGradient>
+  </defs>
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text id="head" x="20" y="50" class="heading">Preattentive Attributes</text>
+
+  <g id="content">
+
+    <g data-fire="1" data-blank="true" transform="translate(385,52)">
+      <text>features automatically processed by visual sensory (iconic) memory</text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(20,100)">
+      <text x="40" y="0" class="category">color</text>
+
+      <g data-fire="2" data-blank="true" class="items" transform="translate(0,20)">
+        <text x="40" y="105" class="attribute">hue</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20" style="fill:hsl(340, 23%, 46%);"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="3" data-blank="true" class="items" transform="translate(0,150)">
+        <text x="40" y="105" class="attribute">saturation</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20" style="fill:rgb(22, 111, 212);"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="4" data-blank="true" class="items" transform="translate(0,280)">
+        <text x="40" y="105" class="attribute">lightness</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20" style="fill:hsl(212, 23%, 62%);"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="5" data-blank="true" class="items" transform="translate(0,410)">
+        <text x="40" y="105" class="attribute">texture</text>
+
+        <rect x="0" y="0" width="20" height="20" style="fill:url(#texture_gradient)"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+    </g>
+
+
+    <g data-fire="1" data-blank="true" transform="translate(200,100)">
+      <text x="180" y="0" class="category">form</text>
+
+      <g data-fire="6" data-blank="true" class="items" transform="translate(0,20)">
+        <text x="40" y="105" class="attribute">orientation</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20" transform="rotate(45, 70, 70)"/>
+      </g>
+
+      <g data-fire="7" data-blank="true" class="items" transform="translate(0,150)">
+        <text x="40" y="105" class="attribute">alignment</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="25" y="55" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="8" data-blank="true" class="line_items" transform="translate(0,280)">
+        <text x="40" y="105" class="attribute">collinearity</text>
+
+        <line x1="0" y1="10" x2="20" y2="10"/>
+        <line x1="30" y1="10" x2="50" y2="10"/>
+        <line x1="60" y1="10" x2="80" y2="10"/>
+
+        <line x1="0" y1="40" x2="20" y2="40" transform="rotate(-30, 10, 40)"/>
+        <line x1="30" y1="40" x2="50" y2="40"/>
+        <line x1="60" y1="40" x2="80" y2="40"/>
+
+        <line x1="0" y1="70" x2="20" y2="70"/>
+        <line x1="30" y1="70" x2="50" y2="70"/>
+        <line x1="60" y1="70" x2="80" y2="70"/>
+      </g>
+
+      <g data-fire="9" data-blank="true" class="line_items" transform="translate(0,410)">
+        <text x="40" y="105" class="attribute">length</text>
+
+        <line x1="10" y1="30" x2="10" y2="80"/>
+        <line x1="30" y1="0" x2="30" y2="80"/>
+        <line x1="50" y1="30" x2="50" y2="80"/>
+        <line x1="70" y1="30" x2="70" y2="80"/>
+
+        <rect data-fire="26" data-blank="true" x="-15" y="-10" width="110" height="125" class="hilite"/>
+      </g>
+
+      <g data-fire="10" data-blank="true" class="items" transform="translate(140,20)">
+        <text x="40" y="105" class="attribute">shape</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <circle cx="40" cy="40" r="10"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="11" data-blank="true" class="items" transform="translate(140,150)">
+        <text x="40" y="105" class="attribute">size</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="63" y="3" width="14" height="14"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+
+        <rect data-fire="26" data-blank="true" x="-15" y="-10" width="110" height="125" class="hilite"/>
+      </g>
+
+      <g data-fire="12" data-blank="true" class="line_items" transform="translate(140,280)">
+        <text x="40" y="105" class="attribute">curvature</text>
+
+        <path id="curve" d="M10,0 C15,5 15,15 10,20"/>
+        <use href="#curve" x="30" y="0" />
+        <use href="#curve" x="60" y="0" />
+
+        <use href="#curve" x="0" y="30" />
+        <use href="#curve" x="30" y="30" />
+        <path d="M70,30 C80,35 80,45 70,50"/>
+
+        <use href="#curve" x="0" y="60" />
+        <use href="#curve" x="30" y="60" />
+        <use href="#curve" x="60" y="60" />
+      </g>
+
+      <g data-fire="13" data-blank="true" class="line_items" transform="translate(140,410)">
+        <text x="40" y="105" class="attribute">width</text>
+
+        <line x1="10" y1="0" x2="10" y2="80"/>
+        <line x1="30" y1="0" x2="30" y2="80"/>
+        <line x1="50" y1="0" x2="50" y2="80" style="stroke-width:4px;"/>
+        <line x1="70" y1="0" x2="70" y2="80"/>
+      </g>
+
+
+      <g data-fire="14" data-blank="true" class="line_items" transform="translate(280,20)">
+        <text x="40" y="105" class="attribute">added marks</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <g>
+          <rect x="0" y="30" width="20" height="20"/>
+          <path d="M0,30 L20,50 M20,30 0,50"/>
+        </g>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="15" data-blank="true" class="items" transform="translate(280,150)">
+        <text x="40" y="105" class="attribute">enclosure</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+
+        <polygon class="line_items" points="25,25 85,25 85,55 55,55 55,85 25,85" />
+      </g>
+
+      <g data-fire="16" data-blank="true" class="items" transform="translate(280,280)">
+        <text x="40" y="105" class="attribute">spatial grouping</text>
+
+        <circle cx="64" cy="18" r="5"/>
+        <circle cx="63" cy="7" r="5"/>
+        <circle cx="75" cy="15" r="5"/>
+        <circle cx="54" cy="12" r="5"/>
+        <circle cx="74" cy="26" r="5"/>
+        <circle cx="62" cy="30" r="5"/>
+
+        <circle cx="40" cy="63" r="5"/>
+        <circle cx="6" cy="8" r="5"/>
+        <circle cx="22" cy="27" r="5"/>
+        <circle cx="16" cy="47" r="5"/>
+        <circle cx="66" cy="70" r="5"/>
+      </g>
+
+      <g data-fire="17" data-blank="true" class="items" transform="translate(280,410)">
+        <text x="40" y="105" class="attribute">numerosity</text>
+
+        <circle cx="6" cy="5" r="5"/>
+        <circle cx="16.5" cy="7" r="5"/>
+        <circle cx="7" cy="15.5" r="5"/>
+
+        <circle cx="47.5" cy="27.5" r="5"/>
+        <circle cx="46.5" cy="17" r="5"/>
+        <circle cx="37" cy="25.5" r="5"/>
+
+        <circle cx="6" cy="55" r="5"/>
+        <circle cx="16.5" cy="57" r="5"/>
+        <circle cx="12" cy="45.5" r="5"/>
+
+        <circle cx="70" cy="47" r="5"/>
+        <circle cx="77" cy="55" r="5"/>
+        <circle cx="67" cy="57.5" r="5"/>
+
+        <circle cx="40" cy="60" r="5"/>
+      </g>
+    </g>
+
+
+
+    <g data-fire="1" data-blank="true" transform="translate(660,100)">
+      <text x="40" y="0" class="category">position</text>
+
+      <g data-fire="18" data-blank="true" class="items" transform="translate(0,20)">
+        <text x="40" y="105" class="attribute">2-D position</text>
+
+        <circle cx="10" cy="60" r="5"/>
+        <circle cx="30" cy="40" r="5"/>
+        <circle cx="50" cy="40" r="5"/>
+        <circle cx="70" cy="40" r="5"/>
+
+        <rect data-fire="26" data-blank="true" x="-15" y="-10" width="110" height="125" class="hilite"/>
+      </g>
+
+      <g data-fire="19" data-blank="true" class="line_items" style="fill:white;" transform="translate(0,150)">
+        <text x="40" y="105" class="attribute">stereoscopic depth</text>
+
+        <path d="M0,30 H20 V50 H0 Z L5,27 H25 V45 L20,50 M25,27 L20,30" />
+        <path d="M30,30 H50 V50 H30 Z L35,27 H45 L50,30" />
+        <path d="M65,30 H80 V45 H65 Z M80,30 L76.25,27.75 H61.25 V41.25 L65,45 M61.25,27.75 L65,30" />
+      </g>
+
+      <g data-fire="20" data-blank="true" style="fill:url(#concave_gradient)" transform="translate(0,280)">
+        <text x="40" y="105" class="attribute">concavity or convexity</text>
+
+        <circle cx="10" cy="10" r="10"/>
+        <circle cx="40" cy="10" r="10"/>
+        <circle cx="70" cy="10" r="10"/>
+
+        <circle cx="10" cy="40" r="10"/>
+        <circle cx="40" cy="40" r="10"/>
+        <circle cx="70" cy="40" r="10" transform="rotate(180, 70, 40)"/>
+
+        <circle cx="10" cy="70" r="10"/>
+        <circle cx="40" cy="70" r="10"/>
+        <circle cx="70" cy="70" r="10"/>
+      </g>
+    </g>
+
+
+    <g data-fire="1" data-blank="true" transform="translate(840,100)">
+      <text x="40" y="0" class="category">movement</text>
+
+      <g data-fire="21" data-blank="true" class="items" transform="translate(0,20)">
+        <text x="40" y="105" class="attribute">size change</text>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20" class="grow_shrink"/>
+      </g>
+
+      <g data-fire="22" data-blank="true" class="items" transform="translate(0,150)">
+        <text x="40" y="105" class="attribute">direction and velocity</text>
+
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20" class="move"/>
+        <rect x="30" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="23" data-blank="true" class="items" transform="translate(0,280)">
+        <text x="40" y="105" class="attribute">rotation</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20" class="rotate"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <g data-fire="24" data-blank="true"  class="items blink" transform="translate(0,410)">data-load="25, blink"
+        <text x="40" y="105" class="attribute">flickering</text>
+
+        <rect x="0" y="0" width="20" height="20"/>
+        <rect x="30" y="0" width="20" height="20"/>
+        <rect x="60" y="0" width="20" height="20"/>
+
+        <rect x="0" y="30" width="20" height="20"/>
+        <rect x="30" y="30" width="20" height="20"/>
+        <rect x="60" y="30" width="20" height="20"/>
+
+        <rect x="0" y="60" width="20" height="20"/>
+        <rect x="30" y="60" width="20" height="20" class="target"/>
+        <rect x="60" y="60" width="20" height="20"/>
+      </g>
+
+      <rect data-fire="25" data-blank="true" x="-45" y="5" width="170" height="520" class="blocker"/>
+    </g>
+
+
+    <g data-fire="25" data-blank="true" transform="translate(200,655)">
+      <rect x="0" y="0" width="20" height="20" class="hilite">
+        <title>length, size, and 2-D position</title>
+      </rect>
+      <text x="30" y="18">ideal for quantitative mapping, others suited for qualitative mapping</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>About Doug</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">@import url(silverbullet.css);</style>
+
+  <defs id="defs-1">
+     <path id="heading" d="M0,60 L380,40" />
+     <path id="subheading" d="M20,210 C120,240 520,240 620,210" />
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">What is Data Visualization?</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(30,150)">
+      <text>Fancy word for charts
+        <tspan data-fire="2" data-blank="true" x="50" dy="1.5em">and graphs</tspan>
+        <tspan data-fire="3" data-blank="true" x="100" dy="1.5em">and diagrams</tspan>
+        <tspan data-fire="4" data-blank="true" x="150" dy="1.5em">and maps</tspan>
+      </text>
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(30,350)">
+      <text>(often abbreviated as “dataviz”)</text>
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(30,400)">
+      <text>My goal: get you to rethink what a data visualization is</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>Levels of dataviz accessibility</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">
+    @import url(silverbullet.css);
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,60 L380,40"/>
+    <path id="subheading" d="M20,210 C120,240 520,240 620,210"/>
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">Levels of dataviz accessibility</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>0: None (benefit: can be automated)
+      </text>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(10,200)">
+      <text>1. Provide generic alt-txt: "barchart", "pie chart of market segment size"
+      </text>
+    </g>
+
+    <g data-fire="3" data-blank="true" transform="translate(10,250)">
+      <text>2. Provide detailed summary in alt-txt: "Line chart showing market trends, with a downward trend over the last year", "bar chart with 12 bars; the highest value is 1500"
+      </text>
+    </g>
+
+    <g data-fire="4" data-blank="true" transform="translate(10,300)">
+      <text>3. Provide hidden content (e.g. a table) with the same information
+      </text>
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(10,350)">
+      <text>4. Serial access to data: table alternative
+      </text>
+    </g>
+
+    <g data-fire="5" data-blank="true" transform="translate(10,400)">
+      <text>5. Automatically generic task-oriented contextual options
+      </text>
+    </g>
+
+  </g>
+
+</svg>

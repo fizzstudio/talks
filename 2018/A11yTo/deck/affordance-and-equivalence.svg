@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1100 600">
+
+  <title>Affordance and Equivalence</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">
+    @import url(silverbullet.css);
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,60 L380,40"/>
+    <path id="subheading" d="M20,210 C120,240 520,240 620,210"/>
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+  <rect id="frame" x="0" y="0" width="100%" height="100%"/>
+
+  <text id="head" x="1080" y="1.2em" class="heading" text-anchor="end">Affordance and Equivalence</text>
+
+  <g id="content" font-size="30">
+    <g data-fire="1" data-blank="true" transform="translate(30,70)">
+      <text x="15">Not just a long-lost Jane Austin novel…</text>
+      <image href="jane-austen-book.png" x="0" y="20" width="394.2" height="498"/>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(10,150)">
+      <text>Each feature of the chart includes an affordance and a set of tasks that it is geared toward
+
+        <tspan x="20" dy="1.5em">Affordances</tspan>
+        <tspan x="60" dy="1.5em">For each affordance or task, we need to isolate the channel and mechanism and find accessible equivalent. Maybe iconic memory can be replaced with echoic or haptic?</tspan>
+        <tspan x="60" dy="1.5em">Reduce cognitive load as much as possible</tspan>
+        <tspan x="60" dy="1.5em">Anticipate user's needs</tspan>
+        <tspan x="20" dy="1.5em">Tasks are typically implicit: comparison with other data point, position in trend, assessment with regard to whole, categorizing (filtering/sorting), navigation/focus</tspan>
+        <tspan x="60" dy="1.5em">For each task, we need to make it explicit</tspan>
+      </text>
+    </g>
+
+  </g>
+
+</svg>

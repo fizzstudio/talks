@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 640 430">
+
+  <title>Data Verbalization</title>
+
+  <script id="slideshowLibrary" xlink:href="silverbullet.js" type="text/ecmascript"/>
+  <style type="text/css"> @import url(silverbullet.css); </style>
+  <style>
+    .heading {
+      text-anchor: middle;
+      font-size: 80px;
+      font-weight: bold;
+      fill: hsl(279, 45%, 51%);
+    }
+  </style>
+
+  <defs id="defs-1">
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" />
+  <!-- <rect id="frame" x="0" y="0" width="640" height="400" fill="none" stroke="white"/> -->
+
+  <text class="heading" x="320" y="130">
+    Data Verbalization
+  </text>
+
+  <text class="subheading" x="320" y="204" text-anchor="middle" font-size="30">how you can make your data <tspan x="320" dy="1.25em"> accessible to everyone</tspan></text>
+
+  <text class="subheading" font-size="24" text-anchor="end">
+    <tspan x="330" y="312" font-size="30">Doug Schepers</tspan><tspan x="330" y="343" font-size="0.8em"><a xlink:href="http://twitter.com/shepazu" title="Doug's email address" class="subheading">doug@fizz.studio</a></tspan><tspan x="330" y="370" font-size="0.8em"><a xlink:href="http://twitter.com/shepazu" title="Doug's Twitter Account" class="subheading">@shepazu</a></tspan>
+  </text>
+
+  <svg id="fizz_logo" x="330" y="280" width="100" height="100" viewBox="0 0 208 208">
+    <title>Fizz Logo</title>
+    <style>
+      text#wordmark {
+        font-family: "Avenir Next", Helvetica, sans-serif;
+        font-size: 34px;
+        text-anchor: end;
+        text-transform: lowercase;
+      }
+    </style>
+
+    <g fill="hsl(258, 30%, 40%)">
+      <circle id="circle-0-0" cx="50" cy="50" r="30" fill="#944bbb"/>
+      <circle id="circle-0-1" cx="120" cy="46.5" r="23" fill="#944bbb"/>
+      <circle id="circle-0-2" cx="176" cy="43" r="16" fill="#944bbb"/>
+      <circle id="circle-1-0" cx="46.5" cy="120" r="23" fill="#944bbb"/>
+      <circle id="circle-1-1" cx="112" cy="112" r="16" fill="#944bbb"/>
+      <circle id="circle-2-0" cx="43" cy="176" r="16" fill="#944bbb"/>
+    </g>
+
+    <text id="wordmark" x="192" y="156" class="logo">Fizz<tspan x="193" dy="1em">Studio</tspan></text>
+  </svg>
+
+
+
+</svg>

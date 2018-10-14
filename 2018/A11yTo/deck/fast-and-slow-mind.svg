@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 750 600">
+
+  <title>Fast and slow mind</title>
+
+  <script xlink:href="silverbullet.js"/>
+  <style type="text/css">
+    @import url(silverbullet.css);
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,60 L380,40"/>
+    <path id="subheading" d="M20,210 C120,240 520,240 620,210"/>
+  </defs>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black"/>
+
+  <text id="head" x="750" y="1.5em" class="heading" text-anchor="end">Fast and slow mind</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(10,150)">
+      <text>System 1: Fast, automatic, frequent, emotional, stereotypic, unconscious
+        <tspan x="20" dy="1.5em">pre-attentive attributes</tspan>
+        <tspan x="20" dy="1.5em">gestalt principles</tspan>
+      </text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,250)">
+      <text>System 2: Slow, effortful, infrequent, logical, calculating, conscious
+        <tspan x="20" dy="1.5em">thinking about meaning</tspan>
+      </text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,350)">
+      <text>dataviz uses fast visual systems to convey data, then slow systems to allow user to explore it and think about it</text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,450)">
+      <text>slow system
+        <tspan x="20" dy="1.5em">cognitively expensive (mentally taxing)</tspan>
+        <tspan x="20" dy="1.5em">… slow</tspan>
+      </text>
+    </g>
+
+    <g data-fire="1" data-blank="true" transform="translate(10,550)">
+      <text>goal is to reduce the speed and effort in accomplishing tasks in a non-visual way</text>
+    </g>
+  </g>
+
+</svg>

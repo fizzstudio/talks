@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <circle cx="80" cy="50" r="20" stroke="pink" stroke-width="5" fill="white"/>
+  <circle cx="130" cy="100" r="10" stroke="lightgreen" stroke-width="4" fill="white"/>
+  <circle cx="100" cy="150" r="4" stroke="lightblue" stroke-width="3" fill="white"/>
+  <text x="79" y="185" style='font-family: Helvetica, sans-serif; font-size: 37pt; text-weight: bold'>fızz</text>
+</svg>
