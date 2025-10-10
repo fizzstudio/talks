@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+  viewBox="0 0 650 410">
+  <title>Thanks!</title>
+
+  <style type="text/css">
+    @import url(_silverbullet.css);
+  </style>
+  <script id="slideshowLibrary" href="_silverbullet.js" type="text/ecmascript" />
+  <style>
+    .colorbox text,
+    .colorbox text a,
+    .colorbox text tspan {
+      fill: white;
+      font-size: 20px;
+    }
+
+    .colorbox text tspan.strong {
+      font-size: 30px;
+    }
+
+    #credits {
+      fill: gray;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    .center {
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs id="defs-1">
+    <path id="heading" d="M0,80 L520,50" />
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="black" />
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text class="heading" x="325" y="65" font-size="60" font-weight="bold" text-anchor="middle">Thanks for your
+    attention!</text>
+
+  <g id="content" font-size="24">
+    <g transform="translate(110,15)">
+      <text class="subheading" font-size="24" text-anchor="middle"
+        transform="translate(115,152)">
+        <tspan x="0" y="0" font-size="30">Doug Schepers</tspan>
+        <tspan x="0" dy="1.5em" font-size="0.8em">
+          <tspan>
+            <a href="mailto:doug@schepers.cc" title="Doug's email address" class="subheading">doug@fizz.studio</a>
+          </tspan>
+          <tspan dx="0" font-size="1.5em">·</tspan>
+          <tspan dx="0">
+            <a href="http://twitter.com/shepazu" title="Doug's Twitter Account" class="subheading">@shepazu</a>
+          </tspan>
+        </tspan>
+        <tspan x="0" dy="1.25em">Founder &amp; CEO</tspan>
+      </text>
+    </g>
+
+    <!-- <image transform="translate(275,135)" href="./assets/paracharts-qr-code.jpg" width="90" /> -->
+    <image id="qr-code" transform="translate(383,122)" href="./assets/paracharts-qr-code.jpg" width="150" />
+
+    <svg id="fizz_logo" x="375" y="119" width="155" height="155" viewBox="0 0 208 208" opacity="0.6">
+      <title>Fizz Logo</title>
+      <style>
+        text#wordmark {
+          font-family: "Avenir Next", Helvetica, sans-serif;
+          font-size: 34px;
+          text-anchor: end;
+          text-transform: lowercase;
+        }
+      </style>
+
+      <g fill="hsl(281, 68%, 51%)">
+        <circle id="circle-0-0" cx="50" cy="50" r="30" />
+        <circle id="circle-0-1" cx="120" cy="46.5" r="23" />
+        <circle id="circle-0-2" cx="176" cy="43" r="16" />
+        <circle id="circle-1-0" cx="46.5" cy="120" r="23" />
+        <circle id="circle-1-1" cx="112" cy="112" r="16" />
+        <circle id="circle-2-0" cx="43" cy="176" r="16" />
+      </g>
+
+      <!-- <text id="wordmark" x="192" y="156" class="logo">Fizz<tspan x="193" dy="1em">Studio</tspan></text> -->
+    </svg>
+
+
+
+    <g transform="translate(325,330)">
+      <text class="center">Questions? Comments? Suggestions?
+        <tspan x="0" dy="1.5em"></tspan>
+      </text>
+    </g>
+
+    <g transform="translate(325,385)">
+      <text class="center">
+        Sign up at
+        <tspan><a href="https://fizz.studio/paracharts/">fizz.studio/paracharts</a></tspan>
+      </text>
+    </g>
+
+    <!-- <image transform="translate(0,300)" href="./assets/paracharts-qr-code.jpg" width="100" /> -->
+
+  </g>
+
+
+</svg>

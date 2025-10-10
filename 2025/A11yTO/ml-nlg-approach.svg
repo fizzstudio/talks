@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200 700">
+
+  <title>Philosophy of NLG and ML</title>
+
+  <script href="_silverbullet.js"/>
+  <style type="text/css">
+    @import url(_silverbullet.css);
+  </style>
+  <style>
+    #content {
+      font-size: 28px;
+    }
+
+    .subheading {
+      font-weight: bold;
+      font-size: 40px;
+      text-anchor: middle;
+      fill: white;
+    }
+
+    .row_header,
+    .cell {
+      text-anchor: middle;
+    }
+
+    .arrow_line {
+      fill: none;
+      stroke: gainsboro;
+      stroke-width: 40px;
+      marker-end: url(#arrow);
+    }
+
+    .emphasize {
+      font-weight: bold;
+    }
+
+    .plus {
+      font-weight: bold;
+      text-anchor: middle;
+      font-size: 100px;
+      stroke: black;
+      stroke-width: 6px;
+    }
+
+    .emphasize {
+      font-weight: bold;
+    }
+
+    .background {
+      fill: gainsboro;
+    }
+
+    .column.nlg {
+      fill: hsl(200, 73%, 88%);
+    }
+
+    .column_head.nlg {
+      fill: hsl(200, 73%, 28%);
+    }
+
+    .column.ml {
+      fill: hsl(120, 73%, 88%);
+    }
+
+    .column_head.ml {
+      fill: hsl(120, 73%, 28%);
+    }
+
+     
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white"/>
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text id="head" x="98%" y="1.5em" class="heading" text-anchor="end">Philosophy of NLG and ML</text>
+
+  <g id="content">
+
+    <g id="nlg" transform="translate(70,120)">
+      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="500" class="column nlg"/>
+
+      <g data-fire="1" data-blank="true">
+        <rect x="0" y="0" width="510" height="50" class="column_head nlg"/>
+        <text class="subheading" transform="translate(255,40)">Natural Language Generation</text>
+      </g>
+
+      <g data-fire="2" data-blank="true" transform="translate(20,100)">
+        <text x="0">Classic NLG, not Generative AI 
+          <tspan x="20" dy="1.5em">Dependable, predictable, consistent,</tspan>
+          <tspan x="20" dy="1.5em">uncontroversial</tspan>
+        </text>
+      </g>
+
+      <g data-fire="3" data-blank="true" transform="translate(20,250)">
+        <text x="0">Flexible and controllable
+          <tspan x="20" dy="1.5em">Custom templates for each chart/trend type</tspan>
+          <tspan x="20" dy="1.5em">Lots of ideas for expansion and user testing</tspan>
+        </text>
+      </g>
+
+      <g data-fire="4" data-blank="true" transform="translate(20,400)">
+        <text x="0">Ideal for education market
+          <tspan x="20" dy="1.5em">Can control which variables are revealed</tspan>
+          <tspan x="20" dy="1.5em">Adaptable for pedagogy and assessment</tspan>
+        </text>
+      </g>
+    </g>
+
+
+
+    <g id="ml" transform="translate(620,120)">
+      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="500" class="column ml"/>
+
+      <g data-fire="1" data-blank="true">
+        <rect x="0" y="0" width="510" height="50" class="column_head ml"/>
+        <text class="subheading" transform="translate(255,40)">Machine Learning</text>
+      </g>
+
+      <g data-fire="5" data-blank="true" transform="translate(20,100)">
+        <text x="0">All built, trained, and maintained by Fizz Studio
+          <tspan x="20" dy="1.5em">No external dependencies, costs,</tspan>
+          <tspan x="20" dy="1.5em">or remote 3rd-party services</tspan>
+        </text>
+      </g>
+
+      <g data-fire="6" data-blank="true" transform="translate(20,250)">
+        <text x="0">Accessibility-focused, user-driven
+          <tspan x="20" dy="1.5em">Innovative techniques with conservative approach</tspan>
+          <tspan x="20" dy="1.5em">Reliable &amp; trustworthy, not gimmicky</tspan>
+        </text>
+      </g>
+
+      <g data-fire="7" data-blank="true" transform="translate(20,400)">
+        <text x="0">Works today (5 years of development)
+          <tspan x="20" dy="1.5em">Clear development path</tspan>
+          <tspan x="20" dy="1.5em">NIH phase 1 grant, hoping for phase 2 🤞</tspan>
+        </text>
+      </g>
+    </g>
+
+  </g>
+
+</svg>
