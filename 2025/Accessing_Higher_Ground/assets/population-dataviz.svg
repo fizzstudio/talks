@@ -1,0 +1,134 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 490"
+  style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; background-color: white; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;">
+  <g class="ChartTab">
+    <g class="HeaderView">
+      <a href="https://ourworldindata.org/grapher/population-by-country-gapminder+un" target="_blank">
+        <text font-size="22.40" x="15.0" y="32.9" fill="#555">
+          <tspan x="15" y="32.92">Population by country</tspan>
+        </text>
+      </a>
+    </g>
+    <g class="LineChart">
+      <defs>
+        <clipPath id="boundsClip-2">
+          <rect x="78.97600000000001" y="0" width="645.59375" height="755.8"></rect>
+        </clipPath>
+      </defs>
+      <g class="AxisBoxView">
+        <g class="HorizontalAxis">
+          <text x="89" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1700</text>
+          <text x="160.9" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1750</text>
+          <text x="232.7" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1800</text>
+          <text x="304.6" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1850</text>
+          <text x="376.5" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1900</text>
+          <text x="448.4" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">1950</text>
+          <text x="543.2" y="447.9" fill="#666" text-anchor="middle" font-size="14.4">2016</text>
+        </g>
+        <g class="VerticalAxis">
+          <text x="83.98" y="428.5" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">0</text>
+          <text x="83.98" y="377.4" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">200 million</text>
+          <text x="83.98" y="326.3" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">400 million</text>
+          <text x="83.98" y="275.2" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">600 million</text>
+          <text x="83.98" y="224.2" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">800 million</text>
+          <text x="83.98" y="173.1" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">1 billion</text>
+          <text x="83.98" y="122" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">1.2 billion</text>
+          <text x="83.98" y="70.9" fill="#666" dominant-baseline="middle" text-anchor="end" font-size="14.4">1.4 billion</text>
+        </g>
+        <g class="AxisGridLines">
+          <line x1="88.98" y1="428.5" x2="543.23" y2="428.5" stroke="#ccc"></line>
+          <line x1="88.98" y1="377.4" x2="543.23" y2="377.4" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="326.3" x2="543.23" y2="326.3" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="275.2" x2="543.23" y2="275.2" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="224.2" x2="543.23" y2="224.2" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="173.1" x2="543.23" y2="173.1" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="122" x2="543.23" y2="122" stroke="#ddd" stroke-dasharray="3,2"></line>
+          <line x1="88.98" y1="70.9" x2="543.23" y2="70.9" stroke="#ddd" stroke-dasharray="3,2"></line>
+        </g>
+      </g>
+      <g clip-path="url(#boundsClip-2)">
+        <g class="HeightedLegend clickable">
+          <g class="legendMark">
+            <rect x="543.23375" y="64" width="66.44" height="12" fill="#fff" opacity="0"></rect>
+            <text font-size="16" x="548.2" y="73.6" fill="#f6a324" font-weight="bold">
+              <tspan x="548.23375" y="73.6">China</tspan>
+            </text>
+          </g>
+          <g class="legendMark">
+            <rect x="543.23375" y="84.3" width="61.16" height="12" fill="#fff" opacity="0"></rect>
+            <text font-size="16" x="548.2" y="93.9" fill="#34983f" font-weight="bold">
+              <tspan x="548.23375" y="93.89999999999999">India</tspan>
+            </text>
+          </g>
+          <g class="legendMark">
+            <rect x="543.23375" y="340.2" width="107.36" height="12" fill="#fff" opacity="0"></rect>
+            <text font-size="16" x="548.2" y="349.8" fill="#ca2628" font-weight="bold">
+              <tspan x="548.23375" y="340">United
+                <tspan x="548.23375" dy="1em">States</tspan>
+              </tspan>
+            </text>
+          </g>
+          <g class="legendMark">
+            <rect x="543.23375" y="369.5" width="65" height="12" fill="#fff" opacity="0"></rect>
+            <text font-size="16" x="548.2" y="379.1" fill="#3360a9" font-weight="bold">
+              <tspan x="548.23375" y="379.1">Brazil</tspan>
+            </text>
+          </g>
+        </g>
+        <g class="Lines">
+          <rect x="89" y="70" width="454" height="359" fill="rgba(255,255,255,0)" opacity="0"></rect>
+          <g class="key-China_0">
+            <path
+              stroke="#f6a324"
+              stroke-linecap="round"
+              d="M89 393L233 346L262 331L263 331L264 330L266 329L267 328L269 328L270 327L272 326L273 326L274 325L276 324L277 324L279 324L280 324L282 324L283 324L285 324L286 324L287 323L289 323L290 323L292 323L293 323L295 323L296 323L297 323L299 323L300 323L302 323L303 323L305 323L306 324L308 325L309 326L310 327L312 328L313 329L315 330L316 331L318 331L319 332L320 333L322 333L323 334L325 334L326 335L328 335L329 336L331 336L332 337L333 337L335 337L336 337L338 336L339 336L341 336L342 336L343 335L345 335L346 335L348 335L349 334L351 334L352 334L354 333L355 333L356 333L358 332L359 332L361 332L362 331L364 331L365 330L366 330L368 329L369 329L371 328L372 328L374 327L375 327L377 326L378 326L379 325L381 325L382 324L384 323L385 323L387 322L388 322L389 321L391 321L392 319L394 318L395 317L397 316L398 314L400 313L401 312L402 311L404 309L405 308L407 308L408 307L410 307L411 306L412 306L414 305L415 305L417 305L418 304L420 304L421 303L423 302L424 301L425 300L427 299L428 299L430 298L431 297L433 297L434 296L435 295L437 295L438 294L440 293L441 293L443 292L444 291L446 290L447 290L448 287L450 283L451 280L453 277L454 275L456 273L457 270L458 268L460 266L461 263L463 261L464 258L466 255L467 252L469 248L470 244L471 239L473 234L474 229L476 223L477 218L479 213L480 207L481 202L483 198L484 193L486 189L487 185L489 182L490 178L492 175L493 171L494 167L496 164L497 160L499 155L500 150L502 145L503 139L504 134L506 129L507 125L509 121L510 118L512 115L513 112L515 109L516 107L517 105L519 103L520 101L522 99L523 97L525 95L526 93L527 91L529 89L530 87L532 85L533 83L535 81L536 79L538 77L539 75L540 73L542 72L543 70"
+              fill="none"
+              stroke-width="3"></path>
+          </g>
+          <g class="key-India_0">
+            <path
+              stroke="#34983f"
+              stroke-linecap="round"
+              d="M89 393L233 385L262 384L333 374L395 364L418 358L435 346L443 341L444 340L446 339L447 338L448 332L450 331L451 329L453 328L454 326L456 324L457 322L458 320L460 318L461 316L463 314L464 311L466 309L467 307L469 304L470 301L471 299L473 296L474 293L476 290L477 287L479 284L480 281L481 277L483 273L484 270L486 266L487 262L489 259L490 255L492 251L493 246L494 242L496 238L497 233L499 229L500 224L502 220L503 215L504 211L506 206L507 202L509 197L510 193L512 188L513 183L515 179L516 174L517 169L519 164L520 160L522 155L523 150L525 146L526 141L527 136L529 132L530 127L532 123L533 118L535 114L536 110L538 106L539 102L540 98L542 94L543 90"
+              fill="none"
+              stroke-width="3"></path>
+          </g>
+          <g class="key-United-States_0">
+            <path
+              stroke="#ca2628"
+              stroke-linecap="round"
+              d="M89 428L233 427L262 426L263 426L264 426L266 426L267 426L269 426L270 426L272 425L273 425L274 425L276 425L277 425L279 425L280 425L282 425L283 425L285 425L286 424L287 424L289 424L290 424L292 424L293 424L295 424L296 423L297 423L299 423L300 423L302 423L303 423L305 423L306 422L308 422L309 422L310 422L312 421L313 421L315 421L316 421L318 421L319 420L320 420L322 420L323 420L325 420L326 419L328 419L329 419L331 419L332 418L333 418L335 418L336 418L338 418L339 417L341 417L342 417L343 416L345 416L346 416L348 416L349 415L351 415L352 415L354 414L355 414L356 414L358 413L359 413L361 413L362 412L364 412L365 412L366 411L368 411L369 411L371 410L372 410L374 410L375 409L377 409L378 409L379 408L381 408L382 407L384 407L385 407L387 406L388 406L389 405L391 405L392 404L394 404L395 404L397 403L398 403L400 402L401 402L402 402L404 402L405 401L407 401L408 400L410 400L411 399L412 399L414 398L415 398L417 398L418 397L420 397L421 397L423 397L424 396L425 396L427 396L428 396L430 395L431 395L433 395L434 395L435 394L437 394L438 393L440 393L441 393L443 392L444 392L446 391L447 390L448 388L450 387L451 387L453 386L454 385L456 385L457 384L458 383L460 382L461 382L463 381L464 380L466 379L467 379L469 378L470 378L471 377L473 376L474 376L476 375L477 375L479 375L480 374L481 374L483 373L484 373L486 372L487 372L489 371L490 370L492 370L493 369L494 369L496 368L497 368L499 367L500 366L502 366L503 365L504 365L506 364L507 363L509 363L510 362L512 361L513 361L515 360L516 359L517 358L519 357L520 357L522 356L523 355L525 354L526 354L527 353L529 352L530 352L532 351L533 350L535 350L536 349L538 349L539 348L540 347L542 347L543 346"
+              fill="none"
+              stroke-width="3"></path>
+          </g>
+          <g class="key-Brazil_0">
+            <path
+              stroke="#3360a9"
+              stroke-linecap="round"
+              d="M89 428L233 428L262 427L305 427L333 426L335 426L336 426L338 426L339 426L341 426L342 426L343 426L345 426L346 426L348 426L349 425L351 425L352 425L354 425L355 425L356 425L358 425L359 425L361 425L362 425L364 425L365 425L366 425L368 425L369 424L371 424L372 424L374 424L375 424L377 424L378 424L379 424L381 424L382 424L384 423L385 423L387 423L388 423L389 423L391 423L392 423L394 423L395 423L397 422L398 422L400 422L401 422L402 422L404 422L405 422L407 421L408 421L410 421L411 421L412 421L414 421L415 420L417 420L418 420L420 420L421 420L423 420L424 419L425 419L427 419L428 419L430 419L431 418L433 418L434 418L435 418L437 418L438 417L440 417L441 417L443 416L444 416L446 416L447 416L448 415L450 414L451 414L453 413L454 413L456 413L457 412L458 412L460 411L461 411L463 410L464 410L466 409L467 408L469 408L470 407L471 407L473 406L474 405L476 405L477 404L479 404L480 403L481 402L483 402L484 401L486 400L487 400L489 399L490 398L492 398L493 397L494 396L496 395L497 395L499 394L500 393L502 392L503 392L504 391L506 390L507 390L509 389L510 388L512 388L513 387L515 386L516 386L517 385L519 384L520 384L522 383L523 383L525 382L526 381L527 381L529 380L530 380L532 379L533 379L535 378L536 378L538 377L539 377L540 376L542 376L543 376"
+              fill="none"
+              stroke-width="3"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g class="SourcesFooter" style="fill: rgb(119, 119, 119);">
+      <g class="clickable" style="fill: rgb(119, 119, 119);">
+        <text font-size="11.20" x="15.0" y="471.9">
+          <tspan x="15" y="471.9">Source: Gapminder until 1949, UN Population Division from 1950-2016</tspan>
+        </text>
+      </g>
+      <text font-size="11.20" x="597.6" y="471.9">
+        <tspan x="400" y="471.9">
+          <a style="fill: #777;" class="cclogo" href="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US" target="_blank">CC BY-SA</a>
+        </tspan>
+      </text>
+      <text font-size="11.20" x="597.6" y="471.9">
+        <tspan x="460" y="471.9" style="fill: #777; font-size: 12px; text-transform: uppercase;">
+          <a style="fill: #777; font-size: 12px; text-transform: uppercase;" href="https://ourworldindata.org/world-population-growth#country-trends-over-the-last-centuries" target="_blank">Our World in Data</a>
+        </tspan>
+      </text>
+    </g>
+  </g>
+</svg>

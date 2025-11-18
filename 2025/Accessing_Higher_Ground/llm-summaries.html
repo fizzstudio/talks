@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LLM Summaries</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      background-color: rgb(254, 253, 253);
+      color: black;
+      margin: 1em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      font-size: 80px;
+      margin-bottom: 0.25em;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-block: 0;
+    }
+
+    #img-desc,
+    #conclusions {
+      display: flex;
+      flex: 1 1 1 0px;
+      justify-content: space-around;
+    }
+
+    img {
+      aspect-ratio: 1;
+    }
+    
+    .card {
+      height: 22em;
+      width: 25em;
+      background-color: rgb(255, 213, 59);
+      padding: 1em;
+    }
+    
+    .summary p:first-of-type {
+      margin-top: 0;
+    }
+    
+    #conclusions {
+      margin-top: 1em;
+    }
+
+    #conclusions .card {
+      height: 12em;
+      background-color: rgb(180, 234, 169);
+    }
+
+    #conclusions .card li {
+      line-height: 2em;
+      font-size: 1.3em;
+    }
+
+    #orgs.card {
+      background-color: rgb(249, 194, 203);
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="heading">LLM Summaries: prose and cons</h1>
+    <article id="content">
+      <section id="img-desc">
+        <img class="card" src="./assets/line-chart.png" alt="A line chart, described in text">
+        <div class="card summary" data-fire="1" data-blank="true">
+          <p>This line chart compares passenger car sales in four countries—China, the United States, Japan, and
+            Germany—from 2005 to 2018.</p>
+
+          <ul>
+            <li>China’s line starts low, around 4 million cars in 2005, then soars dramatically, peaking near 25 million
+              by 2017, before dipping slightly in 2018.</li>
+            <li>The U.S. stays mostly steady, fluctuating between 6 and 8 million, dipping during the 2008 recession,
+              then
+              recovering slightly before declining again after 2016.</li>
+            <li>Japan remains nearly flat, around 4 to 5 million each year.</li>
+            <li>Germany holds steady near 3 million throughout the period.</li>
+          </ul>
+
+          <p>Overall, the key story is China’s explosive growth, while the other countries’ sales remain relatively
+            stable or slowly decline.</p>
+        </div>
+
+        <div class="card summary" data-fire="1" data-blank="true">
+          <p>From 2005 to 2018, China’s car sales skyrocketed from about 4 million to nearly 25 million, far surpassing
+            other countries. The U.S. stayed around 6–8 million with a dip in 2009, Japan held steady near 4–5 million,
+            and Germany remained around 3 million. Overall, China showed explosive growth while the others stayed mostly
+            flat.</p>
+        </div>
+      </section>
+
+      <section id="conclusions">
+        <div id="individuals" class="card" data-fire="2" data-blank="true">
+          <h2 class="subheading">For individuals</h2>
+
+          <ul>
+            <li>Impressive!</li>
+            <li>Better than our (current) summaries</li>
+            <li>Probably good enough</li>
+          </ul>
+        </div>
+        <div id="orgs" class="card" data-fire="3" data-blank="true">
+          <h2 class="subheading">For organizations</h2>
+
+          <ul>
+            <li>Consistency is critical for equity</li>
+            <li>Privacy and security are important</li>
+            <li>Integrated solution is better</li>
+          </ul>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+</body>
+
+</html>

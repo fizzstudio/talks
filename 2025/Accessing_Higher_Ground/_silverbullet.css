@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Blogger-Sans-Light';
+  src: local('Blogger Sans Light'),
+       local('fonts/Blogger-Sans-Light'),
+       url('fonts/Blogger-Sans-Light.woff') format('woff'),
+       url('fonts/Blogger-Sans-Light.woff') format('opentype');
+}
+
+.heading {
+  font-family: "Blogger-Sans-Light", "Arial Narrow", Helvetica, sans-serif;
+}
+
+.subheading, .bullet, .item, text {
+  font-family: "Blogger-Sans-Light", "Arial Narrow", Helvetica, sans-serif;
+}
+
+
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  src: url('fonts/Atkinson-Hyperlegible-Regular.woff2') format('woff2');
+}
+
+.heading, .subheading, .bullet, .item, text {
+  font-family: "Atkinson-Hyperlegible", "Comic-Sans", sans-serif;
+}
+
+@font-face {
+  font-family: 'YanoneKaffeesatzRegular';
+  src: local('Yanone Kaffeesatz Regular'),
+       local('fonts/YanoneKaffeesatz-Regular'),
+       url('fonts/Yanone_Kaffeesatz_Regular.woff') format('woff'),
+       url('fonts/Yanone_Kaffeesatz_Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'YanoneKaffeesatzLight';
+  src: local('Yanone Kaffeesatz Light'),
+       local('fonts/YanoneKaffeesatz-Light'),
+       url('fonts/Yanone_Kaffeesatz_Light.woff') format('woff'),
+       url('fonts/Yanone_Kaffeesatz_Light.otf') format('opentype');
+}
+
+.heading {
+  font-family: "YanoneKaffeesatzRegular", "Arial Narrow", Helvetica, sans-serif;
+}
+
+.subheading, .bullet, .item, text {
+  font-family: "YanoneKaffeesatzLight", "Arial Narrow", Helvetica, sans-serif;
+}
+
+
+
+.title, .heading, h1, h2, h3 {
+  font-weight: bold;
+  fill: #25283D;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.subheading,
+.content,
+.bullet {
+  fill: #391463;
+}
+
+a {
+  fill: #25283D;
+}
+
+rect#bg {
+  fill: #333333;
+  fill: black;
+  fill: white;
+}
+
+rect#frame {
+  fill: none;
+  stroke: blue;
+  stroke-dasharray: 3 17;
+}
+
+[data-blank="true"] {
+  visibility: hidden;
+}

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+  viewBox="0 0 1200 750">
+
+  <title>Stories are stronger</title>
+
+  <script href="_silverbullet.js" />
+  <style type="text/css">
+    @import url(_silverbullet.css);
+  </style>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    #content {
+      font-size: 38px;
+    }
+
+    .subhead {
+      font-weight: bold;
+    }    
+  </style>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white" />
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
+
+  <text id="head" x="1180" y="1.5em" class="heading" text-anchor="end">Stories are stronger</text>
+
+  <g id="content">
+
+    <g data-fire="1" data-blank="true" transform="translate(5,165)">
+      <image x="0" width="650" href="assets/storytelling-effectiveness.png">
+        <title>Line chart showing a belief impact after one day; stories have 33% drop in impact, while statistic have a 73% drop in impact</title>
+      </image>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(700,180)">
+      <text x="0"><tspan class="subhead">Trust</tspan>
+        <tspan x="20" dy="1.2em">personal experiences percieved as</tspan>
+        <tspan x="20" dy="1.2em">more rational than facts alone</tspan>
+      </text>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(700,350)">
+      <text x="0"><tspan class="subhead">Commitment</tspan>
+        <tspan x="20" dy="1.2em">increases engagement and loyalty</tspan>
+        <tspan x="20" dy="1.2em">especially in change-intensive periods</tspan>
+      </text>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(700,550)">
+      <text x="0"><tspan class="subhead">Which one…</tspan>
+        <tspan x="20" dy="1.2em">graphics?</tspan>
+        <tspan x="20" dy="1.2em">stories?</tspan>
+      </text>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(900,595)">
+      <text class="emphasize">¿Porque no los dos?</text>
+    </g>
+
+  </g>
+
+</svg>

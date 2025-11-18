@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1300 760">
+
+  <title>Salience</title>
+
+  <script href="_silverbullet.js"/>
+  <style type="text/css">
+    @import url('_silverbullet.css');
+  </style>
+  <style>
+    text {
+      font-size: 20px;
+    }
+
+    text.list {
+      font-size: 25px;
+    }
+
+    .emphasize {
+      font-weight: bold;
+    }
+
+    .node {
+      fill: #ffecff;
+      stroke: black;
+    }
+
+    .high {
+      fill: forestgreen;
+    }
+
+    .medium {
+      fill: navy;
+    }
+
+    .low {
+      fill: gray;
+    }
+
+    .none {
+      fill: crimson;
+    }
+
+    .connector {
+      fill: none;
+      stroke: purple;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      marker-end: url(#endArrow);
+    }
+
+    .connector_start {
+      marker-start: url(#marker-circle);
+    }
+
+    #endArrow {
+      fill: purple;
+      stroke: purple;
+      stroke-width: 1px;
+      stroke-linejoin: round;
+    }
+
+    #marker-circle {
+      fill: purple;
+    }
+  </style>
+
+  <defs id="defs-1">
+    <marker id="endArrow" viewBox="-13 -6 37.5 30" markerUnits="strokeWidth"
+        refX="-4" refY="0" markerWidth="10" markerHeight="20" orient="auto"
+        class="process">
+      <path d="M-10,-5 L0,0 -10,5 Z"/>
+    </marker>
+
+    <marker id="marker-circle" viewBox="-10.1 -10.1 20.2 20.2" markerUnits="strokeWidth"
+      refX="0" refY="0" markerWidth="6" markerHeight="6">
+      <circle r="5" />
+    </marker>
+  </defs>
+  
+  <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white"/>
+  <!-- <rect id="frame" x="0" y="0" width="100%" height="100%" fill="none" stroke="red" display=""/> -->
+
+
+  <text id="head" x="30" y="1.5em" class="heading">Salience Ranking Model</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-blank="true" transform="translate(20,100)">
+      <image href="./assets/salience-chart.jpg" width="350"/>
+    </g>
+ 
+
+    <!-- 
+    <g id="ranking-features" data-fire="2" data-blank="true" transform="translate(180,120)">
+      <text>
+        <tspan x="0">maybe have a list of features, with clustering highlighted at top?</tspan>
+        <tspan x="0" dy="1.5em">have 2 most important features, like clustering and tracking</tspan>
+        <tspan x="0" dy="1.5em">compose them into ordered paragraph</tspan>
+      </text>
+    </g> 
+    -->
+
+    <g id="ranking-features" data-fire="2" data-blank="true" transform="translate(400,90)">
+      <text x="10" y="20">Chart Features</text>
+      <rect class="node" x="0" y="25" width="200" height="620"/>
+      <text x="10" y="20">
+        <tspan x="10" dy="1.4em" class="high">clustering</tspan>
+        <tspan x="10" dy="1.4em" class="high">tracking</tspan>
+        <tspan x="10" dy="1.4em" class="medium">relative series value average</tspan>
+        <tspan x="10" dy="1.4em" class="medium">cluster value average</tspan>
+        <tspan x="10" dy="1.4em" class="medium">convergences: 2</tspan>
+        <tspan x="10" dy="1.4em" class="low">trend: falling</tspan>
+        <tspan x="10" dy="1.4em" class="low">trend: rising</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 1 start point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 1 end point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 1 high</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 1 low</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 2 start point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 2 end point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 2 high</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 2 low</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 3 start point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 3 end point</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 3 high</tspan>
+        <tspan x="10" dy="1.4em" class="low">series 3 low</tspan>
+        <tspan x="10" dy="1.4em" class="none">intersections: 0</tspan>
+        <tspan x="10" dy="1.4em" class="none">value range: 35</tspan>
+        <tspan x="10" dy="1.4em" class="none">period span: 11 years</tspan>
+      </text>
+    </g>
+
+    <g id="sentence-frame-template-clustering" data-fire="3" data-forget="14" data-blank="true" transform="translate(650,90)">
+      <rect class="node" x="0" y="25" width="270" height="70"/>
+      <text x="10" y="20">
+        <tspan x="10">Sentence Frame Template (Clustering):</tspan>
+        <tspan x="10" dy="1.5em">"＿＿＿＿＿＿ cluster together,</tspan>
+        <tspan x="10" dy="1.5em">while ＿＿＿＿＿＿ is an outlier."</tspan>
+      </text>
+    </g>
+
+    <g id="nlg-realizer-clustering" data-fire="4" data-forget="14" data-blank="true" transform="translate(950,90)">
+      <rect class="node" x="0" y="25" width="280" height="70"/>
+      <text x="10" y="20">
+        <tspan x="10">NLG Realizer:</tspan>
+        <tspan x="10" dy="1.5em">"Industry and Services cluster together,</tspan>
+        <tspan x="10" dy="1.5em">while Agriculture is an outlier."</tspan>
+      </text>
+    </g>
+
+    <g id="sentence-frame-template-tracking" data-fire="5" data-forget="14" data-blank="true" transform="translate(650,290)">
+      <rect class="node" x="0" y="25" width="270" height="70"/>
+      <text x="10" y="20">
+        <tspan x="10">Sentence Frame Template (Tracking):</tspan>
+        <tspan x="10" dy="1.5em">"＿＿＿＿＿＿ track each other</tspan>
+        <tspan x="10" dy="1.5em">from ＿＿＿ to ＿＿＿."</tspan>
+      </text>
+    </g>
+
+    <g id="nlg-realizer-tracking" data-fire="6" data-forget="14" data-blank="true" transform="translate(950,290)">
+      <rect class="node" x="0" y="25" width="280" height="70"/>
+      <text x="10" y="20">
+        <tspan x="10">NLG Realizer:</tspan>
+        <tspan x="10" dy="1.5em">"Industry and Services track each other</tspan>
+        <tspan x="10" dy="1.5em">from 2009 to 2019."</tspan>
+      </text>
+    </g>
+
+    <g id="final-composition" data-fire="7" data-forget="14" data-blank="true" transform="translate(1000,500)">
+      <rect class="node" x="0" y="25" width="280" height="130"/>
+      <text x="10" y="20">
+        <tspan x="10">Final Composition:</tspan>
+        <tspan x="10" dy="1.5em">"Industry and Services cluster together,</tspan>
+        <tspan x="10" dy="1.5em">while Agriculture is an outlier.</tspan>
+        <tspan x="10" dy="1.5em">Industry and Services track each other</tspan>
+        <tspan x="10" dy="1.5em">from 2009 to 2019."</tspan>
+      </text>
+    </g>
+
+    <path data-fire="3" data-blank="true" d="M500,130 H643" class="connector connector_start"/>
+    <path data-fire="4" data-blank="true" d="M925,150 H943" class="connector"/>
+    <path data-fire="5" data-blank="true" d="M500,160 H625 V330 L643,330" class="connector connector_start"/>
+    <path data-fire="6" data-blank="true" d="M925,350 H943" class="connector"/>
+    <path data-fire="7" data-blank="true" d="M1235,150 H1255 V518" class="connector"/>
+    <path data-fire="7" data-blank="true" d="M1235,350 H1255 V518" class="connector"/>
+
+
+    <!-- <g id="how-rank" data-fire="8" data-blank="true" transform="translate(20,470)"> -->
+    <g id="how-rank" data-fire="8" data-blank="true" transform="translate(620,470)">
+      <text class="list">
+        <tspan x="0" class="emphasize">How ranking works</tspan>
+        <tspan x="0" dy="1.5em">Several factors, such as…</tspan>
+        <tspan x="0" dy="1.5em">• Introspection of ML classification reasoning</tspan>
+        <tspan x="0" dy="1.5em">• Magnitude of sequences in specific trends</tspan>
+        <tspan x="0" dy="1.5em">• Presence or frequency of certain features</tspan>
+        <tspan x="0" dy="1.5em">• Interactions between series</tspan>
+        <tspan x="0" dy="1.5em">• Dominance of tracking/clustering outliers</tspan>
+        <tspan x="0" dy="1.5em">• User-tested profiles based on chart type</tspan>
+      </text>
+    </g>
+
+
+  </g>
+</svg>
