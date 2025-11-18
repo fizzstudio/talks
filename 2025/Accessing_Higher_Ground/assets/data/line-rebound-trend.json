@@ -1,0 +1,167 @@
+{
+  "datasets": [
+    {
+      "type": "line",
+      "title": "Median household income in the United States 1990 to 2018",
+      "facets": {
+        "x": {
+          "label": "Year",
+          "variableType": "independent",
+          "measure": "interval",
+          "datatype": "date",
+          "units": "year",
+          "displayType": {
+            "type": "axis",
+            "orientation": "horizontal"
+          }
+        },
+        "y": {
+          "label": "Household income in U.S. dollars",
+          "variableType": "dependent",
+          "measure": "ratio",
+          "datatype": "number",
+          "units": "U.S. dollar",
+          "displayType": {
+            "type": "axis",
+            "orientation": "vertical"
+          }
+        }
+      },
+      "series": [
+        {
+          "key": "Median income (2018 U.S. dollars)",
+          "theme": {
+            "baseQuantity": "household income",
+            "baseKind": "dimensioned",
+            "locale": "the United States",
+            "aggregate": "median"
+          },
+          "records": [
+            {
+              "x": "1990",
+              "y": "54621"
+            },
+            {
+              "x": "1991",
+              "y": "53025"
+            },
+            {
+              "x": "1992",
+              "y": "52615"
+            },
+            {
+              "x": "1993",
+              "y": "52334"
+            },
+            {
+              "x": "1994",
+              "y": "52942"
+            },
+            {
+              "x": "1995",
+              "y": "54600"
+            },
+            {
+              "x": "1996",
+              "y": "55394"
+            },
+            {
+              "x": "1997",
+              "y": "56533"
+            },
+            {
+              "x": "1998",
+              "y": "58612"
+            },
+            {
+              "x": "1999",
+              "y": "60062"
+            },
+            {
+              "x": "2000",
+              "y": "59938"
+            },
+            {
+              "x": "2001",
+              "y": "58609"
+            },
+            {
+              "x": "2002",
+              "y": "57947"
+            },
+            {
+              "x": "2003",
+              "y": "57875"
+            },
+            {
+              "x": "2004",
+              "y": "57674"
+            },
+            {
+              "x": "2005",
+              "y": "58291"
+            },
+            {
+              "x": "2006",
+              "y": "58746"
+            },
+            {
+              "x": "2007",
+              "y": "59534"
+            },
+            {
+              "x": "2008",
+              "y": "57412"
+            },
+            {
+              "x": "2009",
+              "y": "57010"
+            },
+            {
+              "x": "2010",
+              "y": "55520"
+            },
+            {
+              "x": "2011",
+              "y": "54673"
+            },
+            {
+              "x": "2012",
+              "y": "54569"
+            },
+            {
+              "x": "2013",
+              "y": "56479"
+            },
+            {
+              "x": "2014",
+              "y": "55613"
+            },
+            {
+              "x": "2015",
+              "y": "58476"
+            },
+            {
+              "x": "2016",
+              "y": "60309"
+            },
+            {
+              "x": "2017",
+              "y": "62626"
+            },
+            {
+              "x": "2018",
+              "y": "63179"
+            }
+          ]
+        }
+      ],
+      "data": {
+        "source": "inline"
+      },
+      "settings": {
+        "animation.isAnimationEnabled": false
+      }
+    }
+  ]
+}

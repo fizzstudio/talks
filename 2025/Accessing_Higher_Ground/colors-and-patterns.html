@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Colors &amp; Patterns</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      text-align: justify;
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 29em;
+    }
+
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Colors &amp; Patterns</h1>
+  </header>
+  <aside id="chart_container">
+    <para-chart id="main-chart" manifest="./assets/data/donut-manifest-dark-matter.json"></para-chart>
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0">
+        <p>Most common issue raised</p>
+        <ul>
+          <li>Brand colors</li>
+          <li>Color contrast ratio</li>
+          <li>Not mathematically possible to have color contrast between more than 3 colors</li>
+        </ul>
+      </div>
+
+      <div data-fire="1" class="scroll" data-para-step="1" data-para-action="setColorPalette(pattern)">
+        <h2 id="background" class="subheading">Technical issues with color contrast algorithm</h2>
+
+        <ul>
+          <li>Not mathematically possible to have color contrast between more than 3 colors</li>
+          <li>Intended for text content, not graphical content</li>
+          <li>Developed in the 1990s for different monitor technology using a different color space, with a small informal study</li>
+
+          <li>Unclear who it's for:
+            <ul>
+              <li>People with color blindness? Which kind?</li>
+              <li>People with low vision?
+                <ul>
+                  <li>Visual accuity is not measured with color contrast</li>
+                </ul>
+              </li>
+              <li>People with cataracts?</li>
+            </ul>
+          </li>
+
+          <li>Unintuitive false positives and negatives.</li>
+
+          <li>But… we need to comply with WCAG 2.1 for legal reasons. So let's do it smartly.</li>
+        </ul>
+      </div>
+
+      <div data-fire="1" class="scroll" data-para-step="1" data-para-action="setColorPalette(pattern)">
+        <h2 id="first" class="subheading">Patterns</h2>
+
+        <ul>
+          <li>Suggestion from W3C WCAG 2.1 Techniques</li>
+          <li>Technique G111: Using color and pattern
+            <ul>
+              <li>"patterns are included to convey the same information in a manner that does not depend on color.."</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div data-fire="2" class="scroll" data-para-step="1" data-para-action="setColorPalette(diva)">
+        <h2 id="second" class="subheading">Color blind palettes</h2>
+
+        <ul>
+          <li>One size does not fit all… and can even be mutually exclusive!</li>
+          <li>Use smart and attractive defaults</li>
+          <li>Let the user customize colors for their own needs</li>
+        </ul>
+      </div>
+
+      <div data-fire="3" class="scroll" 
+        data-para-step="3" data-para-action="setManifest(./assets/data/line-low-vision-mode.json)">
+        <h2 id="third" class="subheading">Low Vision Mode</h2>
+
+        <ul>
+          <li>Switches to darkmode</li>
+          <li>Goes full screen</li>
+          <li>Increases font size and line thickness</li>
+          <li>Uses conventional white+black focus ring</li>
+          <li>Changes to primary-color palette</li>
+          <li>Makes popups static</li>
+          <li>All personalizable</li>
+          <li>Some low vision users won't even need magnifier</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+{
+  "datasets": [
+    {
+      "type": "line",
+      "title": "New York Yankees revenue 2001 to 2018",
+      "facets": {
+        "x": {
+          "label": "Year",
+          "variableType": "independent",
+          "measure": "interval",
+          "datatype": "date",
+          "units": "year",
+          "displayType": {
+            "type": "axis",
+            "orientation": "horizontal"
+          }
+        },
+        "y": {
+          "label": "Revenue in millions of U.S. dollars",
+          "variableType": "dependent",
+          "measure": "ratio",
+          "datatype": "number",
+          "units": "U.S. dollar",
+          "multiplier": 1000000,
+          "displayType": {
+            "type": "axis",
+            "orientation": "vertical"
+          }
+        }
+      },
+      "series": [
+        {
+          "key": "Revenue in million U.S. dollars",
+          "theme": {
+            "baseQuantity": "revenue",
+            "baseKind": "dimensioned",
+            "entity": "New York Yankees"
+          },
+          "records": [
+            {
+              "x": "2001",
+              "y": "215"
+            },
+            {
+              "x": "2002",
+              "y": "223"
+            },
+            {
+              "x": "2003",
+              "y": "238"
+            },
+            {
+              "x": "2004",
+              "y": "264"
+            },
+            {
+              "x": "2005",
+              "y": "277"
+            },
+            {
+              "x": "2006",
+              "y": "302"
+            },
+            {
+              "x": "2007",
+              "y": "327"
+            },
+            {
+              "x": "2008",
+              "y": "375"
+            },
+            {
+              "x": "2009",
+              "y": "441"
+            },
+            {
+              "x": "2010",
+              "y": "427"
+            },
+            {
+              "x": "2011",
+              "y": "439"
+            },
+            {
+              "x": "2012",
+              "y": "471"
+            },
+            {
+              "x": "2013",
+              "y": "461"
+            },
+            {
+              "x": "2014",
+              "y": "508"
+            },
+            {
+              "x": "2015",
+              "y": "516"
+            },
+            {
+              "x": "2016",
+              "y": "526"
+            },
+            {
+              "x": "2017",
+              "y": "619"
+            },
+            {
+              "x": "2018",
+              "y": "668"
+            }
+          ]
+        }
+      ],
+      "data": {
+        "source": "inline"
+      },
+      "settings": {
+        "animation.isAnimationEnabled": false
+      }
+    }
+  ]
+}

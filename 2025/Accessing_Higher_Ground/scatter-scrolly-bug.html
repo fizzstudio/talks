@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Scatter-Scrolly Bug</title>
+  <!-- <script src="./_silverbullet.js">  </script> -->
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      text-align: justify;
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 29em;
+    }
+
+    [data-para-step] {
+      display: block;
+      min-height: 2em;
+    }
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Scatter-Scrolly Bug</h1>
+  </header>
+  <aside id="chart_container">
+    <para-chart id="main-chart" manifest="./assets/data/scatter-manifest-geyser.json"></para-chart>
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0">
+        <p>Trends</p>
+        <ul>
+          <li>Using symbols for lines and datapoints</li>
+          <li>Direct labeling</li>
+          <li>Gaps between datapoints</li>
+        </ul>
+      </div>
+
+      <div data-fire="0" class="scroll">
+        <h2 id="intro" class="subheading">Quick, equivalent access</h2>
+
+        <p>Sighted users usually glance at a chart, get the gist, and quickly move on.</p>
+
+        <p>Scren reader users should have the same affordance. No more, "Did I miss something important?"</p>
+
+        <ul>
+          <li>"Did I miss something important?"</li>
+        </ul>
+
+        <p>We have 2 goals:</p>
+        <ul>
+          <li>Provide full interactivity and exploration of charts</li>
+          <li>Direct labeling</li>
+          <li>Gaps between datapoints</li>
+        </ul>
+      </div>
+
+
+
+
+
+      <div data-fire="4" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="simple-rend" class="subheading">Simple Trend</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+
+      <div data-fire="4" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="rebound-rend" class="subheading">Rebound Trend</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+
+      <div data-fire="4" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="tracking-clustering" class="subheading">Tracking and Clustering</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+      <div data-fire="4" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="intersections" class="subheading">Intersections</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+
+      <!-- 
+
+          <div data-para-step="5" data-para-action="setManifest(/src/demo-data/bar-multi-manifest-48.json)">
+        <p>
+          Change chart type
+        </p>
+      </div>
+      <div data-para-step="5" data-para-action="setColorPalette(pattern)">
+        <p>
+   -->
+
+    </div>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>
