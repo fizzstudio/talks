@@ -78,12 +78,12 @@
       min-height: 29em;
     }
 
-    /* 
-    [data-para-step] {
+    
+    span[data-para-step] {
       display: block;
-      min-height: 2em;
+      min-height: 0.5em;
     } 
-    */
+   
 
     [data-para-step] p {
       margin-inline: 2em;
@@ -101,7 +101,7 @@
     <h1 class="heading">Multimodality</h1>
   </header>
   <aside id="chart_container">
-    <para-chart id="main-chart" manifest="./assets/data/china-gdp-line-basic.manifest.json"></para-chart>
+    <para-chart id="main-chart" manifest="./assets/data/soni-line-simple-rising-trend.json"></para-chart>
   </aside>
   <main id="main">
 
@@ -115,7 +115,7 @@
         </ul>
       </div>
 
-      <div data-fire="1" class="scroll" data-para-step="1" data-para-action="playSonification(services)">
+      <div data-fire="1" class="scroll" data-para-step="1" data-para-action="playSonification(Revenue)">
         <h2 id="first" class="subheading">Sonification
         </h2>
 
@@ -142,15 +142,23 @@
         </ul>
       </div>
 
-      <div data-fire="2" class="scroll">
-        <h2 id="second" class="subheading">Sonification limitations</h2>
-
+      <div data-fire="2" class="scroll" data-para-step="2"
+        data-para-action="setManifest(./assets/data/soni-line-rebound-trend.json)">
+        <h2 id="second" class="subheading">More complex data?</h2>
+    
         <ul>
           <li>Not great for precision
             <ul>
               <li>As with color, we have difficulty mapping semantics to small differences</li>
             </ul>
           </li>
+        </ul>
+      </div>
+
+      <div data-fire="3" class="scroll"  data-para-step="3" data-para-action="playSonification(Median income)">
+        <h2 id="limits" class="subheading">Sonification limitations</h2>
+    
+        <ul>
           <li>Ephemeral, and can be time-intensive</li>
           <li>Often requires (too much?) training for real exploration</li>
           <li>Use sparingly to manage attention, like animation</li>
@@ -158,32 +166,22 @@
         </ul>
       </div>
 
-      <div data-fire="3" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+      <div data-fire="4" class="scroll">
         <h2 id="third" class="subheading">SparkBraille</h2>
 
-        <img src="./assets/divider_line_example.svg" alt="Line chart with symbols">
+        <!-- <p>Uses a common refreshable braille display to provide a tactile </p> -->
+
         <ul>
-          <li>Differentiates color blocks</li>
-          <li>Satisfies WCAG success criteron 1.4.11: Non-text Contrast
+          <li>Uses a common refreshable braille display</li>
+          <li>Provides a tactile gist of the data in the braille cells
             <ul>
-              <li>"Important visual information meets the same minimum contrast required for larger text."</li>
+              <li>Two datapoints per braille cell</li>
             </ul>
           </li>
+          <li>User can interact with the line with the cursor routing keys</li>
         </ul>
       </div>
 
-
-      <!-- 
-
-          <div data-para-step="5" data-para-action="setManifest(/src/demo-data/bar-multi-manifest-48.json)">
-        <p>
-          Change chart type
-        </p>
-      </div>
-      <div data-para-step="5" data-para-action="setColorPalette(pattern)">
-        <p>
-   -->
 
     </div>
   </main>

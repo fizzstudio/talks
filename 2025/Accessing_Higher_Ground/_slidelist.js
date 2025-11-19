@@ -25,7 +25,8 @@ var slidelist = [
 
   'ai-descriptions.html',
   'chart-exploration.html',
-  
+  'storytelling.html',
+
   'underlay.svg',
   'llm-summaries.html',
   'ml-nlg-approach.svg',

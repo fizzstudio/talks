@@ -1135,7 +1135,8 @@
         "animation.expandPoints": false,
         "animation.symbolPopIn": true,
         "controlPanel.isControlPanelDefaultOpen": false,
-        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": false
+        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": false,
+        "chart.isShowPopups": true
       }
     }
   ]

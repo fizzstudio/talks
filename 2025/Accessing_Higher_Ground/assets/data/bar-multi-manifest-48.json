@@ -581,7 +581,8 @@
       "settings": {
         "controlPanel.isControlPanelDefaultOpen": false,
         "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": false,
-        "animation.isAnimationEnabled": true
+        "animation.isAnimationEnabled": true,
+        "chart.isShowPopups": true
       }
     }
   ]

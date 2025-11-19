@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>AI Descriptions</title>
+  <title>Chart Exploration</title>
   <script src="./_silverbullet.js">  </script>
   <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
 
@@ -78,10 +78,10 @@
       min-height: 29em;
     }
 
-    /* [data-para-step] {
+    [data-para-step] {
       display: block;
       min-height: 2em;
-    } */
+    }
 
     [data-para-step] p {
       margin-inline: 2em;
@@ -90,6 +90,7 @@
     [data-para-step]:last-of-type {
       margin-bottom: 5em;
     }
+
 
     .emphasize {
       background-color: hsl(229, 73%, 90%)
@@ -100,24 +101,18 @@
 <body>
 
   <header>
-    <h1 class="heading">AI Descriptions</h1>
+    <h1 class="heading">Chart Exploration</h1>
   </header>
   <aside id="chart_container">
-    <para-chart id="main-chart" manifest="./assets/data/bar-single-manifest-1018.json"></para-chart>
+    <para-chart id="main-chart" manifest="./assets/data/scatter-manifest-geyser.json"></para-chart>
   </aside>
   <main id="main">
 
     <div class="steps">
       <div data-fire="0" class="scroll">
-        <p>You give us data, we generate in parallel:</p>
-        <ul class="parallel">
-          <li>An accessible chart</li>
-          <li>A live description of the chart</li>
-        </ul>
+        <p>Trends</p>
 
-        <p>We use a small AI engine, running in the browser, to discover and describe trends and patterns.</p>
-
-        <p class="emphasize">This is the modern equivalent of alt text and long descriptions for a high-leverl overview of a data visualization.</p>
+        <p class="emphasize">This is the modern equivalent of alt text and long descriptions for data visualizations.</p>
       </div>
 
       <div data-fire="1" class="scroll">
@@ -125,13 +120,18 @@
 
         <p>Sighted users usually glance at a chart, get the gist, and quickly move on.</p>
 
-        <p>Screen reader users should have the same affordance. No more, "Did I miss something important?"</p>
+        <p>Scren reader users should have the same affordance. No more, "Did I miss something important?"</p>
+
+        <ul>
+          <li>"Did I miss something important?"</li>
+        </ul>
 
         <p>We have 2 goals:</p>
-        <ol>
+        <ul>
           <li>Provide full interactivity and exploration of charts</li>
-          <li>Help users avoid using our charts</li>
-        </ol>
+          <li>Direct labeling</li>
+          <li>Gaps between datapoints</li>
+        </ul>
       </div>
 
 
@@ -139,77 +139,42 @@
 
 
       <div data-fire="2" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-simple-rising-trend.json)">
-        <h2 id="simple-trend" class="subheading">Simple Trend</h2>
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="simple-rend" class="subheading">Simple Trend</h2>
 
         <ul>
-          <li>Easy to detect… no AI needed</li>
-          <li>3 kinds of basic trend:
-            <ul>
-              <li>Rising</li>
-              <li>Falling</li>
-              <li>Steady</li>
-            </ul>
-          </li>
+          <li></li>
         </ul>
       </div>
 
 
       <div data-fire="3" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-rebound-trend.json)">
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
         <h2 id="rebound-rend" class="subheading">Rebound Trend</h2>
 
         <ul>
-          <li>Combine simple trends into complex trends</li>
-          <li>Describe highs and lows</li>
-          <li>Give context info for orientation</li>
+          <li></li>
         </ul>
       </div>
 
 
       <div data-fire="4" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-tracking.json)">
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
         <h2 id="tracking-clustering" class="subheading">Tracking and Clustering</h2>
 
         <ul>
-          <li>For multi-series charts, we describe the relationship between the lines</li>
-          <li>With serial datapoint navigation, when would a screen reader user realize these lines track each other?
-          </li>
+          <li></li>
         </ul>
       </div>
 
-      <div data-fire="5" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-intersection.manifest.json)">
+      <div data-fire="4" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
         <h2 id="intersections" class="subheading">Intersections</h2>
 
         <ul>
-          <li>You can explore the trend and each datapoint of each series</li>
-          <li>Other key features include
-            <ul>
-              <li>Other key features include intersections between lines</li>
-              <li>The dominant series</li>
-            </ul>
-          </li>
-          <li>Intersections are described:
-            <ul>
-              <li>In the series description</li>
-              <li>During navigation</li>
-            </ul>
-          </li>
+          <li></li>
         </ul>
       </div>
-
-
-      <!-- 
-
-          <div data-para-step="5" data-para-action="setManifest(/src/demo-data/bar-multi-manifest-48.json)">
-        <p>
-          Change chart type
-        </p>
-      </div>
-      <div data-para-step="5" data-para-action="setColorPalette(pattern)">
-        <p>
-   -->
 
     </div>
   </main>

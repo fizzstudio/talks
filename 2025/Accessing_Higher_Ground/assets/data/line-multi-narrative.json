@@ -303,7 +303,10 @@
         "source": "inline"
       },
       "settings": {
-        "animation.isAnimationEnabled": false
+        "controlPanel.isControlPanelDefaultOpen": false,
+        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": true,
+        "animation.isAnimationEnabled": false,
+        "ui.speechRate": 1
       }
     }
   ]

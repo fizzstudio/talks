@@ -30,7 +30,7 @@
       },
       "series": [
         {
-          "key": "Revenue in million U.S. dollars",
+          "key": "Revenue",
           "theme": {
             "baseQuantity": "revenue",
             "baseKind": "dimensioned",
@@ -117,7 +117,7 @@
       },
       "settings": {
         "controlPanel.isControlPanelDefaultOpen": false,
-        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": true,
+        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": false,
         "animation.isAnimationEnabled": false
       }
     }

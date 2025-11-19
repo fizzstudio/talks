@@ -62,16 +62,16 @@
 
   <g id="content" transform="translate(50, 0)">
 
-    <text data-fire="2" data-blank="true" id="head" x="1180" y="1.5em" class="heading" text-anchor="end">Not an overlay… an underlay</text>
+    <text data-fire="1" data-blank="true" id="head" x="1180" y="1.5em" class="heading" text-anchor="end">Not an overlay… an underlay</text>
 
-    <g data-fire="1" data-forget="2" data-blank="true" transform="translate(600, 300)">
+    <g data-fire="0" data-forget="1" transform="translate(600, 300)">
       <text x="0" y="0" fill="black" text-anchor="middle" class="intro">Automated accessiblity?
         <tspan x="0" dy="1.3em">Doesn't need any accessibility expertise or attention?</tspan>
         <tspan x="0" dy="3em">Smells like an overlay.</tspan>
       </text>
     </g>
 
-    <g data-fire="2" data-blank="true" transform="translate(0,200)">
+    <g data-fire="1" data-blank="true" transform="translate(0,200)">
       <g transform="translate(100,-20)">
         <use href="#data_icon" x="-50" y="50" width="217.6" height="272" />
         <text x="60" y="340" fill="black" text-anchor="middle">structured data</text>
@@ -83,11 +83,9 @@
       </g>
     </g>
 
-    <g data-fire="1" data-blank="true" transform="translate(230,250)">
-    </g>
 
 
-    <g data-fire="3" data-blank="true" transform="translate(90, 150)">
+    <g data-fire="2" data-blank="true" transform="translate(90, 150)">
       <path d="M670,150 H260" class="connector overlay"/>
       <text fill="black" text-anchor="middle" transform="translate(460, 70)">
         <tspan class="emphasize">Overlay</tspan>
@@ -95,7 +93,7 @@
       </text>
     </g>
 
-    <g data-fire="4" data-blank="true" transform="translate(80, 300)">
+    <g data-fire="3" data-blank="true" transform="translate(80, 300)">
       <path d="M260,150 H670" class="connector underlay"/>
       <text fill="black" text-anchor="middle" transform="translate(460, 210)">
         <tspan class="emphasize">Underlay</tspan>

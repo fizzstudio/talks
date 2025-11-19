@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1200 700">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+  viewBox="0 0 1200 800">
 
   <title>Philosophy of NLG and ML</title>
 
-  <script href="_silverbullet.js"/>
+  <script href="_silverbullet.js" />
   <style type="text/css">
     @import url(_silverbullet.css);
   </style>
@@ -21,6 +22,12 @@
     .row_header,
     .cell {
       text-anchor: middle;
+    }
+
+    #overview {
+      text-anchor: middle;
+      fill: black;
+      font-size: 40px;
     }
 
     .arrow_line {
@@ -65,27 +72,30 @@
     .column_head.ml {
       fill: hsl(120, 73%, 28%);
     }
-
-     
   </style>
 
-  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white"/>
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white" />
   <!-- <rect id="frame" x="0" y="0" width="100%" height="100%"/> -->
 
   <text id="head" x="98%" y="1.5em" class="heading" text-anchor="end">Philosophy of NLG and AI</text>
 
   <g id="content">
 
-    <g id="nlg" transform="translate(70,120)">
-      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="530" class="column nlg"/>
+    <g id="overall" transform="translate(600,160)">
+      <text id="overview">As little AI as possible… all running in the browser</text>
+    </g>
+
+
+    <g id="nlg" transform="translate(70,200)">
+      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="530" class="column nlg" />
 
       <g data-fire="1" data-blank="true">
-        <rect x="0" y="0" width="510" height="50" class="column_head nlg"/>
+        <rect x="0" y="0" width="510" height="50" class="column_head nlg" />
         <text class="subheading" transform="translate(255,40)">Natural Language Generation</text>
       </g>
 
       <g data-fire="2" data-blank="true" transform="translate(20,100)">
-        <text x="0">Classic NLG, not Generative AI 
+        <text x="0">Classic NLG, not Generative AI
           <tspan x="20" dy="1.5em">Dependable, predictable, consistent,</tspan>
           <tspan x="30" dy="1.5em">uncontroversial</tspan>
         </text>
@@ -108,11 +118,11 @@
 
 
 
-    <g id="ml" transform="translate(620,120)">
-      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="530" class="column ml"/>
+    <g id="ml" transform="translate(620,200)">
+      <rect data-fire="2" data-blank="true" x="0" y="0" width="510" height="530" class="column ml" />
 
       <g data-fire="1" data-blank="true">
-        <rect x="0" y="0" width="510" height="50" class="column_head ml"/>
+        <rect x="0" y="0" width="510" height="50" class="column_head ml" />
         <text class="subheading" transform="translate(255,40)"> AI / Machine Learning</text>
       </g>
 
