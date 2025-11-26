@@ -94,6 +94,34 @@
     .emphasize {
       background-color: hsl(229, 73%, 90%)
     }
+
+    .quiz,
+    .choices {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .choices li {
+      margin-bottom: 5px;
+    }
+
+    .choices label {
+      display: flex;
+      align-items: center;
+    }
+
+    .choices label,
+    input[type="radio"] {
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .question {
+      font-style: italic;
+    }
   </style>
 </head>
 
@@ -109,7 +137,7 @@
 
     <div class="steps">
       <div data-fire="0" class="scroll">
-        <p>Revealing information progressively aids comprehension and increases engagement.</p>                  
+        <p>Revealing information progressively aids comprehension and increases engagement.</p>
       </div>
 
       <div data-fire="1" class="scroll">
@@ -121,7 +149,8 @@
 
         <p>Don't assume that a chart will help them understand… that picture may cost them 1,000 words.</p>
 
-        <p>Keyboard navigation of steps puts them in control, and helps them associate text passages to chart features.</p>
+        <p>Keyboard navigation of steps puts them in control, and helps them associate text passages to chart features.
+        </p>
       </div>
 
 
@@ -143,39 +172,118 @@
 
 
       <div data-fire="3" class="scroll" data-para-step="1"
-        data-para-action="setManifest(./assets/data/line-rebound-trend.json)">
+        data-para-action="setManifest(./assets/data/progressive-1.json)">
         <h2 id="scrollytelling" class="subheading">Scrollytelling</h2>
 
         <ul>
           <li>Combines scrolling and storytelling</li>
           <li>Creates immersive narratives as the learner scrolls down a webpage</li>
+        </ul>
+      </div>
+
+
+      <div data-fire="4" class="scroll" data-para-step="1"
+        data-para-action="setManifest(./assets/data/progressive-2.json)">
+        <h2 id="step-1" class="subheading">Incremental revelation</h2>
+
+        <ul>
           <li>Break down complex topics</li>
-          <li>Create suspense</li>
-          <li>Slowly reveal information</li>
           <li>Gives learner a sense of control and self-pacing</li>
         </ul>
-
-        
       </div>
 
 
-      <div data-fire="4" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-tracking.json)">
-        <h2 id="tracking-clustering" class="subheading">Use quizzes to reinforce learning and test understanding</h2>
+      <div data-fire="5" class="scroll" data-para-step="1"
+        data-para-action="setManifest(./assets/data/progressive-3.json)">
+        <h2 id="step-2" class="subheading">Emotional engagement</h2>
 
         <ul>
-          <li></li>
+          <li>Slowly reveal information</li>
+          <li>Create suspense</li>
+        </ul>
+
+      </div>
+
+
+      <div data-fire="6" class="scroll" data-para-step="1"
+        data-para-action="setManifest(./assets/data/progressive-4.json)">
+        <h2 id="step-3" class="subheading">Progress Finale</h2>
+
+        <ul>
+          <li>Add impact</li>
+        </ul>
+
+      </div>
+
+
+      <div data-fire="7" class="scroll">
+        <h2 id="tests" class="subheading">Add optional interactivity</h2>
+        <p>Use quizzes to reinforce learning and test understanding.</p>
+
+        <ul class="quiz">
+          <!-- 
+          <li>
+            <span class="question">Which country has the highest car sales?</span>
+            <ul class="choices">
+              <li>
+                <label>
+                  <input type="radio" name="question0" value="US" />
+                  <span>US</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question0" value="Japan" />
+                  <span>Japan</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question0" value="Germany" />
+                  <span>Germany</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question0" value="China" />
+                  <span>China</span>
+                </label>
+              </li>
+            </ul>
+          </li>
+          -->
+          <li>
+            <span class="question">What year does the country with highest car sales overtake the others?</span>
+            <ul class="choices">
+              <li>
+                <label>
+                  <input type="radio" name="question1" value="2005" />
+                  <span>2005</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question1" value="2006" />
+                  <span>2006</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question1" value="2008" />
+                  <span>2008</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="question1" value="2017" />
+                  <span>2017</span>
+                </label>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
 
-      <div data-fire="5" class="scroll" data-para-step="3"
-        data-para-action="setManifest(./assets/data/line-intersection.manifest.json)">
-        <h2 id="intersections" class="subheading"></h2>
-
-        <ul>
-          <li></li>
-        </ul>
-      </div>
 
     </div>
   </main>

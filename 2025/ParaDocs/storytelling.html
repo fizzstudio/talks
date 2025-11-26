@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Data Storytelling</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      /* text-align: justify; */
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 29em;
+    }
+
+    /* [data-para-step] {
+      display: block;
+      min-height: 2em;
+    } */
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+
+    .emphasize {
+      background-color: hsl(229, 73%, 90%)
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Data Storytelling</h1>
+  </header>
+  <aside id="chart_container">
+    <para-chart id="main-chart" manifest="./assets/data/line-narrative.json"></para-chart>
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0" class="scroll">
+        <p>Revealing information progressively aids comprehension and increases engagement.</p>                  
+      </div>
+
+      <div data-fire="1" class="scroll">
+        <h2 id="intro" class="subheading">Dyslexia &amp; Dyscalculia</h2>
+
+        <p>Not just a problem with letters and numbers.</p>
+
+        <p>Many people with dyslexia have a symbol decoding issue.</p>
+
+        <p>Don't assume that a chart will help them understand… that picture may cost them 1,000 words.</p>
+
+        <p>Keyboard navigation of steps puts them in control, and helps them associate text passages to chart features.</p>
+      </div>
+
+
+
+
+
+      <div data-fire="2" class="scroll">
+        <h2 id="clt" class="subheading">Cognitive Load Theory</h2>
+
+        <p>Reduce intrinsic cognitive load by breaking tasks into bite-sized chunks conceptually and visually.</p>
+
+        <ul>
+          <li>Segmentation</li>
+          <li>Sequencing and combination</li>
+          <li>Chunking and automating</li>
+          <li>Element interactivity</li>
+        </ul>
+      </div>
+
+
+      <div data-fire="3" class="scroll" data-para-step="1" data-para-action="setManifest(./assets/data/line-low-vision-mode.json)">
+        <h2 id="scrollytelling" class="subheading">Scrollytelling</h2>
+
+        <ul>
+          <li>Combines scrolling and storytelling</li>
+          <li>Creates immersive narratives as the learner scrolls down a webpage</li>
+          <li>Break down complex topics</li>
+          <li>Create suspense</li>
+          <li>Slowly reveal information</li>
+          <li>Gives learner a sense of control and self-pacing</li>
+        </ul>
+
+        
+      </div>
+
+
+      <div data-fire="4" class="scroll" 
+        data-para-step="3" data-para-action="highlightSeries(u_s)">
+        <h2 id="q" class="subheading">Break down complex topics</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+      <div data-fire="5" class="scroll" 
+        data-para-step="4" data-para-action="highlightSeries(china)">
+        <h2 id="w" class="subheading">Slowly reveal information</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+      <div data-fire="6" class="scroll" 
+        data-para-step="5" data-para-action="highlightSeries(china)">
+        <h2 id="e" class="subheading">Use quizzes to reinforce learning and test understanding</h2>
+
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>
