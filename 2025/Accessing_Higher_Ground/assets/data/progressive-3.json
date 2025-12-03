@@ -34,73 +34,7 @@
       },
       "series": [
         {
-          "key": "China",
-          "theme": {
-            "baseQuantity": "passenger car sale",
-            "baseKind": "number",
-            "locale": "China"
-          },
-          "records": [
-            {
-              "x": "2005",
-              "y": "3.97"
-            },
-            {
-              "x": "2006",
-              "y": "5.18"
-            },
-            {
-              "x": "2007",
-              "y": "6.3"
-            },
-            {
-              "x": "2008",
-              "y": "6.76"
-            },
-            {
-              "x": "2009",
-              "y": "10.33"
-            },
-            {
-              "x": "2010",
-              "y": "13.76"
-            },
-            {
-              "x": "2011",
-              "y": "14.47"
-            },
-            {
-              "x": "2012",
-              "y": "15.5"
-            },
-            {
-              "x": "2013",
-              "y": "17.93"
-            },
-            {
-              "x": "2014",
-              "y": "19.71"
-            },
-            {
-              "x": "2015",
-              "y": "21.21"
-            },
-            {
-              "x": "2016",
-              "y": "24.38"
-            },
-            {
-              "x": "2017",
-              "y": "24.72"
-            },
-            {
-              "x": "2018",
-              "y": "23.71"
-            }
-          ]
-        },
-        {
-          "key": "U.S. (excluding light trucks*)",
+          "key": "U.S.",
           "label": "U.S.",
           "theme": {
             "baseQuantity": "passenger car sale",
@@ -303,7 +237,13 @@
         "source": "inline"
       },
       "settings": {
-        "animation.isAnimationEnabled": false
+        "controlPanel.isControlPanelDefaultOpen": false,
+        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": true,
+        "animation.isAnimationEnabled": false,
+        "ui.speechRate": 1,
+        "axis.y.minValue": 0,
+        "axis.y.maxValue": 24,
+        "axis.y.interval": 5
       }
     }
   ]

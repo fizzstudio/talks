@@ -146,6 +146,8 @@
         "source": "inline"
       },
       "settings": {
+        "controlPanel.isControlPanelDefaultOpen": false,
+        "controlPanel.caption.isCaptionExternalWhenControlPanelClosed": true,
         "animation.isAnimationEnabled": false
       }
     }

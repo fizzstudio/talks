@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 640 500">
+
+  <title>ParaCharts: truly accessible data visualization</title>
+
+  <script id="slideshowLibrary" href="_silverbullet.js" type="text/ecmascript"></script>
+  <style type="text/css">
+    @import url('_silverbullet.css');
+  </style>
+  <style>
+    .heading {
+      text-anchor: middle;
+      font-size: 70px;
+      font-weight: bold;
+      fill: hsl(279, 45%, 51%);
+    }
+  </style>
+
+  <defs id="defs-1"></defs>
+
+  <rect
+  id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white"/>
+  <!-- <rect id="frame" x="0" y="0" width="640" height="400" fill="none" stroke="white"/> -->
+
+  <text class="heading" x="320" y="150">
+    Inclusive Data Visualization 
+    <tspan x="320" dy="1.25em">with AI Descriptions</tspan>
+  </text>
+
+  <text class="subheading" x="320" y="300" text-anchor="middle" font-size="30">truly accessible data visualization</text>
+
+  <g transform="translate(0,80)">
+
+
+    <text class="subheading" font-size="24" text-anchor="middle" data-fire="1" data-blank="true"  
+      transform="translate(200,312)">
+      <tspan x="0" y="0" font-size="30">Doug Schepers</tspan>
+      <tspan x="0" dy="1.5em" font-size="0.8em">
+        <tspan>
+          <a href="mailto:doug@schepers.cc" title="Doug's email address" class="subheading">doug@fizz.studio</a>
+        </tspan>
+        <tspan dx="0" font-size="1.5em">·</tspan>
+        <tspan dx="0">
+           <a href="http://twitter.com/shepazu" title="Doug's Twitter Account" class="subheading">@shepazu</a>
+        </tspan>
+      </tspan>
+      <tspan x="0" dy="1.25em">Founder and CEO</tspan>
+    </text>
+  </g>
+
+  <svg id="fizz_logo" x="400" y="360" width="100" height="100" viewBox="0 0 208 208" data-fire="2" data-blank="true">
+    <title>Fizz Logo</title>
+    <style>
+      text#wordmark {
+        font-family: "Avenir Next", Helvetica, sans-serif;
+        font-size: 34px;
+        text-anchor: end;
+        text-transform: lowercase;
+      }
+    </style>
+
+    <g fill="hsl(258, 30%, 40%)">
+      <circle id="circle-0-0" cx="50" cy="50" r="30" fill="#944bbb"/>
+      <circle id="circle-0-1" cx="120" cy="46.5" r="23" fill="#944bbb"/>
+      <circle id="circle-0-2" cx="176" cy="43" r="16" fill="#944bbb"/>
+      <circle id="circle-1-0" cx="46.5" cy="120" r="23" fill="#944bbb"/>
+      <circle id="circle-1-1" cx="112" cy="112" r="16" fill="#944bbb"/>
+      <circle id="circle-2-0" cx="43" cy="176" r="16" fill="#944bbb"/>
+    </g>
+
+    <text id="wordmark" x="192" y="156" class="logo">Fizz<tspan x="193" dy="1em">Studio</tspan>
+    </text>
+  </svg>
+
+</svg>

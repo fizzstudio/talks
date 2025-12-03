@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 650">
+
+  <title>CLT and Disabilities</title>
+
+  <script href="_silverbullet.js" />
+  <style type="text/css">
+    @import url('_silverbullet.css');
+  </style>
+  <style>
+    .emphasize {
+      font-size: 35px;
+      font-weight: bold;
+    }
+  </style>
+  <style>
+    #zoomed_content {
+      transform: translateX(-100px) translateY(-100px) scale(2);
+    }
+
+    .pan {
+      animation: pan_down 2.6s ease-in-out forwards;
+    }
+
+    @keyframes pan_down {
+      0% {
+        transform: translateX(100px) translateY(100px);
+      }
+
+      33% {
+        transform: translateX(100px) translateY(260px);
+      }
+
+      66% {
+        transform: translateX(400px) translateY(280px);
+      }
+
+      100% {
+        transform: translateX(400px) translateY(50px);
+      }
+    }
+
+    .pan_magnifier {
+      animation: pan_magnifier_down 2.6s ease-in-out forwards;
+    }
+
+    @keyframes pan_magnifier_down {
+      0% {
+        transform: translateX(-100px) translateY(-100px) scale(2);
+      }
+
+      33% {
+        transform: translateX(-100px) translateY(-260px) scale(2);
+      }
+
+      66% {
+        transform: translateX(-400px) translateY(-280px) scale(2);
+      }
+
+      100% {
+        transform: translateX(-400px) translateY(-50px) scale(2);
+      }
+    }
+  </style>
+  <style>
+    :root {
+      --a11y_blue: hsl(218, 100%, 32%);
+    }
+
+    .b-chart-label {
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: var(--a11y_blue);
+    }
+
+    .b-chart-line {
+      fill: none;
+      stroke: var(--a11y_blue);
+      stroke-width: 2px;
+      stroke-linecap: round;
+    }
+
+    #line-chart-bg {
+      fill: aliceblue;
+      stroke: none;
+    }
+  </style>
+  <rect id="bg" x="0" y="0" width="100%" height="100%" fill="white" />
+  <rect id="frame" x="0" y="0" width="100%" height="100%" fill="none" stroke="red" display="none" />
+
+
+  <defs id="defs-1">
+    <svg id="bar-chart" viewBox="0 0 100 100" stroke="black" fill="black">
+      <rect id="chart-frame" x="0" y="0" width="100%" height="100%" display="none" />
+      <path d="M3,3 V98 H98" style="fill:none; stroke-width:3px; stroke-linecap:round; stroke-linejoin:round;" />
+      <g style="stroke:none;">
+        <rect x="6" y="75" width="20" height="20" rx="4" ry="4" />
+        <rect x="29" y="50" width="20" height="45" rx="4" ry="4" />
+        <rect x="52" y="5" width="20" height="90" rx="4" ry="4" />
+        <rect x="75" y="25" width="20" height="70" rx="4" ry="4" />
+      </g>
+    </svg>
+
+
+    <svg id="vision-disability-icon" viewBox="0 0 100 100" width="100" height="100">
+      <path style="fill-rule: evenodd;"
+        d="M 37.878 33.849 C 35.597 34.295 34.771 34.681 33.048 35.615 L 50.853 73.787 C 49.117 73.968 46.367 73.9 44.258 73.419 L 27.885 38.113 C 25.941 38.77 25.128 39.163 23.548 40.496 L 38.344 72.243 C 35.696 71.871 33.258 70.852 30.684 69.675 L 18.603 43.811 C 16.967 44.621 15.631 45.633 14.597 46.843 L 23.707 66.338 C 16.109 62.416 8.403 56.396 2.524 50.004 C 9.673 41.694 22.774 32.784 35.56 28.638 L 26.367 9.063 C 25.302 6.159 30.097 4.081 31.726 6.648 L 41.037 27.114 C 64.889 23.6 81.196 34.826 97.472 50.004 C 88.296 60.133 76.72 67.227 61.962 72.088 L 70.597 90.647 C 71.791 93.459 66.987 95.714 65.221 92.988 L 37.878 33.849 Z   M 43.84,32.672 C 60.895,29.12 82.512,42.649 89.256,50.003 C 89.488,51.347 66.697,65.929 59.609,66.766 L 57.657,62.815 C 62.523,60.013 67.371,52.234 63.21,43.429 C 59.015,34.553 49.584,34.556 45.256,35.959 Z  M 49.929 38.896 C 56.962 37.742 62.002 46.158 61.026 50.365 C 60.581 52.176 58.162 51.606 58.282 50.128 C 58.425 48.367 55.89 42.05 50.847 41.868 C 47.934 41.763 47.9 39.229 49.929 38.896 Z" />
+    </svg>
+
+
+    <svg id="person-icon" viewBox="-29.2,-30 58.4 60" overflow="visible" width="87.6" height="90">
+      <path transform="translate(-58.4,-60)"
+        d="M29.14,40.50 C29.03,40.50 28.92,40.50 28.81,40.50 C25.11,40.34 21.92,37.46 20.53,36.00 M29.08,58.87 C22.70,58.87 16.50,58.55 11.75,57.97 C4.06,57.03 2.33,55.71 1.70,54.79 C1.28,54.19 1.19,53.49 1.45,52.82 C3.80,46.61 7.60,45.15 11.00,44.54 C12.37,44.30 14.64,43.77 16.61,43.15 C19.73,42.17 20.37,41.51 20.46,41.40 C20.51,41.24 20.62,40.75 20.64,39.42 L20.61,37.07 L20.54,36.00 C18.12,33.08 17.32,30.31 17.05,28.93 C16.09,28.51 14.85,27.33 14.11,24.14 C13.62,22.04 13.69,20.75 14.33,19.93 C14.49,19.73 14.69,19.57 14.90,19.45 C13.94,12.58 16.27,8.23 18.48,5.74 C21.02,2.87 23.92,1.84 24.04,1.80 L24.07,1.79 L24.09,1.78 C25.54,1.35 26.92,1.12 28.20,1.12 L29.14,1.11 M37.75,36.00 C36.36,37.46 33.17,40.34 29.47,40.50 C29.36,40.50 29.25,40.50 29.14,40.50 M29.14,1.11 L30.08,1.12 C31.36,1.12 32.74,1.35 34.19,1.78 L34.21,1.79 L34.24,1.80 C34.36,1.84 37.26,2.87 39.80,5.74 C42.01,8.23 44.34,12.58 43.38,19.45 C43.59,19.57 43.79,19.73 43.95,19.93 C44.59,20.75 44.66,22.04 44.17,24.14 C43.43,27.33 42.19,28.51 41.23,28.92 C40.96,30.31 40.16,33.08 37.74,36.00 L37.67,37.07 L37.64,39.42 C37.66,40.75 37.77,41.24 37.82,41.40 C37.91,41.51 38.55,42.17 41.67,43.15 C43.64,43.77 45.91,44.30 47.28,44.54 C50.68,45.15 54.48,46.61 56.83,52.82 C57.09,53.49 57.00,54.19 56.58,54.79 C55.95,55.71 54.22,57.03 46.53,57.97 C41.78,58.55 35.58,58.87 29.08,58.87" />
+    </svg>
+
+
+    <circle id="lens" cx="250" cy="230" r="50" />
+    <path id="magnifying-glass-handle" d="M212,268 l-50,50" stroke-width="10" stroke-linecap="round" />
+
+    <clipPath id="magnifying-glass">
+      <use href="#lens" />
+    </clipPath>
+
+    <g id="head" transform="translate(10,10) scale(0.6)">
+      <path fill="none" stroke-width="10" d="M262.198,0c-28.1,0-55.1,6.1-80.3,18c-32,14.9-59.1,38.4-78.4,68c-19.9,30.5-30.4,65.8-30.4,102.3V214l-34,65
+        c-6.5,12.5-6.8,25.3-0.8,35.3s17.5,15.7,31.6,15.7h3.2v51.1c0,27.7,22.5,50.2,50.2,50.2c0.7,0,1.3,0,2-0.1l34.9-5.2v35.1
+        c0,0.5,0,1.1,0.1,1.6c1,12.4,11,21.6,23.7,21.6l0,0c1.5,0,3-0.1,4.6-0.4l181.5-32.2c13.2-2.3,23.6-14.7,23.6-28.1v-101
+        c36.1-35.3,56.6-84,56.6-134.5C450.298,84.4,365.898,0,262.198,0z" />
+      <circle cx="130" cy="220" r="18" />
+    </g>
+
+  </defs>
+
+
+
+  <text id="h1" x="97%" y="1.5em" class="heading" text-anchor="end">Cognitive Load and Disabilities</text>
+
+  <g id="content" font-size="30">
+
+    <g data-fire="1" data-forget="3" data-blank="true" transform="translate(250,150)">
+      <g id="people-grid" transform="translate(100,50)">
+        <rect id="people-grid-bg" x="-100" y="-100" width="500" height="500" fill="white" />
+        <g>
+          <use href="#person-icon" x="0" y="0" width="30" fill="blueviolet" />
+          <use href="#person-icon" x="30" y="0" width="30" fill="brown" />
+          <use href="#person-icon" x="60" y="0" width="30" fill="burlywood" />
+          <use href="#person-icon" x="90" y="0" width="30" fill="cadetblue" />
+          <use href="#person-icon" x="120" y="0" width="30" fill="chartreuse" />
+          <use href="#person-icon" x="150" y="0" width="30" fill="chocolate" />
+          <use href="#person-icon" x="180" y="0" width="30" fill="coral" />
+          <use href="#person-icon" x="210" y="0" width="30" fill="cornflowerblue" />
+        </g>
+        <g transform="translate(0,50)">
+          <use href="#person-icon" x="0" y="0" width="30" fill="crimson" />
+          <use href="#person-icon" x="30" y="0" width="30" fill="darkblue" />
+          <use href="#person-icon" x="60" y="0" width="30" fill="darkcyan" />
+          <use href="#person-icon" x="90" y="0" width="30" fill="darkgoldenrod" />
+          <use href="#person-icon" x="120" y="0" width="30" fill="darkgreen" />
+          <use href="#person-icon" x="150" y="0" width="30" fill="darkkhaki" />
+          <use href="#person-icon" x="180" y="0" width="30" fill="darkmagenta" />
+          <use href="#person-icon" x="210" y="0" width="30" fill="darkolivegreen" />
+        </g>
+        <g transform="translate(0,100)">
+          <use href="#person-icon" x="0" y="0" width="30" fill="darkorange" />
+          <use href="#person-icon" x="30" y="0" width="30" fill="darkorchid" />
+          <use href="#person-icon" x="60" y="0" width="30" fill="darkred" />
+          <use href="#person-icon" x="90" y="0" width="30" fill="darksalmon" />
+          <use href="#person-icon" x="120" y="0" width="30" fill="darkseagreen" />
+          <use href="#person-icon" x="150" y="0" width="30" fill="darkslateblue" />
+          <use href="#person-icon" x="180" y="0" width="30" fill="darkslategray" />
+          <use href="#person-icon" x="210" y="0" width="30" fill="darkviolet" />
+        </g>
+        <g transform="translate(0,150)">
+          <use href="#person-icon" x="0" y="0" width="30" fill="deeppink" />
+          <use href="#person-icon" x="30" y="0" width="30" fill="deepskyblue" />
+          <use href="#person-icon" x="60" y="0" width="30" fill="dodgerblue" />
+          <use href="#person-icon" x="90" y="0" width="30" fill="firebrick" />
+          <use href="#person-icon" x="120" y="0" width="30" fill="forestgreen" />
+          <use href="#vision-disability-icon" x="135" y="-20" width="30" fill="hsl(218, 100%, 32%)" />
+          <use href="#person-icon" x="180" y="0" width="30" fill="goldenrod" />
+          <use href="#person-icon" x="210" y="0" width="30" fill="greenyellow" />
+        </g>
+        <g transform="translate(0,200)">
+          <use href="#person-icon" x="0" y="0" width="30" fill="hotpink" />
+          <use href="#person-icon" x="30" y="0" width="30" fill="indianred" />
+          <use href="#person-icon" x="60" y="0" width="30" fill="indigo" />
+          <use href="#person-icon" x="90" y="0" width="30" fill="gold" />
+          <use href="#person-icon" x="120" y="0" width="30" fill="lightcoral" />
+          <use href="#person-icon" x="150" y="0" width="30" fill="lightpink" />
+          <use href="#person-icon" x="180" y="0" width="30" fill="lightsalmon" />
+          <use href="#person-icon" x="210" y="0" width="30" fill="lightseagreen" />
+        </g>
+      </g>
+
+      <g data-fire="2" data-forget="3" data-blank="true" id="clipped_content"
+        transform="translate(-125, -115) scale(1.5)">
+        <use href="#people-grid" clip-path="url(#magnifying-glass)" opacity="1.0" />
+        <use id="magnifying-glass-frame" href="#lens" fill="none" stroke="black" stroke-width="4" />
+        <use href="#magnifying-glass-handle" fill="none" stroke="black" stroke-width="4" />
+      </g>
+
+
+      <text x="60" y="40">Cognitive load affects everyone…
+        <tspan data-fire="2" data-forget="3" data-blank="true">
+          <tspan x="170" y="350">but the effects are magnified</tspan>
+          <tspan x="150" dy="1.5em">in many people with disabilties</tspan>
+        </tspan>
+      </text>
+    </g>
+
+
+
+    <g id="blindness" data-fire="3" data-forget="10" data-blank="true" transform="translate(180,120)">
+      <text x="10" y="40">
+        <tspan class="emphasize">Blindness</tspan>
+        <tspan class="emphasize" x="450" y="100">Screen reader</tspan>
+        <tspan x="450" dy="1.5em">sequential datapoint access only</tspan>
+        <tspan data-fire="4" data-forget="10" x="450" dy="1.5em">taxes memory</tspan>
+        <tspan data-fire="5" data-forget="10" x="450" dy="1.5em">harder to recognize patterns</tspan>
+      </text>
+
+      <g data-fire="3" data-forget="10" data-blank="true" transform="translate(0,60)">
+        <defs>
+          <circle id="blind-point" r="5" fill="blue" />
+        </defs>
+        <rect id="line-chart-bg" x="-20" y="0" width="360" height="200" />
+        <g data-fire="3" data-forget="4" data-blank="true" transform="translate(10,80)">
+          <text class="b-chart-label" y="-20">120</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="4" data-forget="5" data-blank="true" transform="translate(60,71)">
+          <path class="b-chart-line" d="M-50,9 L0,0" />
+          <text class="b-chart-label" y="-20">129</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="5" data-forget="6" data-blank="true" transform="translate(110,95)">
+          <path class="b-chart-line" d="M-50,-24 L0,0" />
+          <text class="b-chart-label" y="-20">105</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="6" data-forget="7" data-blank="true" transform="translate(160,82)">
+          <path class="b-chart-line" d="M-50,13 L0,0" />
+          <text class="b-chart-label" y="-20">118</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="7" data-forget="8" data-blank="true" transform="translate(210,103)">
+          <path class="b-chart-line" d="M-50,-21 L0,0" />
+          <text class="b-chart-label" y="-20">97</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="8" data-forget="9" data-blank="true" transform="translate(260,106)">
+          <path class="b-chart-line" d="M-50,-3 L0,0" />
+          <text class="b-chart-label" y="-20">94</text>
+          <use href="#blind-point" />
+        </g>
+        <g data-fire="9" data-forget="10" data-blank="true" transform="translate(310,157)">
+          <path class="b-chart-line" d="M-50,-51 L0,0" />
+          <text class="b-chart-label" y="-20">43</text>
+          <use href="#blind-point" />
+        </g>
+      </g>
+
+    </g>
+
+
+
+
+    <g id="low-vision" data-fire="10" data-forget="13" data-blank="true" transform="translate(180,120)">
+      <text x="10" y="40">
+        <tspan class="emphasize">Low Vision</tspan>
+        <tspan class="emphasize" x="450" y="100">Magnifier</tspan>
+        <tspan x="450" dy="1.5em">zoom and pan</tspan>
+        <tspan data-fire="11" data-forget="13" x="450" dy="1.5em">separate modes for context and details</tspan>
+        <!-- 
+        <tspan data-fire="12" data-forget="15" data-blank="true" x="450" dy="1.5em">limited overview and recall triggers</tspan>
+        <tspan data-fire="13" data-forget="15" data-blank="true" x="450" dy="1.5em">harder to notice changes</tspan> 
+        -->
+        <tspan x="450" data-fire="12" data-forget="13" dy="2.5em">(Dataviz is still useful for low vision!)</tspan>
+      </text>
+
+      <g data-fire="10" data-forget="13" data-blank="true" transform="translate(0,60)">
+        <rect id="bar-chart-bg" x="0" y="0" width="420" height="309" fill="none" stroke="none" />
+        <script href="./assets/zoompan.js" />
+
+        <defs>
+          <filter id="blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+          </filter>
+
+          <rect id="zoomer" x="-50" y="-30" width="100" height="60" transform="translate(100,100)" 
+            data-fire="10" data-forget="13" data-draw="11, pan" data-blank="true" 
+            fill="none" stroke="gray" stroke-width="1" />
+          <clipPath id="magnifier">
+            <use href="#zoomer" />
+          </clipPath>
+
+          <image id="barchart-content" href="./assets/global-competitiveness.svg" width="420" />
+        </defs>
+        <g>
+          <use href="#barchart-content" filter="url(#blur)" />
+        </g>
+
+        <g data-fire="10" data-forget="13" data-blank="true">
+          <g id="zoomed_content" data-fire="10" data-forget="13" data-draw="11, pan_magnifier">
+            <use href="#barchart-content" clip-path="url(#magnifier)" />
+            <use id="magnifier-frame_1" href="#zoomer" />
+          </g>
+        </g>
+      </g>
+    </g>
+
+
+    <g id="cognitive-disabilities" data-fire="13" data-forget="22" data-blank="true" transform="translate(180,120)">
+      <g id="mental-model" transform="translate(0,40)">
+        <use href="#head" transform="translate(120,0) scale(-1,1)" fill="purple" stroke="purple" />
+      </g>
+
+      <text x="10" y="40" transform="translate(100,0)">
+        <tspan class="emphasize">Cognitive disabilities</tspan>
+        <tspan x="50" y="100">dyscalculia</tspan>
+        <tspan x="50" dy="1.5em">dyslexia</tspan>
+        <!-- <tspan x="50" dy="1.5em">dysgraphia</tspan> -->
+        <tspan x="50" dy="1.5em">memory impairments</tspan>
+        <tspan x="50" dy="1.5em">brain trauma</tspan>
+        <!-- 
+        <tspan x="50" dy="1.5em">ADHD</tspan>
+        <tspan x="50" dy="1.5em">autism</tspan> 
+        -->
+        <!-- 
+        <tspan data-fire="15" data-forget="22" data-blank="true" x="50" y="100">dyscalculia</tspan>
+        <tspan data-fire="16" data-forget="22" data-blank="true" x="50" dy="1.5em">dyslexia</tspan>
+        <tspan data-fire="17" data-forget="22" data-blank="true" x="50" dy="1.5em">memory issues</tspan>
+        <tspan data-fire="17" data-forget="22" data-blank="true" x="50" dy="1.5em">may be distracted from details and goals</tspan>
+        <tspan data-fire="18" data-forget="22" data-blank="true" x="50" dy="1.5em">may be more literal-minded</tspan> 
+        -->
+      </text>
+    </g>
+
+  </g>
+</svg>
