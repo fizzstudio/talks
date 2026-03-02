@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Tour Guide</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      text-align: justify;
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 100vh;
+    }
+
+    /* [data-para-step] {
+      display: block;
+      min-height: 2em;
+    } */
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+
+    .emphasize {
+      background-color: hsl(229, 73%, 90%)
+    }
+
+    table#binding_table {
+      font-size: 0.7em;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      line-height: 1em;
+      margin-top: 2em;
+      width: 95%;
+    }
+
+    table#binding_table tr {
+      border-bottom: solid 1.5px hsl(0, 0%, 65%);
+    }
+
+    table#binding_table thead tr {
+      border-bottom: solid 3px hsl(0, 0%, 65%);
+    }
+
+    table#binding_table th,
+    table#binding_table td {
+      text-align: start;
+    }
+
+    table#binding_table th,
+    table#binding_table td {
+      padding-block: 1em;
+    }
+
+    table#binding_table td.binding  {
+      font-family: monospace;
+    }
+
+    table#binding_table td.binding span {
+      display: block;
+    }
+
+    img {
+      display: block;
+      margin-inline: auto;
+    }
+
+    img#logo {
+      width: 60%;
+      margin-block: 3em;
+    }
+
+    img#qr {
+      width: 40%;
+    }
+
+    ul#biz li {
+      padding-top: 2em;
+      max-width: 80%;
+      /* text-justify: distribute; */
+      text-align: justify;
+    }
+
+    p {
+      max-width: 80%;
+    }
+    
+    p.slogan,
+    p.link {
+      max-width: 50%;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    #static_media,
+    #parashare {
+      display: flex;
+      width: 80%;
+      align-items: center;
+      gap: 2em;
+    }
+
+    img#media {
+      width: 40%;
+      height: 40%;
+    }
+
+    #parashare p {
+      margin: 1em 0 0 1.5em;
+      padding: 0;
+    }
+
+    #parashare ul {
+      margin-top: 0;
+      /* margin: 0 0 0 3em;
+      padding: 0; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Fizz Studio: ParaCharts</h1>
+  </header>
+  <aside id="chart_container">
+    <!-- <para-chart id="main-chart" manifest="./assets/data/line-intersection-explore.manifest.json"></para-chart> -->
+    <para-chart id="main-chart" manifest="./assets/data/line-multi-manifest-57.json"></para-chart>
+
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0" class="scroll">
+        <p>Structured Charts for Modern Workflows</p>
+      </div>
+
+      <div data-fire="1" class="scroll">
+        <h2 id="intro" class="subheading">Narrative Binding Table</h2>
+
+        <table id="binding_table">
+          <thead>
+            <tr>
+              <th class="phrase">Phrase Fragment</th>
+              <th class="binding">Bound Structure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 
+            <tr>
+              <td class="phrase">"This line chart compares…"</td>
+              <td class="binding">Chart: GDP Line Chart</span> <span>Domain: Year (2008-2018) ·
+                Measure: GDP Share (%)</span> <span>Series: {Agriculture, Industry, Services}</td>
+            </tr>
+            <tr>
+              <td class="phrase">"agriculture,"</td>
+              <td class="binding">Series: Agriculture</td>
+            </tr>
+            <tr>
+              <td class="phrase">"industry,"</td>
+              <td class="binding">Series: Industry</td>
+            </tr>
+            <tr>
+              <td class="phrase">"and services."</td>
+              <td class="binding">Series: Services</td>
+            </tr>
+            <tr>
+              <td class="phrase">"Industry and Services cluster together"</td>
+              <td class="binding">Relation: Proximity</span> <span>Series pair: Industry ↔
+                Services</span> <span>Scope: multi-year</td>
+            </tr>
+            <tr>
+              <td class="phrase">"Agriculture is an outlier below."</td>
+              <td class="binding">Relation: Persistent lower magnitude</span> <span>Series:
+                Agriculture</span> <span>Scope: multi-year</td>
+            </tr>
+            <tr>
+              <td class="phrase">"Industry and Services follow similar trajectories…"
+              </td>
+              <td class="binding">Relation: Pattern similarity</span> <span>Series pair: Industry
+                ↔ Services</span> <span>Scope: multi-year</td>
+            </tr>
+             -->
+            <tr>
+              <td class="phrase">"Services"</td>
+              <td class="binding">
+                <span>Series: Services</span> 
+              </td>
+            </tr>
+            <tr>
+              <td class="phrase">"starts as the second highest line,"</td>
+              <td class="binding">
+                <span>Series: Services</span>
+                <span>Year: 2008</span> 
+                <span>Rank: 2 of 3</span> 
+              </td>
+            </tr>
+            <tr>
+              <td class="phrase">"crosses over Industry,"</td>
+              <td class="binding">
+                <span>Series: Services &gt; Industry</span>
+                <span>Year: 2011</span> 
+                <span>Relation: Order transition</span> 
+              </td>
+            </tr>
+            <tr>
+              <td class="phrase">"touches Industry,"</td>
+              <td class="binding">
+                <span>Services = Industry (45.3)</span>
+                <span>Year: 2012</span> 
+                <span>Relation: Equality (tie)</span> 
+              </td>
+            </tr>
+            <tr>
+              <td class="phrase">"and ends as the highest line."</td>
+              <td class="binding">
+                <span>Series: Services</span>
+                <span>Year: 2018</span> 
+                <span>Rank: 1 of 3</span> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div data-fire="2" class="scroll">
+        <h2 id="static" class="subheading">Solution for static media</h2>
+
+        <section id="static_media">
+          <img id="media" src="./assets/static-media.png" alt="">
+          <ul>
+            <li>Social media</li>
+            <li>PDF</li>
+            <li>Email</li>
+            <li>Print</li>
+          </ul>
+        </section>
+
+        <section id="parashare">
+          <div>
+            <p>We provide:</p>
+            <ul>
+              <li>Static chart image</li>
+              <li>Alt text</li>
+              <li>Permalink / <br> QR code</li>
+            </ul>
+          </div>
+          <img id="qr" src="./assets/paralink-qrcode.png" alt="">
+        </section>
+
+        
+
+        <p class="link"><a href="http://share.fizz.studio/paralink/4Q8wTThUdoI4u6RvWhRtZ">http://share.fizz.studio/paralink/ 4Q8wTThUdoI4u6RvWhRtZ</a></p>
+
+
+      </div>
+
+      <div data-fire="3" class="scroll">
+        <ul id="biz">
+
+          <li>ParaCharts is developed by Fizz Studio.</li>
+
+          <li>Paid pilot on Inclusio, an NSF-funded accessible graphics marketplace</li>
+
+          <li>Active discussions with higher education and enterprise partners.</li>
+          
+          <li>NC IDEA MICRO funding supports pilot-to-license conversion and revenue validation.</li>
+
+        </ul>
+
+      </div>
+
+      <div data-fire="4" class="scroll">
+        <img id="logo" src="./assets/fizz-logo.svg" alt="">
+
+        <p class="slogan">Fizz Studio is transforming charts into tools people can think with.</p>
+      </div>
+
+
+
+
+
+
+    </div>
+  </main>
+  <!-- <script type="module" src="./script/paracharts-1.js"></script> -->
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>

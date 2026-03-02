@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Chart Exploration</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      text-align: justify;
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 29em;
+    }
+
+    /* [data-para-step] {
+      display: block;
+      min-height: 2em;
+    } */
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+
+    .emphasize {
+      background-color: hsl(229, 73%, 90%)
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Chart Exploration</h1>
+  </header>
+  <aside id="chart_container">
+    <para-chart id="main-chart" manifest="./assets/data/line-intersection-explore.manifest.json"></para-chart>
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0" class="scroll">
+        <p>Primed with the automatic description, users have a mental model of the data. They can explore charts
+          whole-to-part, filling in pieces, rather than part-to-whole.</p>
+
+        <p class="emphasize">This is the modern equivalent of providing a data table for detailed exploration of a
+          dataset.</p>
+      </div>
+
+      <div data-fire="1" class="scroll">
+        <h2 id="intro" class="subheading">Full keyboard navigation</h2>
+
+        <p>You can explore each series, and each datapoint.</p>
+
+        <p><strong>Arrow key navigation:</strong></p>
+        <ul>
+          <li><code>`Up`</code> &amp; <code>`Down`</code>: move between series</li>
+          <li><code>`Left`</code> &amp; <code>`Right`</code>: move between datapoints</li>
+          <li>Different patterns for more complex charts types</li>
+        </ul>
+
+        <p><strong>Hot key navigation:</strong></p>
+        <ul>
+          <li>Jump to high and low points, for chart or series</li>
+          <li>Activate specific modes</li>
+          <li>Select datapoints</li>
+          <li>Do specific actions</li>
+        </ul>
+      </div>
+
+
+
+
+
+      <div data-fire="2" class="scroll">
+        <h2 id="query" class="subheading">Queries</h2>
+
+        <ul>
+          <li><code>`Q`</code> key</li>
+          <li>Provides more details about a datapoint</li>
+          <li>Compares all selected datapoints</li>
+        </ul>
+      </div>
+
+
+      <div data-fire="3" class="scroll">
+        <h2 id="annotations" class="subheading">Annotations</h2>
+
+        <ul>
+          <li>Automatically added by AI for notable points
+            <ul>
+              <li>Intersections</li>
+              <li>Highs and lows</li>
+              <li>Start and end points of a series</li>
+            </ul>
+          </li>
+          <li>Author can add manually, for explanatory charts</li>
+          <li>End user can add manually, to aid exploration and reasoning</li>
+          <li>On our roadmap: securely sharing annotations</li>
+        </ul>
+      </div>
+
+      <div data-fire="4" class="scroll" data-para-step="1"
+        data-para-action="setManifest(./assets/data/line-rebound-trend.json)">
+        <h2 id="intersections" class="subheading">Trend Navigation</h2>
+
+        <ul>
+          <li>In addition to datapoint navigation, we enable navigation by trend sequence</li>
+          <li><code>`Q`</code> key</li>
+          <li>Gives context more quickly, with lower cognitive load
+            <ul>
+              <li>Here: 4 sequences, rather than 29 datapoints</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <div data-fire="5" class="scroll" data-para-step="3"
+        data-para-action="setManifest(./assets/data/scatter-manifest-geyser.json)">
+        <h2 id="cluster-nav" class="subheading">Cluster Navigation</h2>
+
+        <ul>
+          <li>Scatterplots may have dozens, hundreds, or thousands of datapoints</li>
+          <li>Unworkable to explore them sequentially</li>
+          <li>We provide cluster navigation</li>
+          <li>We provide cluster navigation
+            <ul>
+              <li>* Datapoints available upon request</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <div data-fire="6" class="scroll" data-para-step="4"
+        data-para-action="setManifest(./assets/data/bar-multi-manifest-48.json)">
+        <h2 id="mouse-nav" class="subheading">Mouse Navigation</h2>
+
+        <ul>
+          <li>Highlight series through legend (or direct labels)</li>
+          <li>Popups
+            <ul>
+              <li>For details</li>
+              <li>For labels</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>

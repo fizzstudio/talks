@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1280 710">
+
+  <title>Alt Text for Charts is Hard</title>
+
+  <script href="_silverbullet.js"/>
+  <style type="text/css">
+    @import url(_silverbullet.css);
+  </style>
+  <style>
+    #content {
+      font-size: 28px;
+    }
+
+
+    a {
+      text-decoration: underline;
+    }
+
+    .source {
+      text-anchor: middle;
+    }
+        
+    .quote {
+      font-style: italic;
+    }
+        
+    .subhead {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .dense {
+      font-size: 20px;
+    }
+
+    .shim {
+      fill: ghostwhite;
+      opacity: 0.99;
+      stroke: gray;
+      stroke-width: 3;
+    }
+
+    .backdrop {
+      fill: ghostwhite;
+      opacity: 0.7;
+    }
+
+    .bad {
+      fill: hsl(0, 90%, 90%);
+      stroke: none;
+    }
+  </style>
+
+  <!-- <rect x="0" y="0" width="100%" height="100%" fill="pink" stroke="red"/> -->
+  <rect x="0" y="0" width="100%" height="100%" fill="none"/>
+
+  <text id="head" x="98%" y="1.5em" class="heading" text-anchor="end">Alt Text for Charts is Hard</text>
+
+
+  <g id="content">
+    <g data-fire="1" data-blank="true" transform="translate(10,10)">
+      <image href="assets/school-rentention-grouped-bar.png" x="0" y="50" width="700"/>      
+    </g>
+
+    <g data-fire="1" data-blank="true" class="source" transform="translate(355,610)">
+      <text x="0" y="0" class="subhead">Real-world advice:</text>
+      <a href="https://www.maine.edu/content-management/accessibility/images/charts-and-complicated-images/">
+        <text y="35">Graphic Charts and Complicated Images – Accessibility Guide 
+          <tspan x="20" dy="1.5em">by University of Maine</tspan>
+        </text>
+      </a>
+    </g>
+
+    <g data-fire="2" data-blank="true" transform="translate(742,100)">
+      <rect data-fire="3" data-blank="true" x="0" y="0" width="515" height="130" class="bad"/>
+      <text x="10" y="35" class="subhead">Title only</text>
+      <text x="10" y="75">
+        <tspan class="quote" x="10">"Fall 2018 First-Year, Full-Time Cohort Bar Graph"</tspan>
+        <tspan x="50" dy="1.5em">No description of chart contents</tspan>
+      </text>
+    </g>
+
+    <g data-fire="3" data-blank="true" transform="translate(742,245)">
+      <rect data-fire="4" data-blank="true" x="0" y="0" width="515" height="215" class="bad"/>
+      <text x="10" y="35" class="subhead">Conclusion only</text>
+      <text x="10" y="75">
+        <tspan class="quote" x="10">"Graph showing students with Early College have
+          <tspan x="30" dy="1.5em">higher retention rates"</tspan>
+        </tspan>
+        <tspan x="50" dy="1.5em">Missing year of the data, demographics included,</tspan>
+        <tspan x="50" dy="1.5em">and individual data points</tspan>
+      </text>
+    </g>
+
+    <g data-fire="4" data-blank="true" transform="translate(742,475)">
+      <rect data-fire="6" data-blank="true" x="0" y="0" width="515" height="215" class="bad"/>
+      <text x="10" y="35" class="subhead">Title with long description ("good")</text>
+      <text x="10" y="75">
+          <tspan class="quote" x="10">"Figure 1 – Fall 2018 First-Year, Full-Time Cohort 
+          <tspan x="30" dy="1.5em">Bar Graph – See below for descriptions"</tspan>
+        </tspan>
+        <tspan x="50" dy="1.5em">Suggests detailed text description in body or link</tspan>
+        <tspan x="50" dy="1.5em">(Doesn't explicitly suggest data table)</tspan>
+      </text>
+    </g>
+
+    <g data-fire="5" data-forget="6" data-blank="true">
+      <rect x="0" y="0" width="100%" height="100%" class="backdrop"/>
+      <g transform="translate(220,100)">
+        <rect x="0" y="0" width="840" height="580" class="shim"/>
+
+        <text x="20" y="0" class="quote dense">
+          <tspan x="20" dy="1.5em">"The Fall 2018 First-Year, Full-Time Cohort Bar Graph, seen in figure 1 above, shows the first year retention rates for the </tspan>
+          <tspan x="20" dy="1.5em">2018 first-year, full-time cohort for both students who participated in early college and students who did not participate</tspan>
+          <tspan x="20" dy="1.5em">in early college in the following demographics:</tspan>
+
+          <tspan x="40" dy="2em">• Geography: Rural</tspan>
+          <tspan x="40" dy="1.5em">• Geography: Urban</tspan>
+          <tspan x="40" dy="1.5em">• Gender: Male</tspan>
+          <tspan x="40" dy="1.5em">• Gender: Female</tspan>
+          <tspan x="40" dy="1.5em">• Race/Ethnicity: Students of Color</tspan>
+          <tspan x="40" dy="1.5em">• Race/Ethnicity: White</tspan>
+
+          <tspan x="20" dy="2em">The graph in Figure 1 shows that the overall demographics of students who participated in early college persisted at</tspan>
+          <tspan x="20" dy="1.5em">a higher rate than students who did not participate in early college. Rural students with early college experience</tspan>
+          <tspan x="20" dy="1.5em">persisted at 82% versus rural students without early college experience at 69%. Urban students with early college</tspan>
+          <tspan x="20" dy="1.5em">experience persisted at 83% versus urban students without early college experience at 73%. Male students with early</tspan>
+          <tspan x="20" dy="1.5em">college experience persisted at 80% versus male students without early college experience at 68%. Female students</tspan>
+          <tspan x="20" dy="1.5em">with early college experience persisted at 84% versus female students without early college experience at 73%.</tspan>
+          <tspan x="20" dy="1.5em">Students of color with early college experience persisted at 84% versus female students of color without early college</tspan>
+          <tspan x="20" dy="1.5em">experience at 70%. White students with early college experience persisted at 82% versus female students of color</tspan>
+          <tspan x="20" dy="1.5em">without early college experience at 71%.</tspan>
+        </text>
+
+      </g>
+    </g>
+
+  </g>
+
+</svg>

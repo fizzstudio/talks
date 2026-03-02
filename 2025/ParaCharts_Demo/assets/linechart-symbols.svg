@@ -1,0 +1,309 @@
+<svg id="chart-bar" xmlns="http://www.w3.org/2000/svg" tabindex="0"
+  viewBox="0 0 500 280">
+  <title />
+  <defs> <svg id="symbol_circle" width="10" height="10" viewBox="0 0 10 10" overflow="visible">
+      <path d="M0,-5 A5,5 0 1,1 0,5 A5,5 0 1,1 0,-5" stroke-width="3" />
+    </svg><svg id="symbol_square" width="10" height="10" viewBox="0 0 10 10" overflow="visible">
+      <path d="M-5,-5 H5 V5 H-5 Z" stroke-width="3" />
+    </svg><svg id="symbol_triangle_up" width="10" height="10" viewBox="0 0 10 10" overflow="visible">
+      <path d="M-5,3.33 H5 L0,-5.66 Z" stroke-width="3" />
+    </svg></defs>
+  <rect id="fizz_chart_frame" fill="none" pointer-events="all" x="0" y="0" width="100%" height="100%" />
+  <style xmlns="http://www.w3.org/1999/xhtml">
+    svg {
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 15px
+    }
+
+    #fizz_chart_frame {
+      fill: none;
+      stroke: none;
+    }
+
+    .y_axis_line {
+      fill: none;
+      stroke: hsl(0, 0%, 0%);
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    #foo .y_axis_line {
+      fill: none;
+      stroke: red;
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    .legend_label {
+      font-size: 15px;
+      text-anchor: start;
+      fill: hsl(0, 0%, 0%);
+      stroke: none;
+    }
+
+    .x_axis_line {
+      fill: none;
+      stroke: hsl(0, 0%, 0%);
+      opacity: 1;
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    .axis_label {
+      text-anchor: middle;
+      fill: hsl(0, 0%, 0%);
+      stroke: none
+    }
+
+    .axis_label_y {
+      text-anchor: end;
+      fill: hsl(0, 0%, 0%);
+      stroke: none
+    }
+
+    .tickmark_y {
+      opacity: 1;
+    }
+
+    .tickmark_y_0 {
+      fill: hsl(270, 50%, 50%);
+      stroke: hsl(270, 50%, 50%);
+      opacity: 1;
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    .tickmark_y {
+      fill: hsl(0, 0%, 0%);
+      stroke: hsl(0, 0%, 0%);
+      opacity: 1;
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    .tick_group_y:hover,
+    .tick_group_y:hover .tickmark_y {
+      font-weight: bold;
+      opacity: 1
+    }
+
+    .tickmark_x {
+      opacity: 0.2
+    }
+
+    .tickmark_x_0 {
+      fill: hsl(270, 50%, 50%);
+      stroke: hsl(270, 50%, 50%);
+      opacity: 1;
+      stroke-width: 2px;
+      stroke-linecap: round
+    }
+
+    .radial_label_right {
+      text-anchor: start
+    }
+
+    .radial_label_left {
+      text-anchor: end
+    }
+
+    .datapoint_background {
+      fill: none;
+      stroke: none;
+      pointer-events: all;
+      outline: none
+    }
+
+    .data_line {
+      fill: none;
+      stroke: hsl(270, 50%, 50%);
+      stroke-width: 3px;
+      stroke-linecap: round
+    }
+
+    .data_area {
+      stroke: hsl(270, 50%, 50%);
+      stroke-width: 3px;
+      stroke-linecap: round;
+      fill: none
+    }
+
+    .data_area_background {
+      stroke: none;
+      fill: hsl(270, 50%, 50%);
+      fill-opacity: 0.8
+    }
+
+    .trendline {
+      stroke: red;
+      stroke-width: 3px;
+      fill: none
+    }
+
+    .center_label tspan.subtext {
+      font-size: 2rem;
+      text-anchor: middle
+    }
+
+    .chart_title {
+      font-size: 18px;
+      text-anchor: middle;
+      fill: black;
+    }
+
+    .A {
+      fill: hsl(12, 69%, 35%);
+      stroke: hsl(12, 69%, 35%);
+    }
+
+    .A .data_line {
+      fill: none;
+      stroke: hsl(12, 69%, 35%);
+    }
+
+    .C {
+      fill: hsl(75, 43%, 45%);
+      stroke: hsl(75, 43%, 45%);
+    }
+
+    .C .data_line {
+      fill: none;
+      stroke: hsl(75, 43%, 45%);
+    }
+
+    .B {
+      fill: hsl(225, 30%, 52%);
+      stroke: hsl(225, 30%, 52%);
+    }
+
+    .B .data_line {
+      fill: none;
+      stroke: hsl(225, 30%, 52%);
+    }
+
+    #end_arrow {
+      fill: black;
+      stroke: none;
+    }
+
+    #improved {
+      fill: none;
+      stroke: black;
+      stroke-width: 12px;
+      marker-end: url(#end_arrow);
+    }
+  </style>
+
+  <defs>
+    <marker id="end_arrow" viewBox="-13 -6 37.5 30" markerUnits="strokeWidth"
+    refX="-4" refY="0" markerWidth="12" markerHeight="24" orient="auto">
+      <path id="end_arrow_path" d="M-10,-5 L0,0 -10,5 Z" />
+    </marker>
+  </defs>
+
+
+  
+  <g id="before" transform="translate(-25)">
+    <g id="x-axis" data-axistype="category" tabindex="-1" transform="translate(77.40,223.00)">
+      <path id="x_Semester_line-0" class="x_axis_line" d="M-10,0 H407.6" />
+      <title class="axis_label" style="font-size:15px" transform="translate(202,39)">Semester</title>
+      <g transform="translate(71,0)" class="tick_group_x"><text class="axis_label" transform="translate(0,16)"
+          style="font-size:13px">2022</text></g>
+      <g transform="translate(204,0)" class="tick_group_x"><text class="axis_label" transform="translate(0,16)"
+          style="font-size:13px">2023</text></g>
+      <g transform="translate(337,0)" class="tick_group_x"><text class="axis_label" transform="translate(0,16)"
+          style="font-size:13px">2024</text></g>
+    </g>
+    <g id="y-axis" data-axistype="numeric" tabindex="-1" transform="translate(77.40,21.5)">
+      <defs>
+        <path id="y-tick" d="M-10,0 H0" />
+      </defs>
+      <path id="y_A_C_B_line-2" class="y_axis_line" d="M0,201.5 V0" />
+      <g transform="translate(0,201.5)" class="tick_group_y"><text class="axis_label_y" transform="translate(-13,4)"
+          style="font-size:13px">0</text>
+        <use href="#y-tick" class="tickmark_y_0" />
+      </g>
+      <g transform="translate(0,100.75)" class="tick_group_y"><text class="axis_label_y" transform="translate(-13,4)"
+          style="font-size:13px">100</text>
+        <use href="#y-tick" class="tickmark_y" />
+      </g>
+      <g transform="translate(0,0.00)" class="tick_group_y"><text class="axis_label_y" transform="translate(-13,4)"
+          style="font-size:13px">200</text>
+        <use href="#y-tick" class="tickmark_y" />
+      </g>
+    </g>
+    <g role="dataset" transform="translate(77.4,21.5)">
+      <g id="datapoint-x_2022-2">
+
+        <g tabindex="0" class="datapoint mark series_0 A" transform="translate(70.93,0)">
+          <path d="M0,45.77 L66.53,82.705" class="data_line" />
+          <use id="LineChart_A_x_20222_datapoint" href="#symbol_circle"
+            y="45.77" width="10" height="10" />
+        </g>
+
+        <g tabindex="0" class="datapoint mark series_1 C" transform="translate(70.93,0)">
+          <path d="M0,164.615 L66.53,89.53" class="data_line" />
+          <use id="LineChart_C_x_20222_datapoint" href="#symbol_square"
+            y="164.615" width="10" height="10" />
+        </g>
+        
+        <g tabindex="0" class="datapoint mark series_2 B" transform="translate(70.93,0)">
+          <path d="M0,136.51 L66.53,114.425" class="data_line" />
+          <use id="LineChart_B_x_20222_datapoint" href="#symbol_triangle_up"
+            y="136.51" width="10" height="10" />
+        </g>
+      </g>
+      <g id="datapoint-x_2023-2">
+        <g tabindex="0" class="datapoint mark series_0 A" transform="translate(203.80,0)">
+          <path d="M-66.53,82.705 L0,119.645 L66.53,84.715"
+            class="data_line" />
+          <use id="LineChart_A_x_20232_datapoint" href="#symbol_circle"
+            y="119.645" width="10" height="10" />
+        </g>
+        <g tabindex="0" class="datapoint mark series_1 C" transform="translate(203.80,0)">
+          <path d="M-66.53,89.53 L0,14.45 L66.53,63.835"
+            class="data_line" />
+          <use id="LineChart_C_x_20232_datapoint" href="#symbol_square"
+            y="14.45" width="10" height="10" />
+        </g>
+        <g tabindex="0" class="datapoint mark series_2 B" transform="translate(203.80,0)">
+          <path d="M-66.53,114.425 L0,92.345 L66.53,138.115" class="data_line" />
+          <use id="LineChart_B_x_20232_datapoint" href="#symbol_triangle_up"
+            y="92.345" width="10" height="10" />
+        </g>
+      </g>
+      <g id="datapoint-x_2024-2">
+        <g tabindex="0" class="datapoint mark series_0 A" transform="translate(336.67,0)">
+          <path d="M-66.53,84.715 L0,49.785" class="data_line" />
+          <use id="LineChart_A_x_20242_datapoint" href="#symbol_circle"
+            y="49.785" width="10" height="10" />
+        </g>
+        <g tabindex="0" class="datapoint mark series_1 C" transform="translate(336.67,0)">
+          <path d="M-66.53,63.835 L0,113.22" class="data_line" />
+          <use id="LineChart_C_x_20242_datapoint" href="#symbol_square"
+            y="113.22" width="10" height="10" />
+        </g>
+        <g tabindex="0" class="datapoint mark series_2 B" transform="translate(336.67,0)">
+          <path d="M-66.53,138.115 L0,183.885" class="data_line" />
+          <use id="LineChart_B_x_20242_datapoint" href="#symbol_triangle_up"
+            y="183.885" width="10" height="10" />
+        </g>
+      </g>
+    </g>
+
+    <g id="legend" transform="translate(120,265)">
+      <g id="legend-A" transform="translate(50,0)">
+        <use class="A" href="#symbol_circle" width="10" height="10" />
+        <text class="legend_label" x="10" y="5">A</text>    
+      </g>
+      <g id="legend-B" transform="translate(150,0)">
+        <use class="B" href="#symbol_triangle_up" width="10" height="10" />
+        <text class="legend_label" x="10" y="5">B</text>    
+      </g>  
+      <g id="legend-C" transform="translate(250,0)">
+        <use class="C" href="#symbol_square" width="10" height="10" />
+        <text class="legend_label" x="10" y="5">C</text>    
+      </g>
+    </g>
+  </g>
+</svg>

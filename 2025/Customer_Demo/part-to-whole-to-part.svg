@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 1000 650">
+
+  <title>Part-to-Whole vs. Whole-to-Part</title>
+
+  <script href="_silverbullet.js"/>
+  <style type="text/css">@import url(_silverbullet.css);</style>
+
+  <style type="text/css">
+    tspan.hilite {
+      font-weight: bold;
+      font-size: 2rem;
+      fill: crimson;
+    }
+
+    .puzzle_piece {
+      /* 
+      stroke: none;
+      stroke: white;
+       */
+      /* stroke-width: 2px; */
+      fill-rule: nonzero;
+    }
+
+      #part-1,
+      .part-1 {
+        fill: #3454d1ff;
+        color: #3454d1ff;
+      }
+
+      #part-2,
+      .part-2 {
+        fill: #b4654aff;
+        color: #b4654aff;
+      }
+
+      #part-3,
+      .part-3 {
+        fill: #3d7068ff;
+        color: #3d7068ff;
+      }
+
+      #part-4,
+      .part-4 {
+        color: #ee6c4d;
+        color: #3d5a80;
+        color: hsl(323, 58%, 22%);
+        fill: hsl(323, 58%, 32%);
+      }
+
+
+      #part-1,
+      #part-2,
+      #part-3,
+      #part-4 {
+        stroke: white;
+      }
+
+
+      #whole,
+      #whole-vague,
+      #whole-summary {
+        fill: gray;
+        fill: #353535;
+        fill: #c612f3;
+      }
+
+      .puzzle_outline {
+        fill: white;
+        stroke: white;
+      }
+
+      .puzzle_outline-summary {
+        fill: white;
+        stroke: #c612f3;
+        stroke-width: 2px;
+        /*
+        stroke-dasharray: 5 5;
+        stroke-linecap: round;
+        */
+      }
+
+    .puzzle_label {
+      text-anchor: middle;
+      font-size: 1rem;
+      fill: white;
+    }
+
+    .question {
+      text-anchor: middle;
+      font-size: 5rem;
+      font-weight: bold;
+      stroke: currentColor;
+      stroke-width: 3px;
+    }
+
+  </style>
+  <defs>
+    <g id="head" transform="translate(10,10) scale(0.6)">
+      <path fill="none" stroke-width="10" d="M262.198,0c-28.1,0-55.1,6.1-80.3,18c-32,14.9-59.1,38.4-78.4,68c-19.9,30.5-30.4,65.8-30.4,102.3V214l-34,65
+        c-6.5,12.5-6.8,25.3-0.8,35.3s17.5,15.7,31.6,15.7h3.2v51.1c0,27.7,22.5,50.2,50.2,50.2c0.7,0,1.3,0,2-0.1l34.9-5.2v35.1
+        c0,0.5,0,1.1,0.1,1.6c1,12.4,11,21.6,23.7,21.6l0,0c1.5,0,3-0.1,4.6-0.4l181.5-32.2c13.2-2.3,23.6-14.7,23.6-28.1v-101
+        c36.1-35.3,56.6-84,56.6-134.5C450.298,84.4,365.898,0,262.198,0z"/>
+      <circle cx="130" cy="220" r="18" />
+    </g>
+    <circle id="blind_eye" cx="130" cy="220" r="8" fill="white" transform="translate(10,10) scale(0.6)" />
+
+    <g id="jigsaw">
+      <g id="part-1">
+        <path id="part-1-piece" class="puzzle_piece" d="M100,100 C80,101.77 68.15,96.2 74.27,126.2C80.39,156.2 20.39,156.2 44.27,126.2C68.15,96.2 20,89.24 0,100 V0 H100  C102.75,20 110.83,39.62 80.83,29.8 C50.83,19.99 50.83,79.99 80.83,59.8 C110.83,39.62 97.96,80 100,100 Z"/>
+        <text x="50" y="18" class="puzzle_label">part 1</text>
+      </g>
+
+      <g id="part-2">
+        <path id="part-2-piece" class="puzzle_piece" d="M100,0  C102.75,20 110.83,39.62 80.83,29.8 C50.83,19.99 50.83,79.99 80.83,59.8 C110.83,39.62 97.96,80 100,100  C120,98.23 172.6,118.46 146.57,88.46 C120.54,58.46 180.54,58.46 176.57,88.46 C172.6,118.46 180,89.45 200,100 V0 H100Z"/>
+        <text x="150" y="18" class="puzzle_label">part 2</text>
+      </g>
+
+      <g id="part-3">
+        <path id="part-3-piece" class="puzzle_piece" d="M100,100 C120,98.23 172.6,118.46 146.57,88.46 C120.54,58.46 180.54,58.46 176.57,88.46 C172.6,118.46 180,89.45 200,100 V200 H100 C104.34,180 75.88,147.01 105.88,160.11C135.88,173.21 135.88,113.21 105.88,130.11C75.88,147.01 102.04,120 100,100 Z"/> 
+        <text x="150" y="192" class="puzzle_label">part 3</text>
+      </g>
+
+      <g id="part-4">
+        <path id="part-4-piece" class="puzzle_piece" d="M0,100 V100 C20,89.24 68.15,96.2 44.27,126.2C20.39,156.2 80.39,156.2 74.27,126.2C68.15,96.2 80,101.77 100,100 C102.04,120 75.88,147.01 105.88,130.11 C135.88,113.21 135.88,173.21 105.88,160.11 C75.88,147.01 104.34,180 100,200 H0 V100"/> 
+        <text x="50" y="192" class="puzzle_label">part 4</text>
+      </g>
+
+      <g id="whole">
+        <path id="whole-1" class="puzzle_piece" d="M-5,-25 H205 V205 H-5 Z"/>
+        <use class="puzzle_outline" href="#part-1-piece"/>      
+        <use class="puzzle_outline" href="#part-2-piece"/>      
+        <use class="puzzle_outline" href="#part-3-piece"/>      
+        <use class="puzzle_outline" href="#part-4-piece"/>  
+        <text x="100" y="-7" class="puzzle_label">whole</text>
+      </g>
+
+      <g id="whole-summary">
+        <path id="whole-2" d="M-5,-25 H205 V205 H-5 Z"/>
+        <use class="puzzle_outline-summary" href="#part-1-piece"/>      
+        <use class="puzzle_outline-summary" href="#part-2-piece"/>      
+        <use class="puzzle_outline-summary" href="#part-3-piece"/>      
+        <use class="puzzle_outline-summary" href="#part-4-piece"/>  
+        <text x="100" y="-7" class="puzzle_label">whole</text>
+      </g>
+
+      <g id="whole-vague">
+        <path id="whole-3" class="puzzle_piece" d="M-5,-25 H205 V205 H-5 Z"/>
+        <use class="puzzle_outline" href="#part-1-piece"/>      
+        <use class="puzzle_outline" href="#part-2-piece"/>      
+        <use class="puzzle_outline" href="#part-3-piece"/>      
+        <use class="puzzle_outline" href="#part-4-piece"/>  
+        <text x="100" y="-7" class="puzzle_label">whole</text>
+      </g>
+
+
+      <!-- <use id="whole-vague" class="puzzle_outline" href="#whole" style="stroke-dasharray: 10 6;"/>       -->
+
+    </g>
+
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white" />
+  <!-- <rect x="0" y="0" width="100%" height="100%" fill="white" stroke="red"/> -->
+    <!--<rect x="15" y="0" width="870" height="100%" fill="white" stroke="red"/> -->
+
+  <text id="heading" x="890" y="1.5em" class="heading" text-anchor="end">Part-to-Whole vs. Whole-to-Part</text>
+
+  <g id="content" font-size="30">
+    <g id="external-representation" font-size="30">
+      <g id="piece-by-piece" transform="translate(350,230)">
+        <!-- <use data-fire="5" data-forget="6" data-blank="true" href="#whole"/>   -->
+        <use data-fire="1" data-forget="2" data-blank="true" href="#part-1"/>      
+        <use data-fire="2" data-forget="3" data-blank="true" href="#part-2"/>      
+        <use data-fire="3" data-forget="4" data-blank="true" href="#part-3"/>      
+        <use data-fire="4" data-forget="5" data-blank="true" href="#part-4"/>  
+      </g>
+
+      <g data-fire="6" data-forget="7" data-blank="true" id="final" transform="translate(350,230)">
+        <use href="#whole"/>      
+        <use href="#part-1"/>      
+        <use href="#part-2"/>      
+        <use href="#part-3"/>      
+        <use href="#part-4"/>      
+      </g>
+
+      <g id="whole-then-pieces" transform="translate(350,230)">
+        <use data-fire="7" data-fade="8" data-forget="12" data-blank="true" href="#whole-summary"/>  
+        <!-- <use data-fire="11" data-forget="12" data-blank="true" href="#whole"/>   -->
+
+        <use data-fire="8" data-forget="12" data-blank="true" href="#part-1"/>      
+        <use data-fire="9" data-forget="12" data-blank="true" href="#part-2"/>      
+        <use data-fire="10" data-forget="12" data-blank="true" href="#part-3"/>
+        <use data-fire="11" data-forget="12" data-blank="true" href="#part-4"/>      
+      
+      </g>
+    </g>
+
+    <g id="mental-model" transform="translate(10,160)">
+      <use href="#head" transform="translate(290,0) scale(-1,1)" fill="purple" stroke="purple"/>
+      <g transform="translate(55,65) scale(0.6)">
+        <use data-fire="5" data-forget="7" data-blank="true" href="#whole-vague"/> 
+        <use data-fire="1" data-fade="2" data-forget="3" data-blank="true" href="#part-1"/>      
+        <use data-fire="2" data-fade="3" data-forget="4" data-blank="true" href="#part-2"/>      
+        <use data-fire="3" data-fade="4" data-forget="5" data-blank="true" href="#part-3"/>      
+        <use data-fire="4" data-forget="5" data-blank="true" href="#part-4"/> 
+        <text data-fire="5" data-forget="7" data-blank="true" class="question"><tspan x="60" y="80" class="part-1">?</tspan><tspan x="160" y="80" class="part-2">?</tspan><tspan x="160" y="180" class="part-3">?</tspan><tspan x="60" y="180" class="part-4">?</tspan></text>
+      </g>
+      <!-- <use href="#blind_eye" data-forget="6" transform="translate(290,0) scale(-1,1)" />       -->
+
+
+      <g data-fire="6" data-forget="7" data-blank="true" transform="translate(55,65) scale(0.6)">
+        <use href="#whole"/>      
+        <use href="#part-1"/>      
+        <use href="#part-2"/>      
+        <use href="#part-3"/>      
+        <use href="#part-4"/>      
+      </g>
+      <!-- <use href="#blind_eye" data-fire="6" data-forget="7" data-blank="true" />       -->
+
+      <g transform="translate(55,65) scale(0.6)">
+        <use data-fire="7" data-fade="8" data-blank="true" href="#whole-summary"/>      
+        <use data-fire="12" data-blank="true" href="#whole"/>      
+        <use data-fire="8" data-fade="9" data-forget="13" data-blank="true" href="#part-1"/>      
+        <use data-fire="9" data-fade="10" data-forget="13" data-blank="true" href="#part-2"/>      
+        <use data-fire="10" data-fade="11" data-forget="13" data-blank="true" href="#part-3"/>      
+        <use data-fire="11" data-fade="12" data-forget="13" data-blank="true" href="#part-4"/>      
+      </g>  
+      <!-- <use href="#blind_eye" data-fire="8" data-blank="true"/>       -->
+    </g>
+ 
+    <g data-fire="1" data-blank="true" transform="translate(0,170)">
+      <text x="890" text-anchor="end">Sequential readers (e.g. screen reader users) see only<tspan x="890" dy="1em"> one part of the puzzle at a time</tspan>
+      </text>
+    </g>
+ 
+    <g data-fire="2" data-blank="true" transform="translate(0,245)">
+      <text x="890" text-anchor="end">and have to try to remember<tspan x="890" dy="1em"> the previous piece</tspan>
+      </text>
+    </g>
+ 
+    <g data-fire="3" data-blank="true" transform="translate(0,325)">
+      <text x="890" text-anchor="end">while listening to<tspan x="890" dy="1em"> each new piece</tspan>
+      </text>
+    </g>
+ 
+    <g data-fire="4" data-blank="true" transform="translate(0,405)">
+      <text x="890" text-anchor="end">to attempt to construct<tspan x="890" dy="1em"> the whole</tspan>
+      </text>
+    </g>
+
+    <g data-fire="6" data-blank="true" transform="translate(0,510)">
+      <text x="20">Sighted readers see both the whole and the parts at once</text>
+    </g>
+
+    <g data-fire="7" data-blank="true" transform="translate(0,560)">
+      <text x="20">Initial summaries (alt text, captions) 
+        <tspan x="40" dy="1.5em">prime readers to put each piece into the context of the whole</tspan> 
+      </text>
+    </g> 
+<!-- 
+    <g data-fire="12" data-blank="true" transform="translate(0,610)">
+      <text x="20">For dynamic charts, add interpretation instructions for tasks</text>
+    </g>  -->
+
+  </g>
+
+
+</svg>

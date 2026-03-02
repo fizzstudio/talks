@@ -1,0 +1,1041 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paced Prompter (Smooth Autoscroll + Proper Pause)</title>
+  <style>
+    :root {
+      --current-base: rgba(180, 220, 255, .38);
+      --current-progress: rgba(120, 185, 235, .22);
+
+      --upnext-base: rgba(255, 255, 255, .60);
+      --upnext-soon-yellow: rgba(255, 245, 190, .70);
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, .90);
+      color: white;
+      padding: 10px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .topbar .hint {
+      opacity: .85;
+      font-size: 14px;
+    }
+
+    button {
+      background: white;
+      border: 0;
+      padding: 8px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    label {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .10);
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.1);
+    }
+
+    .pane {
+      padding: 18px 14px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    details>summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 8px 0;
+    }
+
+    details>div {
+      margin-top: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      font-size: 14px;
+    }
+
+    .script {
+      font-size: 34px;
+      line-height: 1.35;
+    }
+
+    .section {
+      position: relative;
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
+      scroll-margin-top: 80px;
+    }
+
+    .box {
+      position: relative;
+      border-radius: 16px;
+      padding: 12px 10px;
+    }
+
+    .tag {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .current .box {
+      background: var(--current-base);
+    }
+
+    .current .box::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: calc(var(--progress, 0) * 100%);
+      background: var(--current-progress);
+      border-radius: 16px 16px 0 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .upnextSoon .box {
+      background: var(--upnext-base);
+    }
+
+    .upnextSoon .tag {
+      color: #444;
+    }
+
+    .upnextCountdown .box {
+      background: var(--upnext-soon-yellow);
+    }
+
+    .tag,
+    .content,
+    .badge {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content p {
+      margin: 0 0 14px 0;
+    }
+
+    .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 16px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .70);
+      color: white;
+      letter-spacing: .2px;
+      user-select: none;
+      display: none;
+      z-index: 2;
+    }
+
+    .badge.light {
+      background: rgba(0, 0, 0, .55);
+    }
+
+    .badge.show {
+      display: inline-block;
+    }
+
+    @media (max-width: 520px) {
+      .script {
+        font-size: 28px;
+      }
+
+      .badge {
+        font-size: 14px;
+      }
+    }
+
+    mark {
+      background: rgba(255, 240, 160, .65);
+      padding: 0 .12em;
+      border-radius: .25em;
+    }
+
+    .aside {
+      font-size: 0.82em;
+      opacity: 0.75;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    blockquote {
+      margin: 0 0 14px 0;
+      padding-left: 14px;
+      border-left: 4px solid rgba(0, 0, 0, .25);
+      opacity: 0.9;
+    }
+
+    blockquote p {
+      margin: 0 0 10px 0;
+    }
+
+    blockquote p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <button id="start">Start</button>
+    <button id="pause" disabled>Pause</button>
+    <button id="reset">Reset</button>
+
+    <label style="margin-left:auto;">
+      <input id="follow" type="checkbox" checked />
+      Follow
+    </label>
+
+    <div class="hint">Smooth autoscroll, pause preserves scroll position.</div>
+  </div>
+
+  <div class="pane">
+    <details open>
+      <summary>Script Input</summary>
+      <div>
+        <p>Format: <code>[m:ss-m:ss] Title</code> on its own line, followed by text lines. Blank lines become
+          paragraphs.</p>
+
+        <textarea id="input">
+        [0:00-0:10] Hook
+        One sentence **hook** that sets the *stakes*.
+        
+        [0:15-0:30] Problem
+        What is broken, who it hurts, and why now.
+        
+        - Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        - Possimus rem quos facilis, consequatur nemo doloremque provident, minima velit perferendis dicta laborum voluptatem molestiae voluptates totam harum expedita quibusdam, ad explicabo!
+        
+        [0:30-0:50] Solution
+        What you built and why it is different.
+
+        > Dolor sit amet consectetur adipisicing elit. Voluptatibus recusandae nemo nam mollitia repellendus, accusamus doloribus quod molestias saepe fugiat inventore quo! Necessitatibus id quod suscipit soluta nostrum asperiores nobis!
+        
+        1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus rem quos facilis, consequatur nemo doloremque provident, minima velit perferendis dicta laborum voluptatem molestiae voluptates totam harum expedita quibusdam, ad explicabo!
+   
+        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis sit voluptatem dolor magni sapiente tenetur autem pariatur unde nemo laborum dolorem sequi in odit, sunt, fuga debitis quae commodi!
+        
+        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis sit voluptatem dolor magni sapiente tenetur autem pariatur unde nemo laborum dolorem sequi in odit, sunt, fuga debitis quae commodi!
+        
+        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis sit voluptatem dolor magni sapiente tenetur autem pariatur unde nemo laborum dolorem sequi in odit, sunt, fuga debitis quae commodi!
+        
+        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut?
+        
+        [0:50-1:30] Close
+        Ask, credibility, and next step.
+        
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus rem quos facilis, consequatur nemo doloremque provident, minima velit perferendis dicta laborum voluptatem molestiae voluptates totam harum expedita quibusdam, ad explicabo!
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis sit voluptatem dolor magni sapiente tenetur autem pariatur unde nemo laborum dolorem sequi in odit, sunt, fuga debitis quae commodi!
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut?
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis sit voluptatem dolor magni sapiente tenetur autem pariatur unde nemo laborum dolorem sequi in odit, sunt, fuga debitis quae commodi!
+        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo soluta facere eligendi facilis itaque dignissimos porro aperiam veritatis ut! Enim eveniet consequuntur quis recusandae corrupti quo deleniti necessitatibus ut?
+        </textarea>
+
+        <div style="display:flex; gap:8px; margin:10px 0 18px;">
+          <button id="load">Load script</button>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="pane script" id="script"></div>
+
+  <script>
+    const btnStart = document.getElementById('start');
+    const btnPause = document.getElementById('pause');
+    const btnReset = document.getElementById('reset');
+    const btnLoad = document.getElementById('load');
+    const input = document.getElementById('input');
+    const chkFollow = document.getElementById('follow');
+    const elScript = document.getElementById('script');
+
+    const PRE_HIGHLIGHT_SECONDS = 10;
+
+    // Smooth long-block autoscroll
+    const AUTO_SCROLL_LONG_BLOCKS = true;
+    const ANCHOR_VIEWPORT_Y = 0.30;   // keep progress edge ~30% down viewport
+    const LONG_BLOCK_VH_MULT = 1.10;  // "long" if box height > 1.10x viewport
+    const MAX_STEP_PX_PER_FRAME = 18; // cap per-frame movement to avoid jumps
+    const NEXT_PEEK_VIEWPORT_Y = 0.85; // next block top will be ~85% down the viewport
+
+    let sections = [];
+    let running = false;
+    let t0 = 0;
+    let pausedAt = 0;
+
+    let rafId = null;
+    let lastFollowIdx = -1;
+
+    // For smooth scroll pacing
+    let lastTickElapsed = null;       // null until first tick after (re)start
+
+    function parseTime(s) {
+      const m = s.trim().match(/^(\d+):(\d\d)$/);
+      if (!m) return null;
+      return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+    }
+
+    function fmtTime(sec) {
+      sec = Math.max(0, Math.floor(sec));
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    function fmtCountdown(sec) {
+      sec = Math.max(0, Math.ceil(sec));
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+    function parseScript(text) {
+      const lines = text.replace(/\r/g, '').split('\n');
+      const out = [];
+      let i = 0;
+
+      while (i < lines.length) {
+        const line = lines[i].trim();
+        const hdr = line.match(/^\[(\d+:\d\d)\s*-\s*(\d+:\d\d)\]\s*(.+)$/);
+        if (!hdr) { i++; continue; }
+
+        const start = parseTime(hdr[1]);
+        const end = parseTime(hdr[2]);
+        const title = hdr[3].trim();
+        i++;
+
+        const body = [];
+        while (i < lines.length && !lines[i].trim().match(/^\[(\d+:\d\d)\s*-\s*(\d+:\d\d)\]/)) {
+          body.push(lines[i]);
+          i++;
+        }
+
+        if (start == null || end == null || end <= start) continue;
+        out.push({ start, end, title, text: body.join('\n') });
+      }
+
+      out.sort((a, b) => a.start - b.start);
+      return out;
+    }
+    
+
+    // function buildParagraphs(container, rawText) {
+    //   container.innerHTML = '';
+    //   const t = (rawText ?? '').trim();
+    //   if (!t) return;
+
+    //   const paras = t.split(/\n\s*\n+/).map(p => p.trim()).filter(Boolean);
+    //   for (const para of paras) {
+    //     const normalized = para.split('\n').map(s => s.trim()).join(' ');
+    //     const p = document.createElement('p');
+    //     p.textContent = normalized;
+    //     container.appendChild(p);
+    //   }
+    // }
+
+    //     function renderSimpleMarkdown(container, rawText) {
+    //   container.innerHTML = '';
+
+    //   const t = (rawText ?? '').trim();
+    //   if (!t) return;
+
+    //   const lines = t.split('\n');
+
+    //   let currentList = null;
+
+    //   function closeList() {
+    //     if (currentList) {
+    //       container.appendChild(currentList);
+    //       currentList = null;
+    //     }
+    //   }
+
+    //   function applyInlineFormatting(text) {
+    //     // Escape HTML
+    //     text = text
+    //       .replace(/&/g, "&amp;")
+    //       .replace(/</g, "&lt;")
+    //       .replace(/>/g, "&gt;");
+
+    //     // Bold: **text**
+    //     text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+    //     // Italic: *text*
+    //     text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+    //     return text;
+    //   }
+
+    //   for (let line of lines) {
+    //     const trimmed = line.trim();
+
+    //     if (!trimmed) {
+    //       closeList();
+    //       continue;
+    //     }
+
+    //     // Bullet list
+    //     const bulletMatch = trimmed.match(/^[-*]\s+(.*)$/);
+    //     if (bulletMatch) {
+    //       if (!currentList || currentList.tagName !== 'UL') {
+    //         closeList();
+    //         currentList = document.createElement('ul');
+    //       }
+
+    //       const li = document.createElement('li');
+    //       li.innerHTML = applyInlineFormatting(bulletMatch[1]);
+    //       currentList.appendChild(li);
+    //       continue;
+    //     }
+
+    //     // Numbered list
+    //     const numberMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+    //     if (numberMatch) {
+    //       if (!currentList || currentList.tagName !== 'OL') {
+    //         closeList();
+    //         currentList = document.createElement('ol');
+    //       }
+
+    //       const li = document.createElement('li');
+    //       li.innerHTML = applyInlineFormatting(numberMatch[1]);
+    //       currentList.appendChild(li);
+    //       continue;
+    //     }
+
+    //     // Normal paragraph
+    //     closeList();
+
+    //     const p = document.createElement('p');
+    //     p.innerHTML = applyInlineFormatting(trimmed);
+    //     container.appendChild(p);
+    //   }
+
+    //   closeList();
+    // }
+
+
+    // function renderSimpleMarkdown(container, rawText) {
+    //   container.innerHTML = '';
+
+    //   const t = (rawText ?? '').trim();
+    //   if (!t) return;
+
+    //   const lines = t.split('\n');
+    //   let i = 0;
+
+    //   let currentList = null;
+    //   let currentListType = null; // 'ul' or 'ol'
+
+    //   function closeList() {
+    //     if (currentList) {
+    //       container.appendChild(currentList);
+    //       currentList = null;
+    //       currentListType = null;
+    //     }
+    //   }
+
+    //   function applyInlineFormatting(text) {
+    //     text = text
+    //       .replace(/&/g, "&amp;")
+    //       .replace(/</g, "&lt;")
+    //       .replace(/>/g, "&gt;");
+
+    //     text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    //     text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+    //     return text;
+    //   }
+
+    //   function peekNextNonEmpty(startIndex) {
+    //     for (let j = startIndex; j < lines.length; j++) {
+    //       if (lines[j].trim()) return lines[j].trim();
+    //     }
+    //     return null;
+    //   }
+
+    //   while (i < lines.length) {
+    //     const line = lines[i];
+    //     const trimmed = line.trim();
+
+    //     // Blank line
+    //     if (!trimmed) {
+    //       const next = peekNextNonEmpty(i + 1);
+
+    //       // If we're in a list and next line is same list type, ignore blank line
+    //       if (currentList && next) {
+    //         const isBullet = next.match(/^[-*]\s+/);
+    //         const isNumber = next.match(/^\d+\.\s+/);
+
+    //         if (
+    //           (currentListType === 'ul' && isBullet) ||
+    //           (currentListType === 'ol' && isNumber)
+    //         ) {
+    //           i++;
+    //           continue;
+    //         }
+    //       }
+
+    //       // Otherwise, close list
+    //       closeList();
+    //       i++;
+    //       continue;
+    //     }
+
+    //     // Bullet list
+    //     const bulletMatch = trimmed.match(/^[-*]\s+(.*)$/);
+    //     if (bulletMatch) {
+    //       if (!currentList || currentListType !== 'ul') {
+    //         closeList();
+    //         currentList = document.createElement('ul');
+    //         currentListType = 'ul';
+    //       }
+
+    //       const li = document.createElement('li');
+    //       li.innerHTML = applyInlineFormatting(bulletMatch[1]);
+    //       currentList.appendChild(li);
+    //       i++;
+    //       continue;
+    //     }
+
+    //     // Numbered list
+    //     const numberMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+    //     if (numberMatch) {
+    //       if (!currentList || currentListType !== 'ol') {
+    //         closeList();
+    //         currentList = document.createElement('ol');
+    //         currentListType = 'ol';
+    //       }
+
+    //       const li = document.createElement('li');
+    //       li.innerHTML = applyInlineFormatting(numberMatch[1]);
+    //       currentList.appendChild(li);
+    //       i++;
+    //       continue;
+    //     }
+
+    //     // Normal paragraph
+    //     closeList();
+    //     const p = document.createElement('p');
+    //     p.innerHTML = applyInlineFormatting(trimmed);
+    //     container.appendChild(p);
+    //     i++;
+    //   }
+
+    //   closeList();
+    // }
+
+    function renderSimpleMarkdown(container, rawText) {
+      container.innerHTML = '';
+
+      const t = (rawText ?? '').trim();
+      if (!t) return;
+
+      const lines = t.split('\n');
+      let i = 0;
+
+      let currentList = null;
+      let currentListType = null; // 'ul' or 'ol'
+
+      function closeList() {
+        if (currentList) {
+          container.appendChild(currentList);
+          currentList = null;
+          currentListType = null;
+        }
+      }
+
+      // function applyInlineFormatting(text) {
+      //   text = text
+      //     .replace(/&/g, "&amp;")
+      //     .replace(/</g, "&lt;")
+      //     .replace(/>/g, "&gt;");
+
+      //   text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      //   text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+      //   return text;
+      // }
+
+      function applyInlineFormatting(text) {
+        // Preserve hard line breaks: a trailing "\\" on a line means <br>
+        // We'll encode them as a token before escaping and formatting.
+        const HARD_BR = "__HARD_BR__";
+        text = text.replace(/\\\\\s*$/g, HARD_BR);
+
+        // Escape HTML
+        text = text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+
+        // Highlight: ==text==
+        text = text.replace(/==(.+?)==/g, "<mark>$1</mark>");
+
+        // Bold: **text**
+        text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+        // Italic: *text*  (kept simple; same limitations as before)
+        text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
+
+        // Stage directions: ((pause)) / ((smile))
+        // Keep this AFTER escaping so it can't inject HTML.
+        text = text.replace(/\(\((.+?)\)\)/g, '<span class="aside">($1)</span>');
+
+        // Restore hard line break token
+        text = text.replaceAll(HARD_BR, "<br>");
+
+        return text;
+      }
+
+      function peekNextNonEmpty(startIndex) {
+        for (let j = startIndex; j < lines.length; j++) {
+          if (lines[j].trim()) return lines[j].trim();
+        }
+        return null;
+      }
+
+      while (i < lines.length) {
+        const line = lines[i];
+        const trimmed = line.trim();
+
+        // Blank line
+        if (!trimmed) {
+          const next = peekNextNonEmpty(i + 1);
+
+          if (currentList && next) {
+            const isBullet = next.match(/^[-*]\s+/);
+            const isNumber = next.match(/^\d+\.\s+/);
+
+            if (
+              (currentListType === 'ul' && isBullet) ||
+              (currentListType === 'ol' && isNumber)
+            ) {
+              i++;
+              continue;
+            }
+          }
+
+          closeList();
+          i++;
+          continue;
+        }
+
+        // Blockquote
+        if (trimmed.startsWith('> ')) {
+          closeList();
+
+          const block = document.createElement('blockquote');
+
+          while (i < lines.length && lines[i].trim().startsWith('> ')) {
+            const quoteText = lines[i].trim().slice(2).trim();
+            const p = document.createElement('p');
+            p.innerHTML = applyInlineFormatting(quoteText);
+            block.appendChild(p);
+            i++;
+          }
+
+          container.appendChild(block);
+          continue;
+        }
+
+        // Bullet list
+        const bulletMatch = trimmed.match(/^[-*]\s+(.*)$/);
+        if (bulletMatch) {
+          if (!currentList || currentListType !== 'ul') {
+            closeList();
+            currentList = document.createElement('ul');
+            currentListType = 'ul';
+          }
+
+          const li = document.createElement('li');
+          li.innerHTML = applyInlineFormatting(bulletMatch[1]);
+          currentList.appendChild(li);
+          i++;
+          continue;
+        }
+
+        // Numbered list
+        const numberMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+        if (numberMatch) {
+          if (!currentList || currentListType !== 'ol') {
+            closeList();
+            currentList = document.createElement('ol');
+            currentListType = 'ol';
+          }
+
+          const li = document.createElement('li');
+          li.innerHTML = applyInlineFormatting(numberMatch[1]);
+          currentList.appendChild(li);
+          i++;
+          continue;
+        }
+
+        // Normal paragraph
+        closeList();
+        const p = document.createElement('p');
+        p.innerHTML = applyInlineFormatting(trimmed);
+        container.appendChild(p);
+        i++;
+      }
+
+      closeList();
+    }
+
+
+    function render() {
+      elScript.innerHTML = '';
+      sections.forEach((s, idx) => {
+        const section = document.createElement('div');
+        section.className = 'section';
+        section.dataset.idx = String(idx);
+        section.dataset.start = String(s.start);
+        section.dataset.end = String(s.end);
+        section.id = `block-${idx}`; // anchor on whole block
+
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.setProperty('--progress', '0');
+
+        const tag = document.createElement('div');
+        tag.className = 'tag';
+        tag.textContent = `[${fmtTime(s.start)}–${fmtTime(s.end)}] ${s.title}`;
+
+        const content = document.createElement('div');
+        content.className = 'content';
+        // buildParagraphs(content, s.text);
+        renderSimpleMarkdown(content, s.text);
+
+        const badgeNow = document.createElement('div');
+        badgeNow.className = 'badge';
+        badgeNow.dataset.kind = 'now';
+
+        const badgeNext = document.createElement('div');
+        badgeNext.className = 'badge light';
+        badgeNext.dataset.kind = 'next';
+
+        box.appendChild(tag);
+        box.appendChild(content);
+        box.appendChild(badgeNow);
+        box.appendChild(badgeNext);
+        section.appendChild(box);
+        elScript.appendChild(section);
+      });
+    }
+
+    function currentElapsed() {
+      if (!running) return pausedAt;
+      return (performance.now() - t0) / 1000;
+    }
+
+    function pickActiveIndexByTime(elapsed) {
+      if (sections.length === 0) return -1;
+
+      for (let i = 0; i < sections.length; i++) {
+        if (elapsed >= sections[i].start && elapsed < sections[i].end) return i;
+      }
+      if (elapsed < sections[0].start) return -1;
+      if (elapsed >= sections[sections.length - 1].end) return sections.length - 1;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (elapsed >= sections[i].end) return i;
+      }
+      return -1;
+    }
+
+    function pickNextIndex(elapsed) {
+      if (sections.length === 0) return -1;
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].start > elapsed) return i;
+      }
+      return -1;
+    }
+
+    function clearState(nodes) {
+      nodes.forEach(n => {
+        n.classList.remove('current', 'upnextSoon', 'upnextCountdown');
+        const box = n.querySelector('.box');
+        if (box) box.style.setProperty('--progress', '0');
+
+        const now = n.querySelector('.badge[data-kind="now"]');
+        const nxt = n.querySelector('.badge[data-kind="next"]');
+        if (now) { now.classList.remove('show'); now.textContent = ''; }
+        if (nxt) { nxt.classList.remove('show'); nxt.textContent = ''; }
+      });
+    }
+
+    function smoothAutoScrollLongBlock(activeSectionNode, progress01, durationSec, dtSec) {
+      if (!AUTO_SCROLL_LONG_BLOCKS) return;
+      if (!activeSectionNode) return;
+      if (!dtSec || dtSec <= 0) return;
+
+      const box = activeSectionNode.querySelector('.box');
+      if (!box) return;
+
+      const vh = window.innerHeight;
+      const rect = box.getBoundingClientRect();
+      const boxHeight = rect.height;
+
+      if (boxHeight < vh * LONG_BLOCK_VH_MULT) return;
+      if (progress01 < ANCHOR_VIEWPORT_Y) return;
+
+      // Ideal scroll: keep progress edge at anchor line
+      const boxTopDoc = window.scrollY + rect.top;
+      const edgeDoc = boxTopDoc + (progress01 * boxHeight);
+      const idealScrollY = edgeDoc - (ANCHOR_VIEWPORT_Y * vh);
+
+      // Base clamp: within the current box
+      const boxBottomDoc = boxTopDoc + boxHeight;
+      const minScrollY = boxTopDoc;
+
+      // Extend maxScrollY so the next block can start appearing (no jump)
+      let maxScrollY = boxBottomDoc - vh;
+
+      const nextSection = activeSectionNode.nextElementSibling;
+      if (nextSection && nextSection.classList && nextSection.classList.contains('section')) {
+        const nextTopDoc = window.scrollY + nextSection.getBoundingClientRect().top;
+        const peekMax = nextTopDoc - (NEXT_PEEK_VIEWPORT_Y * vh);
+
+        // Allow scrolling beyond the box-bottom clamp if that helps reveal the next block
+        maxScrollY = Math.max(maxScrollY, peekMax);
+      }
+
+      // Also clamp to document bottom
+      const docMax = Math.max(0, document.documentElement.scrollHeight - vh);
+      maxScrollY = Math.min(maxScrollY, docMax);
+
+      // Ensure sane clamp ordering
+      const targetScrollY = clamp(idealScrollY, minScrollY, Math.max(minScrollY, maxScrollY));
+
+      const currentY = window.scrollY;
+      const delta = targetScrollY - currentY;
+
+      // Pace: progress edge moves at ~boxHeight/durationSec pixels per second
+      const pxPerSec = boxHeight / Math.max(0.001, durationSec);
+      let maxStep = pxPerSec * dtSec;
+      maxStep = Math.min(maxStep, MAX_STEP_PX_PER_FRAME);
+
+      const step = clamp(delta, -maxStep, maxStep);
+      if (Math.abs(step) < 0.5) return;
+
+      window.scrollTo({ top: currentY + step, behavior: 'auto' });
+    }
+
+    // function smoothAutoScrollLongBlock(activeSectionNode, progress01, durationSec, dtSec) {
+    //   if (!AUTO_SCROLL_LONG_BLOCKS) return;
+    //   if (!activeSectionNode) return;
+    //   if (!dtSec || dtSec <= 0) return;
+
+    //   const box = activeSectionNode.querySelector('.box');
+    //   if (!box) return;
+
+    //   const vh = window.innerHeight;
+    //   const rect = box.getBoundingClientRect();
+    //   const boxHeight = rect.height;
+
+    //   if (boxHeight < vh * LONG_BLOCK_VH_MULT) return;
+    //   if (progress01 < ANCHOR_VIEWPORT_Y) return;
+
+    //   // Ideal scroll: keep progress edge at anchor line
+    //   const boxTopDoc = window.scrollY + rect.top;
+    //   const edgeDoc = boxTopDoc + (progress01 * boxHeight);
+    //   const idealScrollY = edgeDoc - (ANCHOR_VIEWPORT_Y * vh);
+
+    //   // Clamp to box bounds
+    //   const boxBottomDoc = boxTopDoc + boxHeight;
+    //   const minScrollY = boxTopDoc;
+    //   const maxScrollY = boxBottomDoc - vh;
+    //   const targetScrollY = clamp(idealScrollY, minScrollY, maxScrollY);
+
+    //   const currentY = window.scrollY;
+    //   const delta = targetScrollY - currentY;
+
+    //   // Pace: progress edge moves at ~boxHeight/durationSec pixels per second
+    //   const pxPerSec = boxHeight / Math.max(0.001, durationSec);
+    //   let maxStep = pxPerSec * dtSec;
+
+    //   // Hard cap per frame to prevent sudden jumps on slow frames
+    //   maxStep = Math.min(maxStep, MAX_STEP_PX_PER_FRAME);
+
+    //   const step = clamp(delta, -maxStep, maxStep);
+
+    //   // If we're basically aligned, don't move
+    //   if (Math.abs(step) < 0.5) return;
+
+    //   window.scrollTo({ top: currentY + step, behavior: 'auto' });
+    // }
+
+    function update(elapsed, dtSec) {
+      const nodes = Array.from(document.querySelectorAll('.section'));
+      clearState(nodes);
+
+      const activeIdx = pickActiveIndexByTime(elapsed);
+      const nextIdx = pickNextIndex(elapsed);
+
+      if (activeIdx >= 0 && activeIdx < nodes.length) {
+        const activeNode = nodes[activeIdx];
+        activeNode.classList.add('current');
+
+        const s = sections[activeIdx];
+        const duration = Math.max(0.001, (s.end - s.start));
+        const progress01 = clamp((elapsed - s.start) / duration, 0, 1);
+
+        const box = activeNode.querySelector('.box');
+        if (box) box.style.setProperty('--progress', String(progress01));
+
+        const badgeNow = activeNode.querySelector('.badge[data-kind="now"]');
+        if (badgeNow) {
+          badgeNow.textContent = fmtTime(elapsed);
+          badgeNow.classList.add('show');
+        }
+
+        // Smooth autoscroll tied to the block’s allocated time
+        smoothAutoScrollLongBlock(activeNode, progress01, duration, dtSec);
+
+        // Follow only while running, and only when the active block changes
+        if (running && chkFollow.checked && activeIdx !== lastFollowIdx) {
+          activeNode.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          lastFollowIdx = activeIdx;
+        }
+      }
+
+      if (nextIdx >= 0 && nextIdx < nodes.length) {
+        const startsIn = sections[nextIdx].start - elapsed;
+        if (startsIn <= PRE_HIGHLIGHT_SECONDS) {
+          const node = nodes[nextIdx];
+          node.classList.add('upnextSoon', 'upnextCountdown');
+
+          const badgeNext = node.querySelector('.badge[data-kind="next"]');
+          if (badgeNext) {
+            badgeNext.textContent = `Next in ${fmtCountdown(startsIn)}`;
+            badgeNext.classList.add('show');
+          }
+        }
+      }
+    }
+
+    function tick() {
+      const elapsed = currentElapsed();
+
+      // dt: time since last tick (used for smooth scroll step sizing)
+      let dtSec = 0;
+      if (lastTickElapsed != null) dtSec = Math.max(0, elapsed - lastTickElapsed);
+
+      // First frame after start/resume: set baseline and do NOT autoscroll-jump
+      if (lastTickElapsed == null) dtSec = 0;
+
+      update(elapsed, dtSec);
+
+      lastTickElapsed = elapsed;
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function startLoop() {
+      if (rafId != null) return;
+      lastTickElapsed = null; // prevents first-frame jump
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function stopLoop() {
+      if (rafId == null) return;
+      cancelAnimationFrame(rafId);
+      rafId = null;
+      lastTickElapsed = null;
+    }
+
+    function setButtons() {
+      btnStart.disabled = running;
+      btnPause.disabled = !running;
+    }
+
+    btnLoad.addEventListener('click', () => {
+      sections = parseScript(input.value);
+      render();
+      lastFollowIdx = -1;
+      update(0, 0);
+    });
+
+    btnStart.addEventListener('click', () => {
+      if (running) return;
+      running = true;
+      t0 = performance.now() - pausedAt * 1000;
+      setButtons();
+      startLoop();
+    });
+
+    btnPause.addEventListener('click', () => {
+      if (!running) return;
+
+      // Freeze elapsed and stop all motion.
+      pausedAt = currentElapsed();
+      running = false;
+      setButtons();
+      stopLoop();
+    });
+
+    btnReset.addEventListener('click', () => {
+      running = false;
+      pausedAt = 0;
+      lastFollowIdx = -1;
+      setButtons();
+      stopLoop();
+      update(0, 0);
+    });
+
+    // Initial
+    sections = parseScript(input.value);
+    render();
+    setButtons();
+    update(0, 0);
+  </script>
+
+</body>
+
+</html>

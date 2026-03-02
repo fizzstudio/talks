@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+  viewBox="0 0 1100 640">
+
+  <title>Advanced Chart Accessibility</title>
+
+  <script href="_silverbullet.js" />
+  <style type="text/css">
+    @import url(_silverbullet.css);
+  </style>
+  <style type="text/css">
+    .emphasize {
+      font-weight: bold;
+    }
+
+    #content {
+      font-size: 45px;
+      text-anchor: middle;
+    }
+
+    .list {
+      font-size: 25px;
+      text-anchor: middle;
+    }
+
+    .heading {
+      text-anchor: middle;
+    }
+
+    .colorbox text {
+      fill: white;
+    }
+  </style>
+
+  <defs id="defs-1">
+
+
+  </defs>
+
+  <rect id="bg" x="-1000" y="-1000" width="3000" height="3000" fill="white" />
+
+  <text id="head" x="550" y="1.5em" class="heading">Advanced Chart Accessibility</text>
+
+  <g id="content">
+
+    <g data-fire="1" data-forget="2" data-blank="true" class="colorbox" transform="translate(550,320)">
+      <text>Accessible dataviz consulting experience
+        <tspan x="0" dy="2.5rem" class="list">Feedback on our recommendations</tspan>
+        <tspan x="0" dy="2.5rem" class="list">1. "But those are our brand colors!"</tspan>
+        <tspan x="0" dy="2.5rem" class="list">2. "The charts we're using don't support that"</tspan>
+      </text>
+    </g>
+    
+    <g data-fire="2" data-blank="true" class="colorbox" transform="translate(550,150)">
+      <text>Automatic summary generation
+        <tspan x="0" dy="2.5rem" class="list">Whole chart</tspan>
+        <tspan x="0" dy="2rem" class="list">Each series</tspan>
+        <tspan x="0" dy="2rem" class="list">Each datapoint</tspan>
+        <tspan x="0" dy="2rem" class="list">Annotations</tspan>
+        <tspan x="0" dy="2rem" class="list">Selection queries and comparisons</tspan>
+      </text>
+      <use href="#brain" x="-160" y="-42" width="50" height="50" fill="black" />
+    </g>
+
+    <g data-fire="3" data-blank="true" class="colorbox" transform="translate(550,380)">
+      <text>Summaries are often enough for most users
+        <tspan x="0" dy="2.5rem" class="list">Provides enough info to make informed choice on whether to drill in
+        </tspan>
+        <tspan x="0" dy="2.5rem" class="list">If user chooses to explore the chart, now primed with context</tspan>
+      </text>
+      <use href="#categorization-icon" x="-160" y="-42" width="50" height="50" fill="black" />
+    </g>
+
+    <g data-fire="4" data-blank="true" class="colorbox" transform="translate(550,530)">
+      <text>ParaCharts are accessible by default
+        <tspan x="0" dy="2.5rem" class="list">Most other charting libraries require deploying accessibility explicitly
+        </tspan>
+        <tspan x="0" dy="2.5rem" class="list">Cannot disable ParaCharts accessibility</tspan>
+      </text>
+      <use href="#skill-icon" x="-160" y="-42" width="50" height="50" fill="black" />
+    </g>
+
+    <g data-fire="5" data-blank="true" class="colorbox" transform="translate(950,150)">
+      <text transform="rotate(-25)">DEMO!</text>
+    </g>
+
+  </g>
+
+</svg>

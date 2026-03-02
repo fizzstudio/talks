@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Tour Guide</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      overflow-y: auto;
+      /* padding: 1em; */
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+
+      line-height: 1.8em;
+    }
+
+    main p {
+      text-align: justify;
+      padding-inline: 1em;
+
+    }
+
+    main ul {
+      margin-left: 1em;
+    }
+
+    aside {
+      overflow-y: auto;
+      padding-inline: 1em;
+      /* background-color: orange; */
+    }
+
+    img {
+      width: 90%;
+    }
+
+
+    [data-fire] {
+      display: block;
+      min-height: 29em;
+    }
+
+    /* [data-para-step] {
+      display: block;
+      min-height: 2em;
+    } */
+
+    [data-para-step] p {
+      margin-inline: 2em;
+    }
+
+    [data-para-step]:last-of-type {
+      margin-bottom: 5em;
+    }
+
+    .emphasize {
+      background-color: hsl(229, 73%, 90%)
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Fizz Studio: ParaCharts</h1>
+  </header>
+  <aside id="chart_container">
+    <para-chart id="main-chart" manifest="./assets/data/line-intersection-explore.manifest.json"></para-chart>
+  </aside>
+  <main id="main">
+
+    <div class="steps">
+      <div data-fire="0" class="scroll">
+        <p>Deterministic Tour Guide bindings for charts.</p>
+      </div>
+
+      <div data-fire="1" class="scroll">
+        <h2 id="intro" class="subheading">Narrative Binding Table</h2>
+
+        <table data-start="101" data-end="1214" class="w-fit min-w-(--thread-content-width)">
+          <thead data-start="101" data-end="138">
+            <tr data-start="101" data-end="138">
+              <th data-start="101" data-end="119" data-col-size="md" class="">Phrase Fragment</th>
+              <th data-start="119" data-end="138" data-col-size="lg" class="">Bound Structure</th>
+            </tr>
+          </thead>
+          <tbody data-start="176" data-end="1214">
+  <!-- 
+            <tr data-start="176" data-end="327">
+              <td data-start="176" data-end="206" data-col-size="md">"This line chart compares…"</td>
+              <td data-start="206" data-end="327" data-col-size="lg">Chart: GDP Line Chart · Domain: Year (2008-2018) ·
+                Measure: GDP Share (%) · Series: {Agriculture, Industry, Services}</td>
+            </tr>
+            <tr data-start="328" data-end="368">
+              <td data-start="328" data-end="345" data-col-size="md">"agriculture,"</td>
+              <td data-start="345" data-end="368" data-col-size="lg">Series: Agriculture</td>
+            </tr>
+            <tr data-start="369" data-end="403">
+              <td data-start="369" data-end="383" data-col-size="md">"industry,"</td>
+              <td data-start="383" data-end="403" data-col-size="lg">Series: Industry</td>
+            </tr>
+            <tr data-start="404" data-end="442">
+              <td data-start="404" data-end="422" data-col-size="md">"and services."</td>
+              <td data-start="422" data-end="442" data-col-size="lg">Series: Services</td>
+            </tr>
+            <tr data-start="443" data-end="564">
+              <td data-start="443" data-end="486" data-col-size="md">"Industry and Services cluster together"</td>
+              <td data-start="486" data-end="564" data-col-size="lg">Relation: Proximity · Series pair: Industry ↔
+                Services · Scope: multi-year</td>
+            </tr>
+            <tr data-start="565" data-end="684">
+              <td data-start="565" data-end="602" data-col-size="md">"Agriculture is an outlier below."</td>
+              <td data-start="602" data-end="684" data-col-size="lg">Relation: Persistent lower magnitude · Series:
+                Agriculture · Scope: multi-year</td>
+            </tr>
+            <tr data-start="685" data-end="827">
+              <td data-start="685" data-end="740" data-col-size="md">"Industry and Services follow similar trajectories…"
+              </td>
+              <td data-start="740" data-end="827" data-col-size="lg">Relation: Pattern similarity · Series pair: Industry
+                ↔ Services · Scope: multi-year</td>
+            </tr>
+             -->
+            <tr data-start="828" data-end="861">
+              <td data-start="828" data-end="841" data-col-size="md">"Services"</td>
+              <td data-start="841" data-end="861" data-col-size="lg">Series: Services</td>
+            </tr>
+            <tr data-start="862" data-end="949">
+              <td data-start="862" data-end="901" data-col-size="md">"starts as the second highest line,"</td>
+              <td data-start="901" data-end="949" data-col-size="lg">Year: 2008 · Rank: 2 of 3 · Series: Services</td>
+            </tr>
+            <tr data-start="950" data-end="1042">
+              <td data-start="950" data-end="977" data-col-size="md">"crosses over Industry,"</td>
+              <td data-start="977" data-end="1042" data-col-size="lg">Year: 2011 · Relation: Order transition · Services
+                &gt; Industry</td>
+            </tr>
+            <tr data-start="1043" data-end="1135">
+              <td data-start="1043" data-end="1065" data-col-size="md">"touches Industry,"</td>
+              <td data-start="1065" data-end="1135" data-col-size="lg">Year: 2012 · Relation: Equality (tie) · Services =
+                Industry (45.3)</td>
+            </tr>
+            <tr data-start="1136" data-end="1214">
+              <td data-start="1136" data-end="1166" data-col-size="md">"ends as the highest line."</td>
+              <td data-start="1166" data-end="1214" data-col-size="lg">Year: 2018 · Rank: 1 of 3 · Series: Services</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>
