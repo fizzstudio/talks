@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Multi-Series Line Chart</title>
+  <script src="./_silverbullet.js">  </script>
+  <link rel="stylesheet" href="./_silverbullet.css" type="text/css" media="screen, projection, print">
+
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+
+    header {
+      grid-column: 1/3;
+      text-align: center;
+    }
+
+    h1.heading {
+      font-size: 3.5em;
+      margin: 0.25em;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      padding: 0.5em 1em;
+      margin: 0;
+
+      /* height: 50px; */
+      background-color: hsl(0, 0%, 93%);
+      position: sticky;
+      top: 0;
+
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="heading">Multi-Series Line Chart</h1>
+  </header>
+  <main id="main">
+    <para-chart id="main-chart" manifest="./assets/data/line-intersection.manifest.json"></para-chart>
+  </main>
+
+  <script type="module" src="./script/paracharts.js"></script>
+
+</body>
+
+</html>

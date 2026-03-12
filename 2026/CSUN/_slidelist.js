@@ -1,5 +1,7 @@
 var slidelist = [
   'intro.svg',
+  'multi-line.html',
+  'single-line.html',
   // 'housekeeping.svg',
   // 'wcag-dataviz-iceberg.svg',
   'traditional-chart-a11y.svg',
